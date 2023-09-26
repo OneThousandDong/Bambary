@@ -2,6 +2,7 @@ import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import React from 'react';
 import RocketShip from '../assets/svg/ic_rocketship.svg';
 import Planet from '../assets/svg/ic_planet.svg';
+import Sport from '../assets/svg/ic_sport.svg';
 
 const HomeScreen = ({route, navigation}) => {
   return (
@@ -45,11 +46,12 @@ const HomeScreen = ({route, navigation}) => {
         </View>
 
         <View className="absolute flex flex-row">
-          <View className="top-10 mb-80 h-28 p-4">
+          <View className="top-8 h-28 p-4">
             <Planet height={180} width={180} />
           </View>
           <View className="top-1/3 p-4">
             <RocketShip height={90} width={90} />
+            <Sport height={180} width={180} />
           </View>
         </View>
       </View>
