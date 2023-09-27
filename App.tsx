@@ -3,6 +3,7 @@ import {StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
+import ListeningSkillsScreen from './src/screens/ListeningSkillsScreen';
 
 const App = (): React.ReactElement => {
   const Stack = createNativeStackNavigator();
@@ -15,7 +16,7 @@ const App = (): React.ReactElement => {
             headerShown: false,
           }}>
           <Stack.Screen name="Home" component={HomeScreen} />
-          {/*<Stack.Screen name="Setting" component={SettingScreen} />*/}
+          <Stack.Screen name="ListeningSkills" component={ListeningSkillsScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

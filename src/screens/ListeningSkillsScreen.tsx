@@ -3,34 +3,23 @@ import React from 'react';
 import RocketShip from '../assets/svg/ic_rocketship.svg';
 import Planet from '../assets/svg/ic_planet.svg';
 import Sport from '../assets/svg/ic_sport.svg';
+import ICBack from '../assets/svg/ic_back.svg';
+import Dinosaur from '../assets/svg/ic_dinosaur.svg';
 
-const HomeScreen = ({route, navigation}) => {
+const ListeningSkillsScreen = ({route, navigation}) => {
   return (
     <SafeAreaView>
       <View>
-       <View className="bg-emerald-200 relative box-content h-48 p-4 border-r-2 border-b-2 border-l-2 rounded-b-3xl">
-         <Text>Bambary - English For Primary</Text>
-       </View>
-       <View className="absolute top-32 flex flex-row justify-around">
-         <View className="basis-1/12" />
-         <TouchableOpacity 
-             onPress={() => {
-              navigation.navigate('ListeningSkills')
-             }}
-             activeOpacity={0.9}
-             className="bg-indigo-500 mr-2 basis-2/5 box-content h-36 p-4 border-2 rounded-xl">
-           <Text>Kỹ năng</Text>
-           <Text>Nghe</Text>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+           <ICBack height={40} width={40} />
          </TouchableOpacity>
-
-         <View className="bg-amber-200 ml-2 basis-2/5 box-content h-36 p-4 border-2 rounded-xl">
-          <Text>Kỹ năng</Text>
-           <Text>Đọc</Text>
-         </View>
-         <View className="basis-1/12" />
+       <View className="bg-emerald-200 relative box-content m-4 h-40 border-2 rounded-3xl">
+         {/* <Text>Bambary - English For Primary</Text> */}
+         
        </View>
       </View>
-      <View className="top-28 ml-3">
+
+      <View className="ml-3">
        <Text className="text-lg font-bold">Choose Categories</Text>
       </View>
 
@@ -43,16 +32,7 @@ const HomeScreen = ({route, navigation}) => {
             <Text>Khoa học</Text>
           </View>
         </View>
-
-        <View className="top-1/3 flex flex-row justify-center mb-8">
-          <View className="bg-indigo-500 mr-2 basis-2/5 box-content h-28 p-4 border-2 rounded-xl">
-            <Text>Khám phá</Text>
-          </View>
-          <View className="bg-amber-200 ml-2 mt-6 basis-2/5 box-content h-28 p-4 border-2 rounded-xl">
-            <Text>Thế thao</Text>
-          </View>
-        </View>
-
+        
         <View className="absolute flex flex-row">
           <View className="top-8 h-28 p-4">
             <Planet height={180} width={180} />
@@ -63,11 +43,14 @@ const HomeScreen = ({route, navigation}) => {
           </View>
         </View>
       </View>
+      <View>
+        <Dinosaur height={120} width={120} />
+      </View>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default ListeningSkillsScreen;
 
 const styles = StyleSheet.create({
   container: {
