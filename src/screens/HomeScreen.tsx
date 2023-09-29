@@ -7,36 +7,24 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React from 'react';
-import RocketShipSVG from '../assets/svg/ic_rocketship.svg';
-import PlanetSVG from '../assets/svg/ic_planet.svg';
-import SportSVG from '../assets/svg/ic_sport.svg';
-import IslandSVG from '../assets/svg/ic_island.svg';
-import DinosaurSVG from '../assets/svg/ic_dinosaur.svg';
-import HorseSVG from '../assets/svg/ic_horse.svg';
-import MenuSVG from '../assets/svg/ic_menu.svg';
+import Svgs from '../constants/Svgs';
 
 const HomeScreen = ({route, navigation}) => {
-  return (
-    <SafeAreaView>
-      {/*<ScrollView>*/}
-      <View>
-        <View className="bg-emerald-200 relative box-content h-48 p-4 border-r-2 border-b-2 border-l-2 rounded-b-3xl">
-          <View className="bg-indigo-500 w-8 h-8 rounded-lg shadow-inner justify-center items-center">
-            <MenuSVG height={20} width={20} />
-          </View>
-          <Text>Bambary - English For Primary</Text>
+  const OverlappingSquares = () => {
+    return (
+      <View style={styles.container}>
+        <View className="absolute bg-emerald-200 h-96 w-full z-10 p-4 rounded-b-3xl">
+          <Text>QuangNNNN</Text>
         </View>
-        <View className="absolute top-32 flex flex-row justify-around">
-          <View className="basis-1/12" />
-          <View className="bg-indigo-500 mr-2 basis-2/5 box-content h-36 p-4 border-2 rounded-xl">
-            <Text>Kỹ năng</Text>
-            <Text>Nghe</Text>
+        <View className="absolute flex flex-row top-12">
+          <View className="bg-amber-200 mr-2 h-40 w-36 z-20 top-12 rounded-xl">
+            <Text>Nguyen</Text>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('ListeningSkills');
               }}>
               <View>
-                <DinosaurSVG
+                <Svgs.DinosaurSVG
                   style={{transform: [{rotateY: '180deg'}]}}
                   height={80}
                   width={80}
@@ -44,25 +32,71 @@ const HomeScreen = ({route, navigation}) => {
               </View>
             </TouchableOpacity>
           </View>
-
-          <View className="bg-amber-200 ml-2 basis-2/5 box-content h-36 p-4 border-2 rounded-xl">
-            <Text>Kỹ năng</Text>
-            <Text>Đọc</Text>
+          <View className="bg-indigo-500 ml-2 h-40 w-36 z-20 top-12 rounded-xl">
+            <Text>Huu</Text>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('ListeningSkills');
               }}>
               <View>
-                <HorseSVG
-                  height={80}
-                  width={80}
-                />
+                <Svgs.HorseSVG height={80} width={80} />
               </View>
             </TouchableOpacity>
           </View>
-          <View className="basis-1/12" />
         </View>
       </View>
+    );
+  };
+  return (
+    <SafeAreaView>
+      <View style={styles.container}>
+        <OverlappingSquares />
+      </View>
+      {/*<ScrollView>*/}
+      {/*<View>*/}
+      {/*  <View className="bg-emerald-200 relative box-content h-48 p-4 border-r-2 border-b-2 border-l-2 rounded-b-3xl">*/}
+      {/*    <View className="bg-indigo-500 w-8 h-8 rounded-lg shadow-inner justify-center items-center">*/}
+      {/*      <MenuSVG height={20} width={20} />*/}
+      {/*    </View>*/}
+      {/*    <Text>Bambary - English For Primary</Text>*/}
+      {/*  </View>*/}
+      {/*  <View className="absolute top-32 flex flex-row justify-around">*/}
+      {/*    <View className="basis-1/12" />*/}
+      {/*    <View className="bg-indigo-500 mr-2 basis-2/5 box-content h-36 p-4 border-2 rounded-xl">*/}
+      {/*      <Text>Kỹ năng</Text>*/}
+      {/*      <Text>Nghe</Text>*/}
+      {/*      <TouchableOpacity*/}
+      {/*        onPress={() => {*/}
+      {/*          navigation.navigate('ListeningSkills');*/}
+      {/*        }}>*/}
+      {/*        <View>*/}
+      {/*          <DinosaurSVG*/}
+      {/*            style={{transform: [{rotateY: '180deg'}]}}*/}
+      {/*            height={80}*/}
+      {/*            width={80}*/}
+      {/*          />*/}
+      {/*        </View>*/}
+      {/*      </TouchableOpacity>*/}
+      {/*    </View>*/}
+
+      {/*    <View className="bg-amber-200 ml-2 basis-2/5 box-content h-36 p-4 border-2 rounded-xl">*/}
+      {/*      <Text>Kỹ năng</Text>*/}
+      {/*      <Text>Đọc</Text>*/}
+      {/*      <TouchableOpacity*/}
+      {/*        onPress={() => {*/}
+      {/*          navigation.navigate('ListeningSkills');*/}
+      {/*        }}>*/}
+      {/*        <View>*/}
+      {/*          <HorseSVG*/}
+      {/*            height={80}*/}
+      {/*            width={80}*/}
+      {/*          />*/}
+      {/*        </View>*/}
+      {/*      </TouchableOpacity>*/}
+      {/*    </View>*/}
+      {/*    <View className="basis-1/12" />*/}
+      {/*  </View>*/}
+      {/*</View>*/}
       <View className="top-24 ml-3">
         <Text className="text-lg font-bold">Choose Categories</Text>
       </View>
