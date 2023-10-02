@@ -3,8 +3,10 @@ import {StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
-import ListeningSkillsScreen from './src/screens/ListeningSkillsScreen';
-import StudyScreen from './src/screens/StudyScreen';
+import ListeningSkillsScreen from './src/screens/CategoryScreen';
+import StudyScreen from './src/screens/Quiz/StudyScreen';
+import ChooseTypeQuiz from './src/screens/Quiz/ChooseTypeQuiz';
+import QuizScreen from './src/screens/Quiz/QuizScreen';
 
 const App = (): React.ReactElement => {
   const Stack = createNativeStackNavigator();
@@ -21,7 +23,9 @@ const App = (): React.ReactElement => {
             name="ListeningSkills"
             component={ListeningSkillsScreen}
           />
-          <Stack.Screen name="Quiz" component={StudyScreen} />
+          <Stack.Screen name="StudyQuiz" component={StudyScreen} />
+          <Stack.Screen name="Quiz" component={QuizScreen} />
+          <Stack.Screen name="ChooseTypeQuiz" component={ChooseTypeQuiz} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

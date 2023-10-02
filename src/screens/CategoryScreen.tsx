@@ -46,7 +46,7 @@ const ListeningSkillsScreen = ({route, navigation}) => {
             {/* <Text className="text-center">Kỹ năng</Text> */}
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Quiz');
+                navigation.navigate('ChooseTypeQuiz');
               }}>
               <View className="items-center">
                 <Svgs.CherrySVG
