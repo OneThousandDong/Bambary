@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
 import ListeningSkillsScreen from './src/screens/ListeningSkillsScreen';
-import QuizScreen from './src/screens/StudyScreen';
+import StudyScreen from './src/screens/StudyScreen';
 
 const App = (): React.ReactElement => {
   const Stack = createNativeStackNavigator();
@@ -17,8 +17,11 @@ const App = (): React.ReactElement => {
             headerShown: false,
           }}>
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="ListeningSkills" component={ListeningSkillsScreen} />
-          <Stack.Screen name="Quiz" component={QuizScreen} />
+          <Stack.Screen
+            name="ListeningSkills"
+            component={ListeningSkillsScreen}
+          />
+          <Stack.Screen name="Quiz" component={StudyScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
