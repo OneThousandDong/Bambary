@@ -7,6 +7,7 @@ import ListeningSkillsScreen from './src/screens/CategoryScreen';
 import StudyScreen from './src/screens/Quiz/StudyScreen';
 import ChooseTypeQuiz from './src/screens/Quiz/ChooseTypeQuiz';
 import QuizScreen from './src/screens/Quiz/QuizScreen';
+import LearnBoardScreen from "./src/screens/Quiz/LearnBoardScreen";
 
 const App = (): React.ReactElement => {
   const Stack = createNativeStackNavigator();
@@ -26,6 +27,7 @@ const App = (): React.ReactElement => {
           <Stack.Screen name="StudyQuiz" component={StudyScreen} />
           <Stack.Screen name="Quiz" component={QuizScreen} />
           <Stack.Screen name="ChooseTypeQuiz" component={ChooseTypeQuiz} />
+          <Stack.Screen name="LearnBoard" component={LearnBoardScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>

@@ -18,10 +18,10 @@ const HomeScreen = ({route, navigation}) => {
         </View>
         <View className="absolute flex flex-row top-12">
           <View className="bg-amber-200 mr-2 h-40 w-36 z-20 top-12 rounded-xl">
-            <Text>Nguyen</Text>
+            <Text>Tất cả lá cờ</Text>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('ListeningSkills');
+                navigation.navigate('LearnBoard');
               }}>
               <View>
                 <Svgs.DinosaurSVG
@@ -33,7 +33,7 @@ const HomeScreen = ({route, navigation}) => {
             </TouchableOpacity>
           </View>
           <View className="bg-indigo-500 ml-2 h-40 w-36 z-20 top-12 rounded-xl">
-            <Text>Huu</Text>
+            <Text>Thông tin lá cờ</Text>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('ListeningSkills');
