@@ -72,9 +72,9 @@ const StudyScreen = ({ route, navigation }) => {
     return (
         <SafeAreaView>
             <View className="bg-emerald-200 m-4 h-3/5 rounded-3xl ">
-                <TouchableOpacity className="m-2" onPress={() => navigation.goBack()}>
+                {/* <TouchableOpacity className="m-2" onPress={() => navigation.goBack()}>
                     <Svgs.BackSVG height={40} width={40} />
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 <View className="bg-emerald-200 rounded-3xl justify-center items-center">
                     <Text className="m-8 font-bold text-xl">What fruit is this?</Text>
                     <View className="flex flex-row m-4 items-center">

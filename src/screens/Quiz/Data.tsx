@@ -8,18 +8,13 @@ export type country = {
 };
 export const DATA: country[] = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    id: 'VN',
     name: 'VIET NAM',
     uri: <Svgs.CherrySVG height={180} width={widthDimensions} />,
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+    id: 'USA',
     name: 'HOA KY',
-    uri: <Svgs.ZW height={180} width={widthDimensions} />,
-  },
-  // {
-  //   id: '58694a0f-3da1-471f-bd96-145571e29d72',
-  //   name: 'THAI LAN',
-  //   uri: <Svgs.DinosaurSVG height={180} width={widthDimensions} />,
-  // },
+    uri: <Svgs.AD height={200} width={widthDimensions} />,
+  }
 ];
