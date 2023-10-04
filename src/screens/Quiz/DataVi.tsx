@@ -8,14 +8,16 @@ export type country = {
   uri: any;
   answer: string[];
   correct: number;
+  index: number;
 };
-export const DATA: country[] = [
+export const DATAVI: country[] = [
   {
     id: 'AD',
     name: 'Andorra',
     uri: <Svgs.AD height={80} width={widthDimensions} />,
     answer: ['Bỉ', 'New Caledonia', 'Andorra', 'Slovakia'],
     correct: 2,
+    index: 0,
   },
   {
     id: 'AE',
@@ -28,6 +30,7 @@ export const DATA: country[] = [
       'Các tiểu vương quốc Ả Rập Thống nhất',
     ],
     correct: 3,
+    index: 1,
   },
   {
     id: 'AF',
@@ -35,6 +38,7 @@ export const DATA: country[] = [
     uri: <Svgs.AF height={80} width={widthDimensions} />,
     answer: ['Barbados', 'Gibraltar', 'Yemen', 'Afghanistan'],
     correct: 3,
+    index: 2,
   },
   {
     id: 'AG',
@@ -42,6 +46,7 @@ export const DATA: country[] = [
     uri: <Svgs.AG height={80} width={widthDimensions} />,
     answer: ['Paraguay', 'Antigua và Barbuda', 'Đức', 'Saint Lucia'],
     correct: 1,
+    index: 3,
   },
   {
     id: 'AI',
@@ -49,6 +54,7 @@ export const DATA: country[] = [
     uri: <Svgs.AI height={80} width={widthDimensions} />,
     answer: ['Iceland', 'Tuvalu', 'Angola', 'Anguilla'],
     correct: 3,
+    index: 4,
   },
   {
     id: 'AL',
@@ -56,6 +62,7 @@ export const DATA: country[] = [
     uri: <Svgs.AL height={80} width={widthDimensions} />,
     answer: ['Albania', 'Uzbekistan', 'Bangladesh', 'Na Uy'],
     correct: 0,
+    index: 5,
   },
   {
     id: 'AM',
@@ -63,6 +70,7 @@ export const DATA: country[] = [
     uri: <Svgs.AM height={80} width={widthDimensions} />,
     answer: ['Armenia', 'Đảo Bouvet', 'Hà Lan', 'Tuvalu'],
     correct: 0,
+    index: 6,
   },
   {
     id: 'AO',
@@ -70,6 +78,7 @@ export const DATA: country[] = [
     uri: <Svgs.AO height={80} width={widthDimensions} />,
     answer: ['Ba Lan', 'American Samoa', 'Angola', 'Triều Tiên'],
     correct: 2,
+    index: 7,
   },
   {
     id: 'AQ',
@@ -77,6 +86,7 @@ export const DATA: country[] = [
     uri: <Svgs.AQ height={80} width={widthDimensions} />,
     answer: ['Antarctica', 'Quần đảo Bắc Mariana', 'Ả Rập Xê Út', 'Brazil'],
     correct: 0,
+    index: 8,
   },
   {
     id: 'AR',
@@ -84,6 +94,7 @@ export const DATA: country[] = [
     uri: <Svgs.AR height={80} width={widthDimensions} />,
     answer: ['Ecuador', 'Thành Vatican', 'Argentina', 'Guatemala'],
     correct: 2,
+    index: 9,
   },
   {
     id: 'AS',
@@ -91,6 +102,7 @@ export const DATA: country[] = [
     uri: <Svgs.AS height={80} width={widthDimensions} />,
     answer: ['Đảo Bouvet', 'Madagascar', 'American Samoa', 'Đông Timor'],
     correct: 2,
+    index: 10,
   },
   {
     id: 'AT',
@@ -98,6 +110,7 @@ export const DATA: country[] = [
     uri: <Svgs.AT height={80} width={widthDimensions} />,
     answer: ['Áo', 'Lesotho', 'Cộng hòa Dominica', 'Papua New Guinea'],
     correct: 0,
+    index: 11,
   },
   {
     id: 'AU',
@@ -105,6 +118,7 @@ export const DATA: country[] = [
     uri: <Svgs.AU height={80} width={widthDimensions} />,
     answer: ['Niger', 'Uganda', 'Các tiểu vương quốc Ả Rập Thống nhất', 'Úc'],
     correct: 3,
+    index: 12,
   },
   {
     id: 'AW',
@@ -112,6 +126,7 @@ export const DATA: country[] = [
     uri: <Svgs.AW height={80} width={widthDimensions} />,
     answer: ['Martinique', 'Aruba', 'Sint Maarten', 'Scotland'],
     correct: 1,
+    index: 13,
   },
   {
     id: 'AX',
@@ -119,6 +134,7 @@ export const DATA: country[] = [
     uri: <Svgs.AX height={80} width={widthDimensions} />,
     answer: ['Uzbekistan', 'Quần đảo Åland', 'Hy Lạp', 'Fiji'],
     correct: 1,
+    index: 14,
   },
   {
     id: 'AZ',
@@ -131,6 +147,7 @@ export const DATA: country[] = [
       'Kyrgyzstan',
     ],
     correct: 2,
+    index: 15,
   },
   {
     id: 'BA',
@@ -138,6 +155,7 @@ export const DATA: country[] = [
     uri: <Svgs.BA height={80} width={widthDimensions} />,
     answer: ['Bosnia và Herzegovina', 'Tanzania', 'Costa Rica', 'Ma-rốc'],
     correct: 0,
+    index: 16,
   },
   {
     id: 'BB',
@@ -145,6 +163,7 @@ export const DATA: country[] = [
     uri: <Svgs.BB height={80} width={widthDimensions} />,
     answer: ['Barbados', 'Qatar', 'Azerbaijan', 'Guinea-Bissau'],
     correct: 0,
+    index: 17,
   },
   {
     id: 'BD',
@@ -152,6 +171,7 @@ export const DATA: country[] = [
     uri: <Svgs.BD height={80} width={widthDimensions} />,
     answer: ['Gibraltar', 'Albania', 'Rwanda', 'Bangladesh'],
     correct: 3,
+    index: 18,
   },
   {
     id: 'BE',
@@ -159,6 +179,7 @@ export const DATA: country[] = [
     uri: <Svgs.BE height={80} width={widthDimensions} />,
     answer: ['Bỉ', 'Canada', 'Uganda', 'Saint Kitts và Nevis'],
     correct: 0,
+    index: 19,
   },
   {
     id: 'BF',
@@ -166,6 +187,7 @@ export const DATA: country[] = [
     uri: <Svgs.BF height={80} width={widthDimensions} />,
     answer: ['Indonesia', 'Benin', 'Burkina Faso', 'Kosovo'],
     correct: 2,
+    index: 20,
   },
   {
     id: 'BG',
@@ -173,6 +195,7 @@ export const DATA: country[] = [
     uri: <Svgs.BG height={80} width={widthDimensions} />,
     answer: ['Guam', 'Trung Quốc', 'Bulgaria', 'Pitcairn'],
     correct: 2,
+    index: 21,
   },
   {
     id: 'BH',
@@ -180,6 +203,7 @@ export const DATA: country[] = [
     uri: <Svgs.BH height={80} width={widthDimensions} />,
     answer: ['Bahrain', 'Malta', 'Quần đảo Virgin', 'Phần Lan'],
     correct: 0,
+    index: 22,
   },
   {
     id: 'BI',
@@ -187,6 +211,7 @@ export const DATA: country[] = [
     uri: <Svgs.BI height={80} width={widthDimensions} />,
     answer: ['Mali', 'Burundi', 'Vanuatu', 'Belize'],
     correct: 1,
+    index: 23,
   },
   {
     id: 'BJ',
@@ -194,6 +219,7 @@ export const DATA: country[] = [
     uri: <Svgs.BJ height={80} width={widthDimensions} />,
     answer: ['Thành Vatican', 'Niger', 'Benin', 'Hà Lan'],
     correct: 2,
+    index: 24,
   },
   {
     id: 'BL',
@@ -206,6 +232,7 @@ export const DATA: country[] = [
       'Trinidad và Tobago',
     ],
     correct: 0,
+    index: 25,
   },
   {
     id: 'BM',
@@ -213,6 +240,7 @@ export const DATA: country[] = [
     uri: <Svgs.BM height={80} width={widthDimensions} />,
     answer: ['Bermuda', 'Tây Sahara', 'São Tomé và Príncipe', 'Guinea-Bissau'],
     correct: 0,
+    index: 26,
   },
   {
     id: 'BN',
@@ -220,6 +248,7 @@ export const DATA: country[] = [
     uri: <Svgs.BN height={80} width={widthDimensions} />,
     answer: ['Romania', 'Nicaragua', 'Belize', 'Brunei Darussalam'],
     correct: 3,
+    index: 27,
   },
   {
     id: 'BO',
@@ -227,6 +256,7 @@ export const DATA: country[] = [
     uri: <Svgs.BO height={80} width={widthDimensions} />,
     answer: ['Liechtenstein', 'Argentina', 'Pitcairn', 'Bolivia'],
     correct: 3,
+    index: 28,
   },
   {
     id: 'BR',
@@ -234,6 +264,7 @@ export const DATA: country[] = [
     uri: <Svgs.BR height={80} width={widthDimensions} />,
     answer: ['Belize', 'Brazil', 'Qatar', 'Hồng Kông'],
     correct: 1,
+    index: 29,
   },
   {
     id: 'BS',
@@ -241,6 +272,7 @@ export const DATA: country[] = [
     uri: <Svgs.BS height={80} width={widthDimensions} />,
     answer: ['Sudan', 'Namibia', 'Ecuador', 'Bahamas'],
     correct: 3,
+    index: 30,
   },
   {
     id: 'BT',
@@ -248,6 +280,7 @@ export const DATA: country[] = [
     uri: <Svgs.BT height={80} width={widthDimensions} />,
     answer: ['Portugal', 'Afghanistan', 'Macao', 'Bhutan'],
     correct: 3,
+    index: 31,
   },
   {
     id: 'BV',
@@ -255,6 +288,7 @@ export const DATA: country[] = [
     uri: <Svgs.BV height={80} width={widthDimensions} />,
     answer: ['Zambia', 'Li-băng', 'Đảo Bouvet', 'Micronesia'],
     correct: 2,
+    index: 32,
   },
   {
     id: 'BW',
@@ -262,6 +296,7 @@ export const DATA: country[] = [
     uri: <Svgs.BW height={80} width={widthDimensions} />,
     answer: ['Papua New Guinea', 'New Caledonia', 'Botswana', 'Trung Quốc'],
     correct: 2,
+    index: 33,
   },
   {
     id: 'BY',
@@ -269,6 +304,7 @@ export const DATA: country[] = [
     uri: <Svgs.BY height={80} width={widthDimensions} />,
     answer: ['Kuwait', 'Belarus', 'Áo', 'Ả Rập Xê Út'],
     correct: 1,
+    index: 34,
   },
   {
     id: 'BZ',
@@ -276,6 +312,7 @@ export const DATA: country[] = [
     uri: <Svgs.BZ height={80} width={widthDimensions} />,
     answer: ['Belize', 'Quần đảo Cocos', 'Turkmenistan', 'Equatorial Guinea'],
     correct: 0,
+    index: 35,
   },
   {
     id: 'CA',
@@ -288,6 +325,7 @@ export const DATA: country[] = [
       'Lithuania',
     ],
     correct: 0,
+    index: 36,
   },
   {
     id: 'CC',
@@ -300,6 +338,7 @@ export const DATA: country[] = [
       'Quần đảo Cocos',
     ],
     correct: 3,
+    index: 37,
   },
   {
     id: 'CD',
@@ -312,6 +351,7 @@ export const DATA: country[] = [
       'Norfolk Island',
     ],
     correct: 2,
+    index: 38,
   },
   {
     id: 'CF',
@@ -319,6 +359,7 @@ export const DATA: country[] = [
     uri: <Svgs.CF height={80} width={widthDimensions} />,
     answer: ['Thụy Sỹ', 'Panama', 'Guyana', 'Cộng hòa Trung Phi'],
     correct: 3,
+    index: 39,
   },
   {
     id: 'CG',
@@ -331,6 +372,7 @@ export const DATA: country[] = [
       'Namibia',
     ],
     correct: 0,
+    index: 40,
   },
   {
     id: 'CH',
@@ -338,13 +380,15 @@ export const DATA: country[] = [
     uri: <Svgs.CH height={80} width={widthDimensions} />,
     answer: ['Honduras', 'Bhutan', 'Thụy Sỹ', 'Quần đảo Virgin'],
     correct: 2,
+    index: 41,
   },
   {
     id: 'CI',
-    name: "Côte d'Ivoire",
+    name: 'Bờ Biển Ngà',
     uri: <Svgs.CI height={80} width={widthDimensions} />,
-    answer: ["Côte d'Ivoire", 'Cameroon', 'Đài Loan', 'Mali'],
+    answer: ['Bờ Biển Ngà', 'Cameroon', 'Đài Loan', 'Mali'],
     correct: 0,
+    index: 42,
   },
   {
     id: 'CK',
@@ -352,6 +396,7 @@ export const DATA: country[] = [
     uri: <Svgs.CK height={80} width={widthDimensions} />,
     answer: ['Cook Islands', 'São Tomé và Príncipe', 'Phần Lan', 'Guadeloupe'],
     correct: 0,
+    index: 43,
   },
   {
     id: 'CL',
@@ -359,6 +404,7 @@ export const DATA: country[] = [
     uri: <Svgs.CL height={80} width={widthDimensions} />,
     answer: ['Quần đảo Cocos', 'Latvia', 'Sudan', 'Chile'],
     correct: 3,
+    index: 44,
   },
   {
     id: 'CM',
@@ -366,6 +412,7 @@ export const DATA: country[] = [
     uri: <Svgs.CM height={80} width={widthDimensions} />,
     answer: ['Qatar', 'Cameroon', 'Quần đảo Cocos', 'Equatorial Guinea'],
     correct: 1,
+    index: 45,
   },
   {
     id: 'CN',
@@ -373,6 +420,7 @@ export const DATA: country[] = [
     uri: <Svgs.CN height={80} width={widthDimensions} />,
     answer: ['Trung Quốc', 'Úc', 'Venezuela', 'Mauritania'],
     correct: 0,
+    index: 46,
   },
   {
     id: 'CO',
@@ -380,6 +428,7 @@ export const DATA: country[] = [
     uri: <Svgs.CO height={80} width={widthDimensions} />,
     answer: ['Colombia', 'Việt Nam', 'Equatorial Guinea', 'Bulgaria'],
     correct: 0,
+    index: 47,
   },
   {
     id: 'CR',
@@ -387,6 +436,7 @@ export const DATA: country[] = [
     uri: <Svgs.CR height={80} width={widthDimensions} />,
     answer: ['Kyrgyzstan', 'Paraguay', 'Costa Rica', 'Quần đảo Cocos'],
     correct: 2,
+    index: 48,
   },
   {
     id: 'CU',
@@ -394,6 +444,7 @@ export const DATA: country[] = [
     uri: <Svgs.CU height={80} width={widthDimensions} />,
     answer: ['Brazil', 'Ấn Độ', 'Turkmenistan', 'Cuba'],
     correct: 3,
+    index: 49,
   },
   {
     id: 'CV',
@@ -401,6 +452,7 @@ export const DATA: country[] = [
     uri: <Svgs.CV height={80} width={widthDimensions} />,
     answer: ['Cape Verde', 'Madagascar', 'Bulgaria', 'Oman'],
     correct: 0,
+    index: 50,
   },
   {
     id: 'CW',
@@ -408,6 +460,7 @@ export const DATA: country[] = [
     uri: <Svgs.CW height={80} width={widthDimensions} />,
     answer: ['Curaçao', 'Guadeloupe', 'Mỹ (Hoa Kỳ)', 'Azerbaijan'],
     correct: 0,
+    index: 51,
   },
   {
     id: 'CX',
@@ -415,6 +468,7 @@ export const DATA: country[] = [
     uri: <Svgs.CX height={80} width={widthDimensions} />,
     answer: ['Panama', 'Grenada', 'Quần đảo Cayman', 'Lãnh thổ Đảo Christmas'],
     correct: 3,
+    index: 52,
   },
   {
     id: 'CY',
@@ -422,6 +476,7 @@ export const DATA: country[] = [
     uri: <Svgs.CY height={80} width={widthDimensions} />,
     answer: ['Ukraine', 'Liberia', 'Bhutan', 'Đảo Síp'],
     correct: 3,
+    index: 53,
   },
   {
     id: 'CZ',
@@ -434,6 +489,7 @@ export const DATA: country[] = [
       'Qatar',
     ],
     correct: 0,
+    index: 54,
   },
   {
     id: 'DE',
@@ -441,6 +497,7 @@ export const DATA: country[] = [
     uri: <Svgs.DE height={80} width={widthDimensions} />,
     answer: ['Belarus', 'Quần đảo Turks và Caicos', 'Đức', 'Mexico'],
     correct: 2,
+    index: 55,
   },
   {
     id: 'DJ',
@@ -448,6 +505,7 @@ export const DATA: country[] = [
     uri: <Svgs.DJ height={80} width={widthDimensions} />,
     answer: ['Pitcairn', 'Dominica', 'Guatemala', 'Djibouti'],
     correct: 3,
+    index: 56,
   },
   {
     id: 'DK',
@@ -455,6 +513,7 @@ export const DATA: country[] = [
     uri: <Svgs.DK height={80} width={widthDimensions} />,
     answer: ['Antarctica', 'Denmark', 'Li-băng', 'Paraguay'],
     correct: 1,
+    index: 57,
   },
   {
     id: 'DM',
@@ -462,6 +521,7 @@ export const DATA: country[] = [
     uri: <Svgs.DM height={80} width={widthDimensions} />,
     answer: ['Åland Islands', 'Tanzania', 'Quần đảo Bắc Mariana', 'Dominica'],
     correct: 3,
+    index: 58,
   },
   {
     id: 'DO',
@@ -469,6 +529,7 @@ export const DATA: country[] = [
     uri: <Svgs.DO height={80} width={widthDimensions} />,
     answer: ['Campuchia', 'Cuba', 'Cộng hòa Dominica', 'São Tomé và Príncipe'],
     correct: 2,
+    index: 59,
   },
   {
     id: 'DZ',
@@ -476,6 +537,7 @@ export const DATA: country[] = [
     uri: <Svgs.DZ height={80} width={widthDimensions} />,
     answer: ['Cộng hòa Trung Phi', 'Algeria', 'Sudan', 'Kiribati'],
     correct: 1,
+    index: 60,
   },
   {
     id: 'EC',
@@ -483,6 +545,7 @@ export const DATA: country[] = [
     uri: <Svgs.EC height={80} width={widthDimensions} />,
     answer: ['Ecuador', 'Kuwait', 'Tanzania', 'Saint Vincent và Grenadines'],
     correct: 0,
+    index: 61,
   },
   {
     id: 'EE',
@@ -490,6 +553,7 @@ export const DATA: country[] = [
     uri: <Svgs.EE height={80} width={widthDimensions} />,
     answer: ['Guyane thuộc Pháp', 'Estonia', 'Lào', 'Slovenia'],
     correct: 1,
+    index: 62,
   },
   {
     id: 'EG',
@@ -497,6 +561,7 @@ export const DATA: country[] = [
     uri: <Svgs.EG height={80} width={widthDimensions} />,
     answer: ['Egypt', 'Monaco', 'Trinidad và Tobago', 'Egypt'],
     correct: 0,
+    index: 63,
   },
   {
     id: 'EH',
@@ -504,6 +569,7 @@ export const DATA: country[] = [
     uri: <Svgs.EH height={80} width={widthDimensions} />,
     answer: ['Tây Sahara', 'Tanzania', 'Bhutan', 'Ma-rốc'],
     correct: 0,
+    index: 64,
   },
   {
     id: 'ER',
@@ -511,6 +577,7 @@ export const DATA: country[] = [
     uri: <Svgs.ER height={80} width={widthDimensions} />,
     answer: ['Eritrea', 'Hungary', 'Serbia', 'Hà Lan'],
     correct: 0,
+    index: 65,
   },
   {
     id: 'ES',
@@ -518,6 +585,7 @@ export const DATA: country[] = [
     uri: <Svgs.ES height={80} width={widthDimensions} />,
     answer: ['Lãnh thổ Đảo Christmas', 'Tây Ban Nha', 'Somalia', 'Italy'],
     correct: 1,
+    index: 66,
   },
   {
     id: 'ET',
@@ -525,6 +593,7 @@ export const DATA: country[] = [
     uri: <Svgs.ET height={80} width={widthDimensions} />,
     answer: ['Saint Barthélemy', 'Kuwait', 'Ethiopia', 'Việt Nam'],
     correct: 2,
+    index: 67,
   },
   {
     id: 'EU',
@@ -532,6 +601,7 @@ export const DATA: country[] = [
     uri: <Svgs.EU height={80} width={widthDimensions} />,
     answer: ['Quần đảo Solomon', 'Liên minh châu Âu', 'Iraq', 'Chile'],
     correct: 1,
+    index: 68,
   },
   {
     id: 'FI',
@@ -544,6 +614,7 @@ export const DATA: country[] = [
       'Phần Lan',
     ],
     correct: 3,
+    index: 69,
   },
   {
     id: 'FJ',
@@ -551,6 +622,7 @@ export const DATA: country[] = [
     uri: <Svgs.FJ height={80} width={widthDimensions} />,
     answer: ['Namibia', 'Zimbabwe', 'Antigua và Barbuda', 'Fiji'],
     correct: 3,
+    index: 70,
   },
   {
     id: 'FK',
@@ -563,6 +635,7 @@ export const DATA: country[] = [
       'Papua New Guinea',
     ],
     correct: 0,
+    index: 71,
   },
   {
     id: 'FM',
@@ -570,6 +643,7 @@ export const DATA: country[] = [
     uri: <Svgs.FM height={80} width={widthDimensions} />,
     answer: ['Micronesia', 'Quần đảo Solomon', 'Pháp', 'Lesotho'],
     correct: 0,
+    index: 72,
   },
   {
     id: 'FO',
@@ -577,6 +651,7 @@ export const DATA: country[] = [
     uri: <Svgs.FO height={80} width={widthDimensions} />,
     answer: ['Azerbaijan', 'Pakistan', 'Quần đảo Faroe', 'Mali'],
     correct: 2,
+    index: 73,
   },
   {
     id: 'FR',
@@ -584,6 +659,7 @@ export const DATA: country[] = [
     uri: <Svgs.FR height={80} width={widthDimensions} />,
     answer: ['Benin', 'Tây Ban Nha', 'Pháp', 'Lesotho'],
     correct: 2,
+    index: 74,
   },
   {
     id: 'GA',
@@ -591,6 +667,7 @@ export const DATA: country[] = [
     uri: <Svgs.GA height={80} width={widthDimensions} />,
     answer: ['Lãnh thổ Anh tại Ấn Độ Dương', 'Burundi', 'Chad', 'Gabon'],
     correct: 3,
+    index: 75,
   },
   {
     id: 'GB-ENG',
@@ -598,6 +675,7 @@ export const DATA: country[] = [
     uri: <Svgs.GB_ENG height={80} width={widthDimensions} />,
     answer: ['Tây Ban Nha', 'Anh', 'Montenegro', 'Peru'],
     correct: 1,
+    index: 76,
   },
   {
     id: 'GB-NIR',
@@ -605,6 +683,7 @@ export const DATA: country[] = [
     uri: <Svgs.GB_NIR height={80} width={widthDimensions} />,
     answer: ['Hàn Quốc', 'Sint Maarten', 'Angola', 'Bắc Ireland '],
     correct: 3,
+    index: 77,
   },
   {
     id: 'GB-SCT',
@@ -612,6 +691,7 @@ export const DATA: country[] = [
     uri: <Svgs.GB_SCT height={80} width={widthDimensions} />,
     answer: ['Li-băng', 'Scotland', 'Ethiopia', 'Vanuatu'],
     correct: 1,
+    index: 78,
   },
   {
     id: 'GB-WLS',
@@ -619,6 +699,7 @@ export const DATA: country[] = [
     uri: <Svgs.GB_WLS height={80} width={widthDimensions} />,
     answer: ['Wales', 'Georgia', 'Senegal', 'Hungary'],
     correct: 0,
+    index: 79,
   },
   {
     id: 'GB',
@@ -631,6 +712,7 @@ export const DATA: country[] = [
       'Polynésie thuộc Pháp',
     ],
     correct: 0,
+    index: 80,
   },
   {
     id: 'GD',
@@ -638,6 +720,7 @@ export const DATA: country[] = [
     uri: <Svgs.GD height={80} width={widthDimensions} />,
     answer: ['Pháp', 'Grenada', 'Syria', 'Malaysia'],
     correct: 1,
+    index: 81,
   },
   {
     id: 'GE',
@@ -645,6 +728,7 @@ export const DATA: country[] = [
     uri: <Svgs.GE height={80} width={widthDimensions} />,
     answer: ['Thụy Điển', 'Georgia', 'Canada', 'Guadeloupe'],
     correct: 1,
+    index: 82,
   },
   {
     id: 'GF',
@@ -652,6 +736,7 @@ export const DATA: country[] = [
     uri: <Svgs.GF height={80} width={widthDimensions} />,
     answer: ['Ethiopia', 'Nhật Bản', 'Guyane thuộc Pháp', 'Ba Lan'],
     correct: 2,
+    index: 83,
   },
   {
     id: 'GG',
@@ -659,6 +744,7 @@ export const DATA: country[] = [
     uri: <Svgs.GG height={80} width={widthDimensions} />,
     answer: ['Kyrgyzstan', 'Denmark', 'Swaziland', 'Guernsey'],
     correct: 3,
+    index: 84,
   },
   {
     id: 'GH',
@@ -666,6 +752,7 @@ export const DATA: country[] = [
     uri: <Svgs.GH height={80} width={widthDimensions} />,
     answer: ['Bulgaria', 'Namibia', 'Ghana', 'Tonga'],
     correct: 2,
+    index: 85,
   },
   {
     id: 'GI',
@@ -673,6 +760,7 @@ export const DATA: country[] = [
     uri: <Svgs.GI height={80} width={widthDimensions} />,
     answer: ['Gibraltar', 'New Caledonia', 'Sudan', 'Hà Lan'],
     correct: 0,
+    index: 86,
   },
   {
     id: 'GL',
@@ -680,6 +768,7 @@ export const DATA: country[] = [
     uri: <Svgs.GL height={80} width={widthDimensions} />,
     answer: ['Scotland', 'Guadeloupe', 'Greenland', 'Uruguay'],
     correct: 2,
+    index: 87,
   },
   {
     id: 'GM',
@@ -687,6 +776,7 @@ export const DATA: country[] = [
     uri: <Svgs.GM height={80} width={widthDimensions} />,
     answer: ['Grenada', 'Quần đảo Virgin', 'Gambia', 'Comoros'],
     correct: 2,
+    index: 88,
   },
   {
     id: 'GN',
@@ -694,6 +784,7 @@ export const DATA: country[] = [
     uri: <Svgs.GN height={80} width={widthDimensions} />,
     answer: ['Martinique', 'Guinea', 'Brazil', 'Tunisia'],
     correct: 1,
+    index: 89,
   },
   {
     id: 'GP',
@@ -701,6 +792,7 @@ export const DATA: country[] = [
     uri: <Svgs.GP height={80} width={widthDimensions} />,
     answer: ['Kazakhstan', 'Đài Loan', 'Guadeloupe', 'Andorra'],
     correct: 2,
+    index: 90,
   },
   {
     id: 'GQ',
@@ -708,6 +800,7 @@ export const DATA: country[] = [
     uri: <Svgs.GQ height={80} width={widthDimensions} />,
     answer: ['Italy', 'Philippines', 'Egypt', 'Equatorial Guinea'],
     correct: 3,
+    index: 91,
   },
   {
     id: 'GR',
@@ -720,6 +813,7 @@ export const DATA: country[] = [
       'Hy Lạp',
     ],
     correct: 3,
+    index: 92,
   },
   {
     id: 'GS',
@@ -732,6 +826,7 @@ export const DATA: country[] = [
       'Myanmar',
     ],
     correct: 1,
+    index: 93,
   },
   {
     id: 'GT',
@@ -739,6 +834,7 @@ export const DATA: country[] = [
     uri: <Svgs.GT height={80} width={widthDimensions} />,
     answer: ['Guatemala', 'Israel', 'Quần đảo Solomon', 'Thụy Sỹ'],
     correct: 0,
+    index: 94,
   },
   {
     id: 'GU',
@@ -746,6 +842,7 @@ export const DATA: country[] = [
     uri: <Svgs.GU height={80} width={widthDimensions} />,
     answer: ['Guam', 'Seychelles', 'Bắc Ireland ', 'Israel'],
     correct: 0,
+    index: 95,
   },
   {
     id: 'GW',
@@ -753,6 +850,7 @@ export const DATA: country[] = [
     uri: <Svgs.GW height={80} width={widthDimensions} />,
     answer: ['Sri Lanka', 'Syria', 'Guinea-Bissau', 'Georgia'],
     correct: 2,
+    index: 96,
   },
   {
     id: 'GY',
@@ -760,6 +858,7 @@ export const DATA: country[] = [
     uri: <Svgs.GY height={80} width={widthDimensions} />,
     answer: ['Triều Tiên', 'Tajikistan', 'Guyana', 'Antarctica'],
     correct: 2,
+    index: 97,
   },
   {
     id: 'HK',
@@ -772,6 +871,7 @@ export const DATA: country[] = [
       'Hồng Kông',
     ],
     correct: 3,
+    index: 98,
   },
   {
     id: 'HM',
@@ -784,6 +884,7 @@ export const DATA: country[] = [
       'Ecuador',
     ],
     correct: 0,
+    index: 99,
   },
   {
     id: 'HN',
@@ -791,6 +892,7 @@ export const DATA: country[] = [
     uri: <Svgs.HN height={80} width={widthDimensions} />,
     answer: ['Honduras', 'Bosnia và Herzegovina', 'Zambia', 'Myanmar'],
     correct: 0,
+    index: 100,
   },
   {
     id: 'HR',
@@ -798,6 +900,7 @@ export const DATA: country[] = [
     uri: <Svgs.HR height={80} width={widthDimensions} />,
     answer: ['Polynésie thuộc Pháp', 'Benin', 'Croatia', 'Jordan'],
     correct: 2,
+    index: 101,
   },
   {
     id: 'HT',
@@ -805,6 +908,7 @@ export const DATA: country[] = [
     uri: <Svgs.HT height={80} width={widthDimensions} />,
     answer: ['Anh', 'Saint Martin', 'Haiti', 'Mỹ'],
     correct: 2,
+    index: 102,
   },
   {
     id: 'HU',
@@ -812,6 +916,7 @@ export const DATA: country[] = [
     uri: <Svgs.HU height={80} width={widthDimensions} />,
     answer: ['Hungary', 'Montserrat', 'Quần đảo Cocos', 'Réunion'],
     correct: 0,
+    index: 103,
   },
   {
     id: 'ID',
@@ -819,6 +924,7 @@ export const DATA: country[] = [
     uri: <Svgs.ID height={80} width={widthDimensions} />,
     answer: ['New Zealand', 'Cộng hòa Trung Phi', 'Ghana', 'Indonesia'],
     correct: 3,
+    index: 104,
   },
   {
     id: 'IE',
@@ -826,6 +932,7 @@ export const DATA: country[] = [
     uri: <Svgs.IE height={80} width={widthDimensions} />,
     answer: ['Ireland', 'Moldova', 'Fiji', 'Niue'],
     correct: 0,
+    index: 105,
   },
   {
     id: 'IL',
@@ -833,6 +940,7 @@ export const DATA: country[] = [
     uri: <Svgs.IL height={80} width={widthDimensions} />,
     answer: ['Israel', 'Greenland', 'Algeria', 'Thụy Điển'],
     correct: 0,
+    index: 106,
   },
   {
     id: 'IM',
@@ -840,6 +948,7 @@ export const DATA: country[] = [
     uri: <Svgs.IM height={80} width={widthDimensions} />,
     answer: ['Scotland', 'Isle of Man', 'Indonesia', 'Sint Maarten'],
     correct: 1,
+    index: 107,
   },
   {
     id: 'IN',
@@ -847,6 +956,7 @@ export const DATA: country[] = [
     uri: <Svgs.IN height={80} width={widthDimensions} />,
     answer: ['Ấn Độ', 'Nhật Bản', 'Quần đảo Faroe', 'Paraguay'],
     correct: 0,
+    index: 108,
   },
   {
     id: 'IO',
@@ -854,6 +964,7 @@ export const DATA: country[] = [
     uri: <Svgs.IO height={80} width={widthDimensions} />,
     answer: ['Georgia', 'Lãnh thổ Anh tại Ấn Độ Dương', 'Serbia', 'Na Uy'],
     correct: 1,
+    index: 109,
   },
   {
     id: 'IQ',
@@ -861,6 +972,7 @@ export const DATA: country[] = [
     uri: <Svgs.IQ height={80} width={widthDimensions} />,
     answer: ['Armenia', 'Réunion', 'Iraq', 'Myanmar'],
     correct: 2,
+    index: 110,
   },
   {
     id: 'IR',
@@ -868,6 +980,7 @@ export const DATA: country[] = [
     uri: <Svgs.IR height={80} width={widthDimensions} />,
     answer: ['Palau', 'Lithuania', 'Georgia', 'Iran'],
     correct: 3,
+    index: 111,
   },
   {
     id: 'IS',
@@ -880,6 +993,7 @@ export const DATA: country[] = [
       'Guinea-Bissau',
     ],
     correct: 0,
+    index: 112,
   },
   {
     id: 'IT',
@@ -887,6 +1001,7 @@ export const DATA: country[] = [
     uri: <Svgs.IT height={80} width={widthDimensions} />,
     answer: ['Nga', 'Italy', 'Sri Lanka', 'Cộng hòa Dominica'],
     correct: 1,
+    index: 113,
   },
   {
     id: 'JE',
@@ -894,6 +1009,7 @@ export const DATA: country[] = [
     uri: <Svgs.JE height={80} width={widthDimensions} />,
     answer: ['Anguilla', 'Nigeria', 'Jersey', 'Thổ Nhĩ Kỳ'],
     correct: 2,
+    index: 114,
   },
   {
     id: 'JM',
@@ -906,6 +1022,7 @@ export const DATA: country[] = [
       'Jamaica',
     ],
     correct: 3,
+    index: 115,
   },
   {
     id: 'JO',
@@ -913,6 +1030,7 @@ export const DATA: country[] = [
     uri: <Svgs.JO height={80} width={widthDimensions} />,
     answer: ['Mali', 'Jordan', 'Micronesia', 'Zimbabwe'],
     correct: 1,
+    index: 116,
   },
   {
     id: 'JP',
@@ -920,6 +1038,7 @@ export const DATA: country[] = [
     uri: <Svgs.JP height={80} width={widthDimensions} />,
     answer: ['Bahamas', 'Monaco', 'Nhật Bản', 'Syria'],
     correct: 2,
+    index: 117,
   },
   {
     id: 'KE',
@@ -927,6 +1046,7 @@ export const DATA: country[] = [
     uri: <Svgs.KE height={80} width={widthDimensions} />,
     answer: ['Kuwait', 'Tây Sahara', 'Kenya', 'Sierra Leone'],
     correct: 2,
+    index: 118,
   },
   {
     id: 'KG',
@@ -934,6 +1054,7 @@ export const DATA: country[] = [
     uri: <Svgs.KG height={80} width={widthDimensions} />,
     answer: ['Campuchia', 'Bermuda', 'Kyrgyzstan', 'Kazakhstan'],
     correct: 2,
+    index: 119,
   },
   {
     id: 'KH',
@@ -941,6 +1062,7 @@ export const DATA: country[] = [
     uri: <Svgs.KH height={80} width={widthDimensions} />,
     answer: ['Jamaica', 'Campuchia', 'Mỹ', 'Barbados'],
     correct: 1,
+    index: 120,
   },
   {
     id: 'KI',
@@ -948,6 +1070,7 @@ export const DATA: country[] = [
     uri: <Svgs.KI height={80} width={widthDimensions} />,
     answer: ['Syria', 'Kiribati', 'Macao', 'Dominica'],
     correct: 1,
+    index: 121,
   },
   {
     id: 'KM',
@@ -955,6 +1078,7 @@ export const DATA: country[] = [
     uri: <Svgs.KM height={80} width={widthDimensions} />,
     answer: ['Sudan', 'Triều Tiên', 'Colombia', 'Comoros'],
     correct: 3,
+    index: 122,
   },
   {
     id: 'KN',
@@ -962,6 +1086,7 @@ export const DATA: country[] = [
     uri: <Svgs.KN height={80} width={widthDimensions} />,
     answer: ['Đức', 'Saint Kitts và Nevis', 'Kiribati', 'Ukraine'],
     correct: 1,
+    index: 123,
   },
   {
     id: 'KP',
@@ -969,6 +1094,7 @@ export const DATA: country[] = [
     uri: <Svgs.KP height={80} width={widthDimensions} />,
     answer: ['Triều Tiên', 'Pitcairn', 'Luxembourg', 'Anh'],
     correct: 0,
+    index: 124,
   },
   {
     id: 'KR',
@@ -976,6 +1102,7 @@ export const DATA: country[] = [
     uri: <Svgs.KR height={80} width={widthDimensions} />,
     answer: ['Uzbekistan', 'Moldova', 'Tây Ban Nha', 'Hàn Quốc'],
     correct: 3,
+    index: 125,
   },
   {
     id: 'KW',
@@ -983,6 +1110,7 @@ export const DATA: country[] = [
     uri: <Svgs.KW height={80} width={widthDimensions} />,
     answer: ['Seychelles', 'Kuwait', 'Mauritania', 'Fiji'],
     correct: 1,
+    index: 126,
   },
   {
     id: 'KY',
@@ -990,6 +1118,7 @@ export const DATA: country[] = [
     uri: <Svgs.KY height={80} width={widthDimensions} />,
     answer: ['Quần đảo Faroe', 'Thailand', 'Iran', 'Quần đảo Cayman'],
     correct: 3,
+    index: 127,
   },
   {
     id: 'KZ',
@@ -997,6 +1126,7 @@ export const DATA: country[] = [
     uri: <Svgs.KZ height={80} width={widthDimensions} />,
     answer: ['Costa Rica', 'Kazakhstan', 'Quần đảo Virgin', 'Malawi'],
     correct: 1,
+    index: 128,
   },
   {
     id: 'LA',
@@ -1004,6 +1134,7 @@ export const DATA: country[] = [
     uri: <Svgs.LA height={80} width={widthDimensions} />,
     answer: ['Lào', 'Venezuela', 'Aruba', 'Martinique'],
     correct: 0,
+    index: 129,
   },
   {
     id: 'LB',
@@ -1011,6 +1142,7 @@ export const DATA: country[] = [
     uri: <Svgs.LB height={80} width={widthDimensions} />,
     answer: ['Mexico', 'Saint Pierre và Miquelon', 'Li-băng', 'Pháp'],
     correct: 2,
+    index: 130,
   },
   {
     id: 'LC',
@@ -1018,6 +1150,7 @@ export const DATA: country[] = [
     uri: <Svgs.LC height={80} width={widthDimensions} />,
     answer: ['Saint Lucia', 'Moldova', 'Saint Pierre và Miquelon', 'Belarus'],
     correct: 0,
+    index: 131,
   },
   {
     id: 'LI',
@@ -1025,6 +1158,7 @@ export const DATA: country[] = [
     uri: <Svgs.LI height={80} width={widthDimensions} />,
     answer: ['Isle of Man', 'Nga', 'Bangladesh', 'Liechtenstein'],
     correct: 3,
+    index: 132,
   },
   {
     id: 'LK',
@@ -1032,6 +1166,7 @@ export const DATA: country[] = [
     uri: <Svgs.LK height={80} width={widthDimensions} />,
     answer: ['Bhutan', 'Sri Lanka', 'Liberia', 'Somalia'],
     correct: 1,
+    index: 133,
   },
   {
     id: 'LR',
@@ -1039,6 +1174,7 @@ export const DATA: country[] = [
     uri: <Svgs.LR height={80} width={widthDimensions} />,
     answer: ['Phần Lan', 'Mauritius', 'Liberia', 'Tokelau'],
     correct: 2,
+    index: 134,
   },
   {
     id: 'LS',
@@ -1046,6 +1182,7 @@ export const DATA: country[] = [
     uri: <Svgs.LS height={80} width={widthDimensions} />,
     answer: ['Lesotho', 'Moldova', 'Denmark', 'Palau'],
     correct: 0,
+    index: 135,
   },
   {
     id: 'LT',
@@ -1058,6 +1195,7 @@ export const DATA: country[] = [
       'Lithuania',
     ],
     correct: 3,
+    index: 136,
   },
   {
     id: 'LU',
@@ -1070,6 +1208,7 @@ export const DATA: country[] = [
       'Quần đảo Turks và Caicos',
     ],
     correct: 1,
+    index: 137,
   },
   {
     id: 'LV',
@@ -1077,6 +1216,7 @@ export const DATA: country[] = [
     uri: <Svgs.LV height={80} width={widthDimensions} />,
     answer: ['Chile', 'Latvia', 'Liechtenstein', 'Palestine'],
     correct: 1,
+    index: 138,
   },
   {
     id: 'LY',
@@ -1084,6 +1224,7 @@ export const DATA: country[] = [
     uri: <Svgs.LY height={80} width={widthDimensions} />,
     answer: ['New Caledonia', 'Libya', 'Nam Phi', 'Đảo Síp'],
     correct: 1,
+    index: 139,
   },
   {
     id: 'MA',
@@ -1091,6 +1232,7 @@ export const DATA: country[] = [
     uri: <Svgs.MA height={80} width={widthDimensions} />,
     answer: ['Đài Loan', 'Wales', 'Equatorial Guinea', 'Ma-rốc'],
     correct: 3,
+    index: 140,
   },
   {
     id: 'MC',
@@ -1098,6 +1240,7 @@ export const DATA: country[] = [
     uri: <Svgs.MC height={80} width={widthDimensions} />,
     answer: ['Saint Vincent và Grenadines', 'Albania', 'Montserrat', 'Monaco'],
     correct: 3,
+    index: 141,
   },
   {
     id: 'MD',
@@ -1110,6 +1253,7 @@ export const DATA: country[] = [
       'Saint Helena, Ascension và Tristan da Cunha',
     ],
     correct: 0,
+    index: 142,
   },
   {
     id: 'ME',
@@ -1117,6 +1261,7 @@ export const DATA: country[] = [
     uri: <Svgs.ME height={80} width={widthDimensions} />,
     answer: ['Montenegro', 'South Sudan', 'Iraq', 'Bosnia và Herzegovina'],
     correct: 0,
+    index: 143,
   },
   {
     id: 'MF',
@@ -1124,6 +1269,7 @@ export const DATA: country[] = [
     uri: <Svgs.MF height={80} width={widthDimensions} />,
     answer: ['Brazil', 'Hàn Quốc', 'Turkmenistan', 'Saint Martin'],
     correct: 3,
+    index: 144,
   },
   {
     id: 'MG',
@@ -1131,6 +1277,7 @@ export const DATA: country[] = [
     uri: <Svgs.MG height={80} width={widthDimensions} />,
     answer: ['Réunion', 'Madagascar', 'Libya', 'Antigua và Barbuda'],
     correct: 1,
+    index: 145,
   },
   {
     id: 'MH',
@@ -1143,6 +1290,7 @@ export const DATA: country[] = [
       'Djibouti',
     ],
     correct: 1,
+    index: 146,
   },
   {
     id: 'MK',
@@ -1150,6 +1298,7 @@ export const DATA: country[] = [
     uri: <Svgs.MK height={80} width={widthDimensions} />,
     answer: ['Paraguay', 'Iran', 'Djibouti', 'North Macedonia'],
     correct: 3,
+    index: 147,
   },
   {
     id: 'ML',
@@ -1157,6 +1306,7 @@ export const DATA: country[] = [
     uri: <Svgs.ML height={80} width={widthDimensions} />,
     answer: ['Curaçao', 'Mali', 'Quần đảo Bắc Mariana', 'Réunion'],
     correct: 1,
+    index: 148,
   },
   {
     id: 'MM',
@@ -1164,6 +1314,7 @@ export const DATA: country[] = [
     uri: <Svgs.MM height={80} width={widthDimensions} />,
     answer: ['Myanmar', 'Kenya', 'Đức', 'Ả Rập Xê Út'],
     correct: 0,
+    index: 149,
   },
   {
     id: 'MN',
@@ -1171,6 +1322,7 @@ export const DATA: country[] = [
     uri: <Svgs.MN height={80} width={widthDimensions} />,
     answer: ['Belize', 'Greenland', 'Nepal', 'Mongolia'],
     correct: 3,
+    index: 150,
   },
   {
     id: 'MO',
@@ -1178,6 +1330,7 @@ export const DATA: country[] = [
     uri: <Svgs.MO height={80} width={widthDimensions} />,
     answer: ['Macao', 'Bermuda', 'Indonesia', 'Uruguay'],
     correct: 0,
+    index: 151,
   },
   {
     id: 'MP',
@@ -1190,6 +1343,7 @@ export const DATA: country[] = [
       'Somalia',
     ],
     correct: 0,
+    index: 152,
   },
   {
     id: 'MQ',
@@ -1197,6 +1351,7 @@ export const DATA: country[] = [
     uri: <Svgs.MQ height={80} width={widthDimensions} />,
     answer: ['Martinique', 'Mexico', 'Philippines', 'Algeria'],
     correct: 0,
+    index: 153,
   },
   {
     id: 'MR',
@@ -1209,6 +1364,7 @@ export const DATA: country[] = [
       'Đảo Heard và quần đảo McDonald',
     ],
     correct: 0,
+    index: 154,
   },
   {
     id: 'MS',
@@ -1216,6 +1372,7 @@ export const DATA: country[] = [
     uri: <Svgs.MS height={80} width={widthDimensions} />,
     answer: ['Bangladesh', 'Sierra Leone', 'Croatia', 'Montserrat'],
     correct: 3,
+    index: 155,
   },
   {
     id: 'MT',
@@ -1223,6 +1380,7 @@ export const DATA: country[] = [
     uri: <Svgs.MT height={80} width={widthDimensions} />,
     answer: ['Hà Lan', 'Hồng Kông', 'Malta', 'El Salvador'],
     correct: 2,
+    index: 156,
   },
   {
     id: 'MU',
@@ -1235,6 +1393,7 @@ export const DATA: country[] = [
       'Congo, the Democratic Republic of the',
     ],
     correct: 0,
+    index: 157,
   },
   {
     id: 'MV',
@@ -1242,6 +1401,7 @@ export const DATA: country[] = [
     uri: <Svgs.MV height={80} width={widthDimensions} />,
     answer: ['Triều Tiên', 'Maldives', 'Quần đảo Virgin', 'Bolivia'],
     correct: 1,
+    index: 158,
   },
   {
     id: 'MW',
@@ -1249,6 +1409,7 @@ export const DATA: country[] = [
     uri: <Svgs.MW height={80} width={widthDimensions} />,
     answer: ['Latvia', 'Bỉ', 'Malawi', 'Nepal'],
     correct: 2,
+    index: 159,
   },
   {
     id: 'MX',
@@ -1256,6 +1417,7 @@ export const DATA: country[] = [
     uri: <Svgs.MX height={80} width={widthDimensions} />,
     answer: ['Mexico', 'Paraguay', 'Bulgaria', 'Kuwait'],
     correct: 0,
+    index: 160,
   },
   {
     id: 'MY',
@@ -1263,6 +1425,7 @@ export const DATA: country[] = [
     uri: <Svgs.MY height={80} width={widthDimensions} />,
     answer: ['Mozambique', 'Palau', 'Canada', 'Malaysia'],
     correct: 3,
+    index: 161,
   },
   {
     id: 'MZ',
@@ -1270,6 +1433,7 @@ export const DATA: country[] = [
     uri: <Svgs.MZ height={80} width={widthDimensions} />,
     answer: ['Tây Sahara', 'Iceland', 'Ukraine', 'Mozambique'],
     correct: 3,
+    index: 162,
   },
   {
     id: 'NA',
@@ -1277,6 +1441,7 @@ export const DATA: country[] = [
     uri: <Svgs.NA height={80} width={widthDimensions} />,
     answer: ['Namibia', 'Nigeria', 'Đảo Bouvet', 'Portugal'],
     correct: 0,
+    index: 163,
   },
   {
     id: 'NC',
@@ -1289,6 +1454,7 @@ export const DATA: country[] = [
       'Indonesia',
     ],
     correct: 1,
+    index: 164,
   },
   {
     id: 'NE',
@@ -1296,6 +1462,7 @@ export const DATA: country[] = [
     uri: <Svgs.NE height={80} width={widthDimensions} />,
     answer: ['Fiji', 'Gibraltar', 'Niger', 'Togo'],
     correct: 2,
+    index: 165,
   },
   {
     id: 'NF',
@@ -1303,6 +1470,7 @@ export const DATA: country[] = [
     uri: <Svgs.NF height={80} width={widthDimensions} />,
     answer: ['Palau', 'Đức', 'Haiti', 'Norfolk Island'],
     correct: 3,
+    index: 166,
   },
   {
     id: 'NG',
@@ -1310,6 +1478,7 @@ export const DATA: country[] = [
     uri: <Svgs.NG height={80} width={widthDimensions} />,
     answer: ['Antarctica', 'Nigeria', 'Romania', 'Nigeria'],
     correct: 3,
+    index: 167,
   },
   {
     id: 'NI',
@@ -1317,6 +1486,7 @@ export const DATA: country[] = [
     uri: <Svgs.NI height={80} width={widthDimensions} />,
     answer: ['Nicaragua', 'Nepal', 'Benin', 'Lào'],
     correct: 0,
+    index: 168,
   },
   {
     id: 'NL',
@@ -1324,6 +1494,7 @@ export const DATA: country[] = [
     uri: <Svgs.NL height={80} width={widthDimensions} />,
     answer: ['Saint Kitts và Nevis', 'Czech Republic', 'Hà Lan', 'Slovenia'],
     correct: 2,
+    index: 169,
   },
   {
     id: 'NO',
@@ -1331,6 +1502,7 @@ export const DATA: country[] = [
     uri: <Svgs.NO height={80} width={widthDimensions} />,
     answer: ['Georgia', 'Na Uy', 'Tonga', 'Na Uy'],
     correct: 3,
+    index: 170,
   },
   {
     id: 'NP',
@@ -1338,6 +1510,7 @@ export const DATA: country[] = [
     uri: <Svgs.NP height={80} width={widthDimensions} />,
     answer: ['Swaziland', 'Nepal', 'Canada', 'Malta'],
     correct: 1,
+    index: 171,
   },
   {
     id: 'NR',
@@ -1345,6 +1518,7 @@ export const DATA: country[] = [
     uri: <Svgs.NR height={80} width={widthDimensions} />,
     answer: ['Guam', 'Pakistan', 'Argentina', 'Nauru'],
     correct: 3,
+    index: 172,
   },
   {
     id: 'NU',
@@ -1352,6 +1526,7 @@ export const DATA: country[] = [
     uri: <Svgs.NU height={80} width={widthDimensions} />,
     answer: ['Niue', 'Đông Timor', 'Aruba', 'Madagascar'],
     correct: 0,
+    index: 173,
   },
   {
     id: 'NZ',
@@ -1364,6 +1539,7 @@ export const DATA: country[] = [
       'Saint Helena, Ascension và Tristan da Cunha',
     ],
     correct: 1,
+    index: 174,
   },
   {
     id: 'OM',
@@ -1371,6 +1547,7 @@ export const DATA: country[] = [
     uri: <Svgs.OM height={80} width={widthDimensions} />,
     answer: ['Panama', 'Úc', 'Oman', 'New Caledonia'],
     correct: 2,
+    index: 175,
   },
   {
     id: 'PA',
@@ -1378,6 +1555,7 @@ export const DATA: country[] = [
     uri: <Svgs.PA height={80} width={widthDimensions} />,
     answer: ['Lãnh thổ Anh tại Ấn Độ Dương', 'Panama', 'Áo', 'Puerto Rico'],
     correct: 1,
+    index: 176,
   },
   {
     id: 'PE',
@@ -1385,6 +1563,7 @@ export const DATA: country[] = [
     uri: <Svgs.PE height={80} width={widthDimensions} />,
     answer: ['Peru', 'Ghana', 'Qatar', 'Trung Quốc'],
     correct: 0,
+    index: 177,
   },
   {
     id: 'PF',
@@ -1397,6 +1576,7 @@ export const DATA: country[] = [
       'Saint Pierre và Miquelon',
     ],
     correct: 2,
+    index: 178,
   },
   {
     id: 'PG',
@@ -1404,6 +1584,7 @@ export const DATA: country[] = [
     uri: <Svgs.PG height={80} width={widthDimensions} />,
     answer: ['Tây Sahara', 'Papua New Guinea', 'Iraq', 'San Marino'],
     correct: 1,
+    index: 179,
   },
   {
     id: 'PH',
@@ -1411,6 +1592,7 @@ export const DATA: country[] = [
     uri: <Svgs.PH height={80} width={widthDimensions} />,
     answer: ['Djibouti', 'Philippines', 'Jersey', 'Peru'],
     correct: 1,
+    index: 180,
   },
   {
     id: 'PK',
@@ -1418,6 +1600,7 @@ export const DATA: country[] = [
     uri: <Svgs.PK height={80} width={widthDimensions} />,
     answer: ['Phần Lan', 'Pakistan', 'Montenegro', 'Somalia'],
     correct: 1,
+    index: 181,
   },
   {
     id: 'PL',
@@ -1425,6 +1608,7 @@ export const DATA: country[] = [
     uri: <Svgs.PL height={80} width={widthDimensions} />,
     answer: ['Tây Sahara', 'Haiti', 'Ba Lan', 'Suriname'],
     correct: 2,
+    index: 182,
   },
   {
     id: 'PM',
@@ -1437,6 +1621,7 @@ export const DATA: country[] = [
       'Colombia',
     ],
     correct: 2,
+    index: 183,
   },
   {
     id: 'PN',
@@ -1444,6 +1629,7 @@ export const DATA: country[] = [
     uri: <Svgs.PN height={80} width={widthDimensions} />,
     answer: ['Pitcairn', 'Haiti', 'Quần đảo Solomon', 'Cameroon'],
     correct: 0,
+    index: 184,
   },
   {
     id: 'PR',
@@ -1451,6 +1637,7 @@ export const DATA: country[] = [
     uri: <Svgs.PR height={80} width={widthDimensions} />,
     answer: ['Portugal', 'Sri Lanka', 'Anguilla', 'Puerto Rico'],
     correct: 3,
+    index: 185,
   },
   {
     id: 'PS',
@@ -1458,6 +1645,7 @@ export const DATA: country[] = [
     uri: <Svgs.PS height={80} width={widthDimensions} />,
     answer: ['Polynésie thuộc Pháp', 'Palestine', 'Bỉ', 'Gibraltar'],
     correct: 1,
+    index: 186,
   },
   {
     id: 'PT',
@@ -1465,6 +1653,7 @@ export const DATA: country[] = [
     uri: <Svgs.PT height={80} width={widthDimensions} />,
     answer: ['Malta', 'Sierra Leone', 'Czech Republic', 'Portugal'],
     correct: 3,
+    index: 187,
   },
   {
     id: 'PW',
@@ -1477,6 +1666,7 @@ export const DATA: country[] = [
       'Bosnia và Herzegovina',
     ],
     correct: 2,
+    index: 188,
   },
   {
     id: 'PY',
@@ -1484,6 +1674,7 @@ export const DATA: country[] = [
     uri: <Svgs.PY height={80} width={widthDimensions} />,
     answer: ['Paraguay', 'Mauritania', 'Palestine', 'Bosnia và Herzegovina'],
     correct: 0,
+    index: 189,
   },
   {
     id: 'QA',
@@ -1491,6 +1682,7 @@ export const DATA: country[] = [
     uri: <Svgs.QA height={80} width={widthDimensions} />,
     answer: ['Denmark', 'Qatar', 'Réunion', 'Israel'],
     correct: 1,
+    index: 190,
   },
   {
     id: 'RE',
@@ -1498,6 +1690,7 @@ export const DATA: country[] = [
     uri: <Svgs.RE height={80} width={widthDimensions} />,
     answer: ['Vương quốc Anh', 'Réunion', 'Maldives', 'Panama'],
     correct: 1,
+    index: 191,
   },
   {
     id: 'RO',
@@ -1510,6 +1703,7 @@ export const DATA: country[] = [
       'Romania',
     ],
     correct: 3,
+    index: 192,
   },
   {
     id: 'RS',
@@ -1517,6 +1711,7 @@ export const DATA: country[] = [
     uri: <Svgs.RS height={80} width={widthDimensions} />,
     answer: ['Serbia', 'Nga', 'Đảo Síp', 'Na Uy'],
     correct: 0,
+    index: 193,
   },
   {
     id: 'RU',
@@ -1524,13 +1719,15 @@ export const DATA: country[] = [
     uri: <Svgs.RU height={80} width={widthDimensions} />,
     answer: ['Nga', 'Palestine', 'Grenada', 'Saint Kitts và Nevis'],
     correct: 0,
+    index: 194,
   },
   {
     id: 'RW',
     name: 'Rwanda',
     uri: <Svgs.RW height={80} width={widthDimensions} />,
-    answer: ['Rwanda', 'Thổ Nhĩ Kỳ', "Côte d'Ivoire", 'Liberia'],
+    answer: ['Rwanda', 'Thổ Nhĩ Kỳ', 'Bờ Biển Ngà', 'Liberia'],
     correct: 0,
+    index: 195,
   },
   {
     id: 'SA',
@@ -1543,6 +1740,7 @@ export const DATA: country[] = [
       'Quần đảo Bắc Mariana',
     ],
     correct: 1,
+    index: 196,
   },
   {
     id: 'SB',
@@ -1550,13 +1748,15 @@ export const DATA: country[] = [
     uri: <Svgs.SB height={80} width={widthDimensions} />,
     answer: ['Quần đảo Solomon', 'Mozambique', 'Sudan', 'Canada'],
     correct: 0,
+    index: 197,
   },
   {
     id: 'SC',
     name: 'Seychelles',
     uri: <Svgs.SC height={80} width={widthDimensions} />,
-    answer: ['Seychelles', 'Senegal', "Côte d'Ivoire", 'Li-băng'],
+    answer: ['Seychelles', 'Senegal', 'Bờ Biển Ngà', 'Li-băng'],
     correct: 0,
+    index: 198,
   },
   {
     id: 'SD',
@@ -1564,6 +1764,7 @@ export const DATA: country[] = [
     uri: <Svgs.SD height={80} width={widthDimensions} />,
     answer: ['Sudan', 'Đức', 'Singapore', 'Campuchia'],
     correct: 0,
+    index: 199,
   },
   {
     id: 'SE',
@@ -1571,6 +1772,7 @@ export const DATA: country[] = [
     uri: <Svgs.SE height={80} width={widthDimensions} />,
     answer: ['Thụy Điển', 'Pháp', 'Quần đảo Svalbard và Jan Mayen', 'Malaysia'],
     correct: 0,
+    index: 200,
   },
   {
     id: 'SG',
@@ -1578,6 +1780,7 @@ export const DATA: country[] = [
     uri: <Svgs.SG height={80} width={widthDimensions} />,
     answer: ['Bhutan', 'Singapore', 'Mauritius', 'Seychelles'],
     correct: 1,
+    index: 201,
   },
   {
     id: 'SH',
@@ -1590,6 +1793,7 @@ export const DATA: country[] = [
       'Hungary',
     ],
     correct: 1,
+    index: 202,
   },
   {
     id: 'SI',
@@ -1597,6 +1801,7 @@ export const DATA: country[] = [
     uri: <Svgs.SI height={80} width={widthDimensions} />,
     answer: ['Oman', 'Bosnia và Herzegovina', 'Slovenia', 'Moldova'],
     correct: 2,
+    index: 203,
   },
   {
     id: 'SJ',
@@ -1609,6 +1814,7 @@ export const DATA: country[] = [
       'Cook Islands',
     ],
     correct: 1,
+    index: 204,
   },
   {
     id: 'SK',
@@ -1616,6 +1822,7 @@ export const DATA: country[] = [
     uri: <Svgs.SK height={80} width={widthDimensions} />,
     answer: ['Bỉ', 'Thành Vatican', 'Slovakia', 'Kuwait'],
     correct: 2,
+    index: 205,
   },
   {
     id: 'SL',
@@ -1623,6 +1830,7 @@ export const DATA: country[] = [
     uri: <Svgs.SL height={80} width={widthDimensions} />,
     answer: ['Úc', 'Moldova', 'Sierra Leone', 'Qatar'],
     correct: 2,
+    index: 206,
   },
   {
     id: 'SM',
@@ -1630,6 +1838,7 @@ export const DATA: country[] = [
     uri: <Svgs.SM height={80} width={widthDimensions} />,
     answer: ['Ukraine', 'Jamaica', 'Bắc Ireland ', 'San Marino'],
     correct: 3,
+    index: 207,
   },
   {
     id: 'SN',
@@ -1637,6 +1846,7 @@ export const DATA: country[] = [
     uri: <Svgs.SN height={80} width={widthDimensions} />,
     answer: ['Đông Timor', 'Ghana', 'Senegal', 'Georgia'],
     correct: 2,
+    index: 208,
   },
   {
     id: 'SO',
@@ -1644,6 +1854,7 @@ export const DATA: country[] = [
     uri: <Svgs.SO height={80} width={widthDimensions} />,
     answer: ['Somalia', 'Martinique', 'Belarus', 'Réunion'],
     correct: 0,
+    index: 209,
   },
   {
     id: 'SR',
@@ -1651,6 +1862,7 @@ export const DATA: country[] = [
     uri: <Svgs.SR height={80} width={widthDimensions} />,
     answer: ['Azerbaijan', 'Quần đảo Virgin', 'Equatorial Guinea', 'Suriname'],
     correct: 3,
+    index: 210,
   },
   {
     id: 'SS',
@@ -1658,6 +1870,7 @@ export const DATA: country[] = [
     uri: <Svgs.SS height={80} width={widthDimensions} />,
     answer: ['Pitcairn', 'South Sudan', 'Azerbaijan', 'Gibraltar'],
     correct: 1,
+    index: 211,
   },
   {
     id: 'ST',
@@ -1665,6 +1878,7 @@ export const DATA: country[] = [
     uri: <Svgs.ST height={80} width={widthDimensions} />,
     answer: ['Syria', 'Brunei Darussalam', 'Lithuania', 'São Tomé và Príncipe'],
     correct: 3,
+    index: 212,
   },
   {
     id: 'SV',
@@ -1672,6 +1886,7 @@ export const DATA: country[] = [
     uri: <Svgs.SV height={80} width={widthDimensions} />,
     answer: ['El Salvador', 'New Caledonia', 'Quần đảo Solomon', 'Bỉ'],
     correct: 0,
+    index: 213,
   },
   {
     id: 'SX',
@@ -1684,6 +1899,7 @@ export const DATA: country[] = [
       'Sint Maarten',
     ],
     correct: 3,
+    index: 214,
   },
   {
     id: 'SY',
@@ -1691,6 +1907,7 @@ export const DATA: country[] = [
     uri: <Svgs.SY height={80} width={widthDimensions} />,
     answer: ['Malta', 'Syria', 'Romania', 'Cook Islands'],
     correct: 1,
+    index: 215,
   },
   {
     id: 'SZ',
@@ -1698,6 +1915,7 @@ export const DATA: country[] = [
     uri: <Svgs.SZ height={80} width={widthDimensions} />,
     answer: ['Bosnia và Herzegovina', 'Israel', 'Swaziland', 'Sierra Leone'],
     correct: 2,
+    index: 216,
   },
   {
     id: 'TC',
@@ -1710,6 +1928,7 @@ export const DATA: country[] = [
       'Guatemala',
     ],
     correct: 1,
+    index: 217,
   },
   {
     id: 'TD',
@@ -1722,6 +1941,7 @@ export const DATA: country[] = [
       'Đông Timor',
     ],
     correct: 2,
+    index: 218,
   },
   {
     id: 'TF',
@@ -1734,6 +1954,7 @@ export const DATA: country[] = [
       'French Southern Territories',
     ],
     correct: 3,
+    index: 219,
   },
   {
     id: 'TG',
@@ -1741,6 +1962,7 @@ export const DATA: country[] = [
     uri: <Svgs.TG height={80} width={widthDimensions} />,
     answer: ['Papua New Guinea', 'Nicaragua', 'Belarus', 'Togo'],
     correct: 3,
+    index: 220,
   },
   {
     id: 'TH',
@@ -1748,6 +1970,7 @@ export const DATA: country[] = [
     uri: <Svgs.TH height={80} width={widthDimensions} />,
     answer: ['Pitcairn', 'Gibraltar', 'Armenia', 'Thailand'],
     correct: 3,
+    index: 221,
   },
   {
     id: 'TJ',
@@ -1755,6 +1978,7 @@ export const DATA: country[] = [
     uri: <Svgs.TJ height={80} width={widthDimensions} />,
     answer: ['South Sudan', 'Macao', 'Tajikistan', 'Georgia'],
     correct: 2,
+    index: 222,
   },
   {
     id: 'TK',
@@ -1767,6 +1991,7 @@ export const DATA: country[] = [
       'Dominica',
     ],
     correct: 2,
+    index: 223,
   },
   {
     id: 'TL',
@@ -1774,6 +1999,7 @@ export const DATA: country[] = [
     uri: <Svgs.TL height={80} width={widthDimensions} />,
     answer: ['Saint Martin', 'Romania', 'Đông Timor', 'Afghanistan'],
     correct: 2,
+    index: 224,
   },
   {
     id: 'TM',
@@ -1781,6 +2007,7 @@ export const DATA: country[] = [
     uri: <Svgs.TM height={80} width={widthDimensions} />,
     answer: ['Mexico', 'Turkmenistan', 'Anguilla', 'Pitcairn'],
     correct: 1,
+    index: 225,
   },
   {
     id: 'TN',
@@ -1788,6 +2015,7 @@ export const DATA: country[] = [
     uri: <Svgs.TN height={80} width={widthDimensions} />,
     answer: ['Pháp', 'Isle of Man', 'Ả Rập Xê Út', 'Tunisia'],
     correct: 3,
+    index: 226,
   },
   {
     id: 'TO',
@@ -1795,6 +2023,7 @@ export const DATA: country[] = [
     uri: <Svgs.TO height={80} width={widthDimensions} />,
     answer: ['Papua New Guinea', 'Tonga', 'Bahrain', 'Saint Lucia'],
     correct: 1,
+    index: 227,
   },
   {
     id: 'TR',
@@ -1802,6 +2031,7 @@ export const DATA: country[] = [
     uri: <Svgs.TR height={80} width={widthDimensions} />,
     answer: ['Scotland', 'Thổ Nhĩ Kỳ', 'Greenland', 'Chad'],
     correct: 1,
+    index: 228,
   },
   {
     id: 'TT',
@@ -1809,6 +2039,7 @@ export const DATA: country[] = [
     uri: <Svgs.TT height={80} width={widthDimensions} />,
     answer: ['Pháp', 'Trinidad và Tobago', 'Yemen', 'Campuchia'],
     correct: 1,
+    index: 229,
   },
   {
     id: 'TV',
@@ -1816,6 +2047,7 @@ export const DATA: country[] = [
     uri: <Svgs.TV height={80} width={widthDimensions} />,
     answer: ['Bulgaria', 'Somalia', 'Tuvalu', 'Isle of Man'],
     correct: 2,
+    index: 230,
   },
   {
     id: 'TW',
@@ -1823,6 +2055,7 @@ export const DATA: country[] = [
     uri: <Svgs.TW height={80} width={widthDimensions} />,
     answer: ['Đài Loan', 'Indonesia', 'Seychelles', 'Đức'],
     correct: 0,
+    index: 231,
   },
   {
     id: 'TZ',
@@ -1830,6 +2063,7 @@ export const DATA: country[] = [
     uri: <Svgs.TZ height={80} width={widthDimensions} />,
     answer: ['Tanzania', 'Angola', 'Ấn Độ', 'Venezuela'],
     correct: 0,
+    index: 232,
   },
   {
     id: 'UA',
@@ -1837,6 +2071,7 @@ export const DATA: country[] = [
     uri: <Svgs.UA height={80} width={widthDimensions} />,
     answer: ['Anh', 'Ukraine', 'Panama', 'Sri Lanka'],
     correct: 1,
+    index: 233,
   },
   {
     id: 'UG',
@@ -1844,6 +2079,7 @@ export const DATA: country[] = [
     uri: <Svgs.UG height={80} width={widthDimensions} />,
     answer: ['Curaçao', 'Nepal', 'Uganda', 'Croatia'],
     correct: 2,
+    index: 234,
   },
   {
     id: 'US',
@@ -1851,6 +2087,7 @@ export const DATA: country[] = [
     uri: <Svgs.US height={80} width={widthDimensions} />,
     answer: ['Mỹ (Hoa Kỳ)', 'Rwanda', 'Chile', 'Guatemala'],
     correct: 0,
+    index: 235,
   },
   {
     id: 'UY',
@@ -1858,6 +2095,7 @@ export const DATA: country[] = [
     uri: <Svgs.UY height={80} width={widthDimensions} />,
     answer: ['Uruguay', 'Thổ Nhĩ Kỳ', 'Saint Barthélemy', 'Madagascar'],
     correct: 0,
+    index: 236,
   },
   {
     id: 'UZ',
@@ -1865,6 +2103,7 @@ export const DATA: country[] = [
     uri: <Svgs.UZ height={80} width={widthDimensions} />,
     answer: ['American Samoa', 'Bắc Macedonia', 'Madagascar', 'Uzbekistan'],
     correct: 3,
+    index: 237,
   },
   {
     id: 'VA',
@@ -1872,6 +2111,7 @@ export const DATA: country[] = [
     uri: <Svgs.VA height={80} width={widthDimensions} />,
     answer: ['Hàn Quốc', 'Ba Lan', 'Colombia', 'Thành Vatican'],
     correct: 3,
+    index: 238,
   },
   {
     id: 'VC',
@@ -1884,6 +2124,7 @@ export const DATA: country[] = [
       'Seychelles',
     ],
     correct: 1,
+    index: 239,
   },
   {
     id: 'VE',
@@ -1891,6 +2132,7 @@ export const DATA: country[] = [
     uri: <Svgs.VE height={80} width={widthDimensions} />,
     answer: ['Jersey', 'Trung Quốc', 'Venezuela', 'Palestine'],
     correct: 2,
+    index: 240,
   },
   {
     id: 'VG',
@@ -1903,6 +2145,7 @@ export const DATA: country[] = [
       'Quần đảo Virgin',
     ],
     correct: 3,
+    index: 241,
   },
   {
     id: 'VI',
@@ -1910,6 +2153,7 @@ export const DATA: country[] = [
     uri: <Svgs.VI height={80} width={widthDimensions} />,
     answer: ['Bosnia và Herzegovina', 'Togo', 'Quần đảo Virgin', 'Madagascar'],
     correct: 2,
+    index: 242,
   },
   {
     id: 'VN',
@@ -1922,6 +2166,7 @@ export const DATA: country[] = [
       'Senegal',
     ],
     correct: 1,
+    index: 243,
   },
   {
     id: 'VU',
@@ -1929,6 +2174,7 @@ export const DATA: country[] = [
     uri: <Svgs.VU height={80} width={widthDimensions} />,
     answer: ['Singapore', 'Vanuatu', 'Guinea', 'Trung Quốc'],
     correct: 1,
+    index: 244,
   },
   {
     id: 'WF',
@@ -1936,13 +2182,15 @@ export const DATA: country[] = [
     uri: <Svgs.WF height={80} width={widthDimensions} />,
     answer: ['Serbia', 'Belize', 'Wallis và Futuna', 'Lithuania'],
     correct: 2,
+    index: 245,
   },
   {
     id: 'WS',
     name: 'Samoa',
     uri: <Svgs.WS height={80} width={widthDimensions} />,
-    answer: ["Côte d'Ivoire", 'Serbia', 'Samoa', 'Malta'],
+    answer: ['Bờ Biển Ngà', 'Serbia', 'Samoa', 'Malta'],
     correct: 2,
+    index: 246,
   },
   {
     id: 'XK',
@@ -1950,6 +2198,7 @@ export const DATA: country[] = [
     uri: <Svgs.XK height={80} width={widthDimensions} />,
     answer: ['Curaçao', 'Luxembourg', 'Kosovo', 'Ả Rập Xê Út'],
     correct: 2,
+    index: 247,
   },
   {
     id: 'YE',
@@ -1962,6 +2211,7 @@ export const DATA: country[] = [
       'Nam Georgia và Quần đảo Nam Sandwich',
     ],
     correct: 1,
+    index: 248,
   },
   {
     id: 'YT',
@@ -1969,6 +2219,7 @@ export const DATA: country[] = [
     uri: <Svgs.YT height={80} width={widthDimensions} />,
     answer: ['Gambia', 'Slovakia', 'Andorra', 'Mayotte'],
     correct: 3,
+    index: 249,
   },
   {
     id: 'ZA',
@@ -1981,6 +2232,7 @@ export const DATA: country[] = [
       'Portugal',
     ],
     correct: 0,
+    index: 250,
   },
   {
     id: 'ZM',
@@ -1988,6 +2240,7 @@ export const DATA: country[] = [
     uri: <Svgs.ZM height={80} width={widthDimensions} />,
     answer: ['Ireland', 'Grenada', 'Wallis và Futuna', 'Zambia'],
     correct: 3,
+    index: 251,
   },
   {
     id: 'ZW',
@@ -1995,5 +2248,6 @@ export const DATA: country[] = [
     uri: <Svgs.ZW height={80} width={widthDimensions} />,
     answer: ['Bolivia', 'Rwanda', 'Zimbabwe', 'Malawi'],
     correct: 2,
+    index: 252,
   },
 ];

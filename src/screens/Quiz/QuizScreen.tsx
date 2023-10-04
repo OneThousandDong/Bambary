@@ -9,11 +9,12 @@ import {
 import React, {useRef, useState, useEffect} from 'react';
 import Svgs from '../../constants/Svgs';
 import {DATA} from './Data';
+import { DATAVI } from "./DataVi";
 
 const QuizScreen = ({route, navigation}) => {
   const [progress, setProgress] = useState(45);
   const [selected, setSelected] = useState([0, 0, 0, 0]);
-  const [question, setQuestion] = useState(DATA[0]);
+  const [question, setQuestion] = useState(DATAVI[0]);
   const [indexQue, setIndexQues] = useState(1);
   const progressAnim = useRef(new Animated.Value(0)).current;
 
@@ -56,7 +57,7 @@ const QuizScreen = ({route, navigation}) => {
       </View>
       <View className="items-center">
         <View className="flex flex-row">
-          <Animated.View className="box-content h-28 w-1/2 rounded-full justify-center">
+          <Animated.View className="box-content h-28 w-1/2 rounded-full item justify-center">
             <TouchableOpacity
               onPress={() => setSelected([1, 0, 0, 0])}
               style={{
@@ -65,7 +66,7 @@ const QuizScreen = ({route, navigation}) => {
                   : 'rgb(236 253 245)',
               }}
               className="ml-10 mr-4 mt-2 h-16 rounded-xl items-center justify-center">
-              <Text>A</Text>
+              <Text className="text-center">{question.answer[0]}</Text>
             </TouchableOpacity>
           </Animated.View>
 
@@ -78,7 +79,7 @@ const QuizScreen = ({route, navigation}) => {
                   : 'rgb(236 253 245)',
               }}
               className="mr-10 ml-4 mt-2 h-16 rounded-xl items-center justify-center">
-              <Text>B</Text>
+              <Text className="text-center">{question.answer[1]}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -93,7 +94,7 @@ const QuizScreen = ({route, navigation}) => {
                   : 'rgb(236 253 245)',
               }}
               className="ml-10 mr-4 h-16 rounded-xl items-center justify-center">
-              <Text>C</Text>
+              <Text className="text-center">{question.answer[2]}</Text>
             </TouchableOpacity>
           </View>
 
@@ -106,7 +107,7 @@ const QuizScreen = ({route, navigation}) => {
                   : 'rgb(236 253 245)',
               }}
               className="mr-10 ml-4 h-16 rounded-xl items-center justify-center">
-              <Text>D</Text>
+              <Text className="text-center">{question.answer[3]}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -115,7 +116,7 @@ const QuizScreen = ({route, navigation}) => {
       <TouchableOpacity
         onPress={() => {
           setIndexQues(indexQue + 1);
-          setQuestion(DATA[indexQue]);
+          setQuestion(DATAVI[indexQue]);
           // setProgress(Math.round((20 / 195) * 100))
           setProgress(25 + indexQue);
         }}
