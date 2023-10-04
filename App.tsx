@@ -3,11 +3,10 @@ import {StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
-import ListeningSkillsScreen from './src/screens/CategoryScreen';
-import StudyScreen from './src/screens/Quiz/StudyScreen';
-import ChooseTypeQuiz from './src/screens/Quiz/ChooseTypeQuiz';
-import QuizScreen from './src/screens/Quiz/QuizScreen';
-import LearnBoardScreen from "./src/screens/Quiz/LearnBoardScreen";
+import QuizWorldScreen from './src/screens/Quiz/QuizWorldScreen';
+import BoardWorldScreen from './src/screens/Quiz/BoardWorldScreen';
+import QuizCountriesScreen from './src/screens/Quiz/QuizCountriesScreen';
+import BoardCountriesScreen from './src/screens/Quiz/BoardCountriesScreen';
 
 const App = (): React.ReactElement => {
   const Stack = createNativeStackNavigator();
@@ -20,14 +19,10 @@ const App = (): React.ReactElement => {
             headerShown: false,
           }}>
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen
-            name="ListeningSkills"
-            component={ListeningSkillsScreen}
-          />
-          <Stack.Screen name="StudyQuiz" component={StudyScreen} />
-          <Stack.Screen name="Quiz" component={QuizScreen} />
-          <Stack.Screen name="ChooseTypeQuiz" component={ChooseTypeQuiz} />
-          <Stack.Screen name="LearnBoard" component={LearnBoardScreen} />
+          <Stack.Screen name="QuizWorld" component={QuizWorldScreen} />
+          <Stack.Screen name="BoardWorldScreen" component={BoardWorldScreen} />
+          <Stack.Screen name="QuizCountries" component={QuizCountriesScreen} />
+          <Stack.Screen name="BoardCountries" component={BoardCountriesScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
