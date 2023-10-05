@@ -61,9 +61,7 @@ const BoardWorldScreen = ({route, navigation}) => {
             </View>
           </View>
           <View className="items-center justify-center">
-            <Text>
-              Bao gồm 254 quốc gia và vùng lãnh thổ trên thế giới.
-            </Text>
+            <Text>Bao gồm 254 quốc gia và vùng lãnh thổ trên thế giới.</Text>
             {/* <View className="flex flex-row">
               <View className="box-content rounded-full justify-center">
                 <TouchableOpacity

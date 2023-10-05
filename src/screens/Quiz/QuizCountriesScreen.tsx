@@ -6,13 +6,13 @@ import {
   Animated,
   Text,
 } from 'react-native';
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import Svgs from '../../constants/Svgs';
-import { DATA } from './Data';
-import { DATAVI } from "../DataQuiz/DataVi";
-import FastImage from 'react-native-fast-image'
+import {DATA} from './Data';
+import {DATAVI} from '../DataQuiz/DataVi';
+import FastImage from 'react-native-fast-image';
 
-const QuizCountriesScreen = ({ route, navigation }) => {
+const QuizCountriesScreen = ({route, navigation}) => {
   const [progress, setProgress] = useState(0);
   const [selected, setSelected] = useState([0, 0, 0, 0]);
   const [question, setQuestion] = useState(DATAVI[0]);
@@ -30,13 +30,15 @@ const QuizCountriesScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     animateProgress();
-    return () => { };
+    return () => {};
   }, [progress]);
   return (
     <SafeAreaView>
       <View className="bg-emerald-200 h-2/4 rounded-3xl m-4">
         <View className="flex flex-row justify-center items-center m-6">
-          <TouchableOpacity className='z-10' onPress={() => navigation.goBack()}>
+          <TouchableOpacity
+            className="z-10"
+            onPress={() => navigation.goBack()}>
             <Svgs.CloseSvg height={40} width={40} />
           </TouchableOpacity>
           <View style={styles.progressBG}>
@@ -44,7 +46,7 @@ const QuizCountriesScreen = ({ route, navigation }) => {
               style={[
                 styles.progress,
                 {
-                  height: (indexQue < 8) ? 10 : 15,
+                  height: indexQue < 8 ? 10 : 15,
                   width: progressAnim.interpolate({
                     inputRange: [0, 100],
                     outputRange: ['0%', '100%'],
@@ -57,7 +59,7 @@ const QuizCountriesScreen = ({ route, navigation }) => {
         <View className="justify-center items-center text-center">
           {/* {question.uri} */}
           <FastImage
-            style={{ width: 250, height: 250 }}
+            style={{width: 250, height: 250}}
             source={question.uri}
             resizeMode={FastImage.resizeMode.contain}
           />
@@ -124,17 +126,16 @@ const QuizCountriesScreen = ({ route, navigation }) => {
         <TouchableOpacity
           onPress={() => {
             if (indexQue > 253) {
-
             } else {
               setIndexQues(indexQue + 1);
               setQuestion(DATAVI[indexQue]);
-              setProgress(Math.round((indexQue / 253) * 100))
+              setProgress(Math.round((indexQue / 253) * 100));
               setCorrectAnswer(false);
-              setSelected([0,0,0,0])
+              setSelected([0, 0, 0, 0]);
             }
           }}
           className="bg-emerald-200 mx-10 mt-2 h-14 rounded-xl items-center justify-center">
-            <Text>Tiếp theo</Text>
+          <Text>Tiếp theo</Text>
         </TouchableOpacity>
       ) : (
         <TouchableOpacity
@@ -144,7 +145,7 @@ const QuizCountriesScreen = ({ route, navigation }) => {
             }
           }}
           className="bg-emerald-200 mx-10 mt-2 h-14 rounded-xl items-center justify-center">
-            <Text>Kiểm tra</Text>
+          <Text>Kiểm tra</Text>
         </TouchableOpacity>
       )}
     </SafeAreaView>
@@ -171,6 +172,6 @@ const styles = StyleSheet.create({
   progress: {
     width: '50%',
     backgroundColor: '#00AB55',
-    borderRadius: 10
+    borderRadius: 10,
   },
 });
