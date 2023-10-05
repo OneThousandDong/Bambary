@@ -1080,12 +1080,13 @@ const WorldMap = ({countries}: Props): React.ReactElement => {
       <Svg
         xmlns="http://www.w3.org/2000/svg"
         width="130%"
-        height="170%"
+        height="200%"
         viewBox="60 50 555 250"
         id="svg5249">
         {data.map((item, index) => {
           return (
             <G
+              key={index}
               onPressIn={() => {
                 selected !== item.nation
                   ? setSelected(item.nation)
@@ -1114,6 +1115,7 @@ export default WorldMap;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     padding: 8,
     width: '100%',
     height: 250,
