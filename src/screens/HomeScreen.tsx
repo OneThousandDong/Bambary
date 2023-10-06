@@ -12,6 +12,7 @@ import {
   KeyboardAvoidingView,
   Dimensions,
   TouchableWithoutFeedback,
+  ImageBackground,
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import Svgs from '../constants/Svgs';
@@ -25,11 +26,11 @@ const CategoryData = [
   },
   {
     name: 'Europe',
-    uri: <Svgs.Europe height={100} width={100} />,
+    uri: <Svgs.Europe height={100} width={150} />,
   },
   {
     name: 'North America',
-    uri: <Svgs.North_America height={100} width={150} />,
+    uri: <Svgs.North_America height={100} width={160} />,
   },
   {
     name: 'South America',
@@ -41,7 +42,7 @@ const CategoryData = [
   },
   {
     name: 'Oceania',
-    uri: <Svgs.Oceania height={100} width={120} />,
+    uri: <Svgs.Oceania height={100} width={150} />,
   },
   {
     name: 'World',
@@ -115,36 +116,41 @@ const HomeScreen = ({route, navigation}) => {
   return (
     <>
       <View style={styles.container}>
-        <View className="bg-emerald-200 h-1/5 w-full z-10 p-4 rounded-b-3xl">
+        <View className="bg-sky-200 h-1/5 w-full z-10 p-4 rounded-b-3xl">
           <View className="m-4">
             <Svgs.MenuSVG height={20} width={20} />
           </View>
-          {/*<LottieView*/}
-          {/*  ref={animationRef}*/}
-          {/*  source={require('../assets/lottie/world.json')}*/}
-          {/*/>*/}
+          <LottieView
+            ref={animationRef}
+            source={require('../assets/lottie/worldaround.json')}
+          />
         </View>
 
         <View className="flex flex-row absolute top-20">
-          <View className="bg-indigo-500 mr-2 h-32 w-36 z-20 rounded-xl">
-            <View className="items-center justify-center">
-              <Text className="m-2">Quốc gia</Text>
-            </View>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('BoardCountries');
-              }}>
-              <View className="flex flex-row">
-                <Svgs.HorseSVG height={80} width={80} />
-                <View className="justify-center">
-                  <Text>195</Text>
-                  <Text>Sovereign states</Text>
-                </View>
+          <View className=" mr-2 h-32 w-36 z-20 rounded-xl">
+            <ImageBackground  style={{height: 128, width: 144}} imageStyle={{ borderRadius: 12}} source={{uri: 'https://img.freepik.com/free-vector/gradient-background-vector-spring-light-pink-green_53876-105763.jpg'}}>
+              <View className="items-center justify-center">
+                <Text className="m-2">Quốc gia</Text>
               </View>
-            </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('BoardCountries');
+                }}>
+                <View className="flex flex-row">
+                  <Svgs.HorseSVG height={80} width={80} />
+                  <View className="justify-center">
+                    <Text>195</Text>
+                    <Text>Sovereign</Text>
+                    <Text>states</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </ImageBackground>
+
           </View>
-          <View className="bg-amber-200 ml-2 h-32 w-36 z-20 rounded-xl">
-            <View className="items-center justify-center">
+          <View className=" ml-2 h-32 w-36 z-10 rounded-xl">
+          <ImageBackground  style={{height: 128, width: 144}} imageStyle={{ borderRadius: 12}} source={{uri: 'https://img.freepik.com/free-vector/background-gradient-green-tones_23-2148382072.jpg'}}>
+          <View className="items-center justify-center">
               <Text className="m-2">Thế giới</Text>
             </View>
             <TouchableOpacity
@@ -158,63 +164,68 @@ const HomeScreen = ({route, navigation}) => {
                   width={80}
                 />
                 <View className="justify-center">
-                  <Text>249 Countries</Text>
+                  <Text>249</Text>
+                  <Text>Countries</Text>
                   <Text>ISO 3166</Text>
                 </View>
               </View>
             </TouchableOpacity>
+          </ImageBackground>
+            
           </View>
         </View>
 
-        {/*<View className="flex-1 top-14">*/}
-        {/*  <Text className="text-lg font-bold m-2">Choose Categories</Text>*/}
-        {/*  <FlatList*/}
-        {/*    contentContainerStyle={{*/}
-        {/*      marginTop: 4,*/}
-        {/*      justifyContent: 'center',*/}
-        {/*      alignItems: 'center',*/}
-        {/*    }}*/}
-        {/*    data={CategoryData}*/}
-        {/*    numColumns={2}*/}
-        {/*    columnWrapperStyle={{*/}
-        {/*      justifyContent: 'space-around',*/}
-        {/*    }}*/}
-        {/*    initialNumToRender={CategoryData.length}*/}
-        {/*    showsVerticalScrollIndicator={false}*/}
-        {/*    keyExtractor={(item, index) => String(index)}*/}
-        {/*    renderItem={({item, index}) => (*/}
-        {/*      <View*/}
-        {/*        className="mx-4 items-center"*/}
-        {/*        style={{margin: index % 2 !== 0 ? 20 : 0}}>*/}
-        {/*        {item.name == 'World' ? (*/}
-        {/*          <View*/}
-        {/*            style={{*/}
-        {/*              width: 320,*/}
-        {/*              height: 100,*/}
-        {/*            }}*/}
-        {/*            className="bg-indigo-500 rounded-xl">*/}
-        {/*            /!*{item?.uri}*!/*/}
-        {/*            <Text>{item?.name}</Text>*/}
-        {/*          </View>*/}
-        {/*        ) : (*/}
-        {/*          <View className="bg-indigo-500 h-36 w-36 rounded-xl">*/}
-        {/*            /!*{item?.uri}*!/*/}
-        {/*            <Text>{item?.name}</Text>*/}
-        {/*          </View>*/}
-        {/*        )}*/}
-        {/*      </View>*/}
-        {/*    )}*/}
-        {/*    ListFooterComponent={*/}
-        {/*      <View>*/}
-        {/*        <Svgs.World*/}
-        {/*          height={Dimensions.get('window').height / 3}*/}
-        {/*          width={Dimensions.get('window').width}*/}
-        {/*        />*/}
-        {/*      </View>*/}
-        {/*    }*/}
-        {/*    onEndReachedThreshold={0.2}*/}
-        {/*  />*/}
-        {/*</View>*/}
+        <View className="flex-1 top-14">
+          <FlatList
+            contentContainerStyle={{
+              marginTop: 4,
+              // justifyContent: 'center',
+              // alignItems: 'center',
+            }}
+            data={CategoryData}
+            numColumns={2}
+            columnWrapperStyle={{
+              justifyContent: 'center',
+            }}
+            initialNumToRender={CategoryData.length}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item, index) => String(index)}
+            renderItem={({item, index}) => (
+              <View 
+                className="mx-2 items-center"
+                style={{margin: index % 2 !== 0 ? 15 : 0}}>
+                {item.name == 'World' ? (
+                  <View
+                    style={{
+                      width: 320,
+                      height: 100,
+                    }}
+                    className="bg-indigo-500 rounded-xl">
+                    {item?.uri}
+                    <Text>{item?.name}</Text>
+                  </View>
+                ) : (
+                  <View className="bg-sky-100 h-36 w-36 rounded-xl items-center">
+                    <View className='pt-1'>
+                    {item?.uri}
+                      </View>
+                    <Text>{item?.name}</Text>
+                  </View>
+                )}
+              </View>
+            )}
+            ListHeaderComponent={<Text className="text-lg font-bold m-2">Choose Categories</Text>}
+            ListFooterComponent={
+              <View>
+                <Svgs.World
+                  height={Dimensions.get('window').height / 3}
+                  width={Dimensions.get('window').width}
+                />
+              </View>
+            }
+            onEndReachedThreshold={0.2}
+          />
+        </View>
       </View>
     </>
     // <View>

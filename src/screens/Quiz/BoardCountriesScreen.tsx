@@ -99,7 +99,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
           <View className="mx-2 box-content h-28 w-28 rounded-full justify-center">
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Quiz');
+                navigation.navigate('QuizCountries');
               }}>
               <View className="items-center">
                 <Svgs.PlaySVG height={120} width={120} />
