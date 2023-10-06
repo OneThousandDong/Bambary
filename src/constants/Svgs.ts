@@ -27,4 +27,5 @@ export default {
   North_America,
   South_America,
   Oceania,
+  World,
 };
