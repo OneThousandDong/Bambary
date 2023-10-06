@@ -209,7 +209,7 @@ const HomeScreen = ({route, navigation}) => {
                     <View className='pt-1'>
                     {item?.uri}
                       </View>
-                    <Text>{item?.name}</Text>
+                    <Text className="text-base font-bold m-2">{item?.name}</Text>
                   </View>
                 )}
               </View>
