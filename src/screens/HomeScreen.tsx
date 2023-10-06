@@ -149,7 +149,7 @@ const HomeScreen = ({route, navigation}) => {
 
           </View>
           <View className=" ml-2 h-32 w-36 z-10 rounded-xl">
-          <ImageBackground  style={{height: 128, width: 144}} imageStyle={{ borderRadius: 12}} source={{uri: 'https://img.freepik.com/free-vector/background-gradient-green-tones_23-2148382072.jpg'}}>
+          <ImageBackground  style={{height: 128, width: 144}} imageStyle={{ borderRadius: 12}} source={{uri: 'https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg'}}>
           <View className="items-center justify-center">
               <Text className="m-2">Thế giới</Text>
             </View>
@@ -205,12 +205,16 @@ const HomeScreen = ({route, navigation}) => {
                     <Text>{item?.name}</Text>
                   </View>
                 ) : (
-                  <View className="bg-sky-100 h-36 w-36 rounded-xl items-center">
-                    <View className='pt-1'>
-                    {item?.uri}
+                    <View className=" h-36 w-36 rounded-xl items-center">
+
+                      <ImageBackground style={{ height: 144, width: 144 }} imageStyle={{ borderRadius: 12 }} source={{ uri: 'https://e0.pxfuel.com/wallpapers/226/830/desktop-wallpaper-background-gradients-video-production-twitter-circle-blue-for-your-mobile-tablet-explore-blue-and-white-blue-light-blue-blue-pastel-blue-gradient.jpg' }}>
+                      <View className='pt-1'>
+                        {item?.uri}
                       </View>
-                    <Text className="text-base font-bold m-2">{item?.name}</Text>
-                  </View>
+                      <Text className="text-base font-bold m-2">{item?.name}</Text>
+                      </ImageBackground>
+                     
+                    </View>
                 )}
               </View>
             )}
