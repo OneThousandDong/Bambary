@@ -1,5 +1,5 @@
 import DinosaurSVG from '../assets/svg/ic_dinosaur.svg';
-import HorseSVG from '../assets/svg/ic_horse.svg';
+import HorseSVG from '../assets/svg/ic_rabbit.svg';
 import MenuSVG from '../assets/svg/ic_menu.svg';
 import PlaySVG from '../assets/svg/ic_play.svg';
 import CloseSvg from '../assets/svg/ic_close.svg';

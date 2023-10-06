@@ -10,6 +10,7 @@ import React, {useRef, useState, useEffect} from 'react';
 import Svgs from '../../constants/Svgs';
 import {DATAVI} from '../DataQuiz/DataVi';
 import FastImage from 'react-native-fast-image';
+import LottieView from 'lottie-react-native';
 
 const QuizWorldScreen = ({route, navigation}) => {
   const [progress, setProgress] = useState(0);
@@ -18,6 +19,7 @@ const QuizWorldScreen = ({route, navigation}) => {
   const [indexQue, setIndexQues] = useState(1);
   const [correctAnwser, setCorrectAnswer] = useState(false);
   const progressAnim = useRef(new Animated.Value(0)).current;
+  const animationRef = useRef<LottieView>(null);
 
   const animateProgress = () => {
     Animated.timing(progressAnim, {
@@ -54,9 +56,21 @@ const QuizWorldScreen = ({route, navigation}) => {
               ]}
             />
           </View>
+          <LottieView
+            style={{
+              width: 400,
+              height: 400,
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              zIndex: 1,
+            }}
+            loop={false}
+            ref={animationRef}
+            source={require('../../assets/lottie/congratulations.json')}
+          />
         </View>
         <View className="justify-center items-center text-center">
-          {/* {question.uri} */}
           <FastImage
             style={{width: 250, height: 250}}
             source={question.uri}
@@ -121,6 +135,7 @@ const QuizWorldScreen = ({route, navigation}) => {
           </View>
         </View>
       </View>
+
       {correctAnwser ? (
         <TouchableOpacity
           onPress={() => {
@@ -141,6 +156,7 @@ const QuizWorldScreen = ({route, navigation}) => {
           onPress={() => {
             if (selected[question?.correct] == 1) {
               setCorrectAnswer(true);
+              animationRef.current.play();
             }
           }}
           className="bg-emerald-200 mx-10 mt-2 h-14 rounded-xl items-center justify-center">
