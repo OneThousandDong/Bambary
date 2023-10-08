@@ -14,14 +14,14 @@ import {
   TouchableWithoutFeedback,
   ImageBackground,
 } from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Svgs from '../constants/Svgs';
 import MapScreen from './MapScreen';
 import LottieView from 'lottie-react-native';
 
 const CategoryData = [
   {
-    name: 'Asisa',
+    name: 'Asia',
     uri: <Svgs.Asia height={100} width={150} />,
   },
   {
@@ -30,23 +30,54 @@ const CategoryData = [
   },
   {
     name: 'North America',
-    uri: <Svgs.North_America height={100} width={160} />,
+    uri: <Svgs.North_America height={100} width={130} />,
   },
   {
     name: 'South America',
-    uri: <Svgs.South_America height={100} width={150} />,
+    uri: <Svgs.South_America height={100} width={140} />,
   },
   {
     name: 'Africa',
-    uri: <Svgs.Africa height={100} width={150} />,
+    uri: <Svgs.Africa height={100} width={140} />,
   },
   {
     name: 'Oceania',
     uri: <Svgs.Oceania height={100} width={150} />,
   },
   {
-    name: 'World',
+    name: 'Flags',
     uri: <Svgs.World height={100} width={120} />,
+  },
+];
+
+const CategoryDataVi = [
+  {
+    name: 'Châu Á',
+    uri: <Svgs.Asia height={100} width={150} />,
+  },
+  {
+    name: 'Châu Âu',
+    uri: <Svgs.Europe height={100} width={150} />,
+  },
+  {
+    name: 'Bắc Mĩ',
+    uri: <Svgs.North_America height={100} width={130} />,
+  },
+  {
+    name: 'Nam Mĩ',
+    uri: <Svgs.South_America height={100} width={140} />,
+  },
+  {
+    name: 'Châu Phi',
+    uri: <Svgs.Africa height={100} width={140} />,
+  },
+  {
+    name: 'Châu Đại Dương',
+    uri: <Svgs.Oceania height={100} width={150} />,
+  },
+  {
+    name: 'Tất cả lá cờ',
+    uri: <Svgs.World height={100} width={150} />,
   },
 ];
 
@@ -61,19 +92,18 @@ const ExtensionData = [
   },
 ];
 
-const HomeScreen = ({route, navigation}) => {
+const HomeScreen = ({ route, navigation }) => {
   const animationRef = useRef<LottieView>(null);
+  const animationRef1 = useRef<LottieView>(null);
 
   useEffect(() => {
-    // animationRef.current?.play();
-
-    // Or set a specific startFrame and endFrame with:
     animationRef.current?.play();
+    animationRef1.current?.play();
   }, []);
 
   const [modalVisible, setModalVisible] = useState(false);
 
-  const ModalPopup = ({visible}) => {
+  const ModalPopup = ({ visible }) => {
     const scaleVal = React.useRef(new Animated.Value(1)).current;
     const [showModal, setShowModal] = useState(visible);
     useEffect(() => {
@@ -102,7 +132,7 @@ const HomeScreen = ({route, navigation}) => {
       <Modal transparent={true} visible={showModal}>
         <View style={styles.modalContainer}>
           <Animated.View
-            style={[styles.modal, {transform: [{scale: scaleVal}]}]}>
+            style={[styles.modal, { transform: [{ scale: scaleVal }] }]}>
             <TouchableOpacity onPress={() => setModalVisible(false)}>
               <Svgs.CloseSvg height={40} width={40} />
             </TouchableOpacity>
@@ -115,7 +145,9 @@ const HomeScreen = ({route, navigation}) => {
 
   return (
     <>
-      <View style={styles.container}>
+      <View className='bg-white' style={styles.container}>
+        {/* <ImageBackground style={{ height: '100%', width: '100%' }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/space-5654794_1280.png')}> */}
+
         <View className="bg-sky-200 h-1/5 w-full z-10 p-4 rounded-b-3xl">
           <View className="m-4">
             <Svgs.MenuSVG height={20} width={20} />
@@ -126,11 +158,11 @@ const HomeScreen = ({route, navigation}) => {
           />
         </View>
 
-        <View className="flex flex-row absolute top-20">
-          <View className=" mr-2 h-32 w-36 z-20 rounded-xl">
-            <ImageBackground  style={{height: 128, width: 144}} imageStyle={{ borderRadius: 12}} source={{uri: 'https://img.freepik.com/free-vector/gradient-background-vector-spring-light-pink-green_53876-105763.jpg'}}>
+        <View className="flex flex-row absolute top-24">
+          <View className=" mr-2 z-20 rounded-xl">
+            <ImageBackground style={{ height: 120, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient1.png')}>
               <View className="items-center justify-center">
-                <Text className="m-2">Quốc gia</Text>
+                <Text className="text-lg font-bold m-2 text-white">Quốc gia</Text>
               </View>
               <TouchableOpacity
                 onPress={() => {
@@ -139,39 +171,36 @@ const HomeScreen = ({route, navigation}) => {
                 <View className="flex flex-row">
                   <Svgs.HorseSVG height={80} width={80} />
                   <View className="justify-center">
-                    <Text>195</Text>
-                    <Text>Sovereign</Text>
-                    <Text>states</Text>
+                    <Text className="text-xl font-bold text-white">195</Text>
+                    {/* <Text className="text-xs font-bold">Quốc gia</Text> */}
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </ImageBackground>
+          </View>
+          <View className=" ml-2 z-10 rounded-xl">
+            <ImageBackground style={{ height: 120, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient2.png')}>
+              <View className="items-center justify-center">
+                <Text className="text-lg font-bold m-2 text-white">Thế giới</Text>
+              </View>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('BoardWorldScreen');
+                }}>
+                <View className="flex flex-row">
+                  <Svgs.DinosaurSVG
+                    style={{ transform: [{ rotateY: '180deg' }] }}
+                    height={80}
+                    width={80}
+                  />
+                  <View className="justify-center">
+                    <Text className="text-lg font-bold text-white">249</Text>
+                    {/* <Text className="text-xs font-bold">Đất nước</Text> */}
                   </View>
                 </View>
               </TouchableOpacity>
             </ImageBackground>
 
-          </View>
-          <View className=" ml-2 h-32 w-36 z-10 rounded-xl">
-          <ImageBackground  style={{height: 128, width: 144}} imageStyle={{ borderRadius: 12}} source={{uri: 'https://images.pexels.com/photos/7130555/pexels-photo-7130555.jpeg'}}>
-          <View className="items-center justify-center">
-              <Text className="m-2">Thế giới</Text>
-            </View>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('BoardWorldScreen');
-              }}>
-              <View className="flex flex-row">
-                <Svgs.DinosaurSVG
-                  style={{transform: [{rotateY: '180deg'}]}}
-                  height={80}
-                  width={80}
-                />
-                <View className="justify-center">
-                  <Text>249</Text>
-                  <Text>Countries</Text>
-                  <Text>ISO 3166</Text>
-                </View>
-              </View>
-            </TouchableOpacity>
-          </ImageBackground>
-            
           </View>
         </View>
 
@@ -179,10 +208,8 @@ const HomeScreen = ({route, navigation}) => {
           <FlatList
             contentContainerStyle={{
               marginTop: 4,
-              // justifyContent: 'center',
-              // alignItems: 'center',
             }}
-            data={CategoryData}
+            data={CategoryDataVi}
             numColumns={2}
             columnWrapperStyle={{
               justifyContent: 'center',
@@ -190,46 +217,50 @@ const HomeScreen = ({route, navigation}) => {
             initialNumToRender={CategoryData.length}
             showsVerticalScrollIndicator={false}
             keyExtractor={(item, index) => String(index)}
-            renderItem={({item, index}) => (
-              <View 
+            renderItem={({ item, index }) => (
+              <View
                 className="mx-2 items-center"
-                style={{margin: index % 2 !== 0 ? 15 : 0}}>
+                style={{ margin: index % 2 !== 0 ? 15 : 0 }}>
                 {item.name == 'World' ? (
-                  <View
-                    style={{
-                      width: 320,
-                      height: 100,
-                    }}
-                    className="bg-indigo-500 rounded-xl">
-                    {item?.uri}
-                    <Text>{item?.name}</Text>
+                  <View className="rounded-xl items-center">
+                    <ImageBackground style={{ height: 100, width: 300 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient.png')}>
+                      <View className="rounded-xl items-center flex flex-row">
+                        {item?.uri}
+                        <Text className="text-base font-bold">{item?.name}</Text>
+                      </View>
+                    </ImageBackground>
                   </View>
                 ) : (
-                    <View className=" h-36 w-36 rounded-xl items-center">
-
-                      <ImageBackground style={{ height: 144, width: 144 }} imageStyle={{ borderRadius: 12 }} source={{ uri: 'https://e0.pxfuel.com/wallpapers/226/830/desktop-wallpaper-background-gradients-video-production-twitter-circle-blue-for-your-mobile-tablet-explore-blue-and-white-blue-light-blue-blue-pastel-blue-gradient.jpg' }}>
+                  <View className="rounded-xl items-center">
+                    <ImageBackground style={{ height: 144, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient.png')}>
                       <View className='pt-1'>
                         {item?.uri}
                       </View>
-                      <Text className="text-base font-bold m-2">{item?.name}</Text>
-                      </ImageBackground>
-                     
-                    </View>
+                      <View className="items-center">
+                        <Text className="text-base font-bold m-2">{item?.name}</Text>
+                      </View>
+                    </ImageBackground>
+                  </View>
                 )}
               </View>
             )}
-            ListHeaderComponent={<Text className="text-lg font-bold m-2">Choose Categories</Text>}
+            ListHeaderComponent={<Text className="text-lg font-bold m-2 ml-5">Choose Categories</Text>}
             ListFooterComponent={
-              <View>
-                <Svgs.World
+              <View style={{height: Dimensions.get('window').height / 4, width: Dimensions.get('window').width, marginBottom: 10}}>
+                {/* <Svgs.World
                   height={Dimensions.get('window').height / 3}
                   width={Dimensions.get('window').width}
+                /> */}
+                <LottieView
+                  ref={animationRef1}
+                  source={require('../assets/lottie/world.json')}
                 />
               </View>
             }
             onEndReachedThreshold={0.2}
           />
         </View>
+        {/* </ImageBackground> */}
       </View>
     </>
     // <View>
