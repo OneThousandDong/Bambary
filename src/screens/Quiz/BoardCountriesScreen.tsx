@@ -106,6 +106,17 @@ const BoardCountriesScreen = ({route, navigation}) => {
               </View>
             </TouchableOpacity>
           </View>
+
+          <View className="mx-2 box-content h-28 w-28 rounded-full justify-center">
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('QuizCountries');
+              }}>
+              <View className="items-center">
+                <Svgs.ReturnSVG height={130} width={130} />
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </SafeAreaView>
