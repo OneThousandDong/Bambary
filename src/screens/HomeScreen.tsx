@@ -181,7 +181,11 @@ const HomeScreen = ({ route, navigation }) => {
           <View className=" mr-2 z-20 rounded-xl">
             <ImageBackground style={{ height: 120, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient1.png')}>
               <View className="items-center justify-center">
-                <Text className="text-lg font-bold m-2 text-white">Quốc gia</Text>
+                {language == 'VI' ? (
+                  <Text className="text-lg font-bold m-2 text-white">Quốc gia</Text>
+                ) : (
+                  <Text className="text-lg font-bold m-2 text-white">Countries</Text>
+                )}
               </View>
               <TouchableOpacity
                 onPress={() => {
@@ -200,7 +204,12 @@ const HomeScreen = ({ route, navigation }) => {
           <View className=" ml-2 z-10 rounded-xl">
             <ImageBackground style={{ height: 120, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient2.png')}>
               <View className="items-center justify-center">
-                <Text className="text-lg font-bold m-2 text-white">Thế giới</Text>
+                {language == 'VI' ? (
+                  <Text className="text-lg font-bold m-2 text-white">Thế giới</Text>
+                ) : (
+                  <Text className="text-lg font-bold m-2 text-white">World</Text>
+                )}
+
               </View>
               <TouchableOpacity
                 onPress={() => {
@@ -228,7 +237,7 @@ const HomeScreen = ({ route, navigation }) => {
             contentContainerStyle={{
               marginTop: 4,
             }}
-            data={CategoryDataVi}
+            data={language == 'VI' ? CategoryDataVi : CategoryData}
             numColumns={2}
             columnWrapperStyle={{
               justifyContent: 'center',
