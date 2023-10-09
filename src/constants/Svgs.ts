@@ -4,6 +4,7 @@ import MenuSVG from '../assets/svg/ic_menu.svg';
 import PlaySVG from '../assets/svg/ic_play.svg';
 import CloseSvg from '../assets/svg/ic_close.svg';
 import BackSVG from '../assets/svg/ic_back.svg';
+import LanguageSVG from '../assets/svg/ic_language.svg';
 //World Map
 import Asia from '../assets/svg/asia.svg';
 import Africa from '../assets/svg/africa.svg';
@@ -20,6 +21,7 @@ export default {
   HorseSVG,
   DinosaurSVG,
   BackSVG,
+  LanguageSVG,
   // World map
   Asia,
   Africa,

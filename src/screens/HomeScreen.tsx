@@ -95,6 +95,7 @@ const ExtensionData = [
 const HomeScreen = ({ route, navigation }) => {
   const animationRef = useRef<LottieView>(null);
   const animationRef1 = useRef<LottieView>(null);
+  const [language, setLanguage] = useState('ENG');
 
   useEffect(() => {
     animationRef.current?.play();
@@ -156,6 +157,24 @@ const HomeScreen = ({ route, navigation }) => {
             ref={animationRef}
             source={require('../assets/lottie/worldaround.json')}
           />
+          <View style={{ position: 'absolute', right: 0, margin: 20 }}>
+            <TouchableOpacity onPress={() => {
+              if (language == 'ENG') {
+                setLanguage('VI');
+              } else {
+                setLanguage('ENG');
+              }
+            }}>
+              <Svgs.LanguageSVG height={30} width={30} />
+              <View className='items-center justify-center'>
+                {language == 'ENG' ? (
+                  <Text className='text-xs'>ENG</Text>
+                ) : (
+                  <Text className='text-xs'>VI</Text>
+                )}
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View className="flex flex-row absolute top-24">
@@ -246,7 +265,7 @@ const HomeScreen = ({ route, navigation }) => {
             )}
             ListHeaderComponent={<Text className="text-lg font-bold m-2 ml-5">Choose Categories</Text>}
             ListFooterComponent={
-              <View style={{height: Dimensions.get('window').height / 4, width: Dimensions.get('window').width, marginBottom: 10}}>
+              <View style={{ height: Dimensions.get('window').height / 4, width: Dimensions.get('window').width, marginBottom: 10 }}>
                 {/* <Svgs.World
                   height={Dimensions.get('window').height / 3}
                   width={Dimensions.get('window').width}
