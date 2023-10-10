@@ -271,7 +271,8 @@ const QuizCountriesScreen = ({route, navigation}) => {
               animatedScaleButton.setValue(1);
             }
           }}
-          className="bg-emerald-200 mx-10 mt-2 h-14 rounded-xl items-center justify-center">
+          style={{backgroundColor: buttonColor}}
+          className="mx-10 mt-2 h-14 rounded-xl items-center justify-center">
           <Text className="text-lg font-bold text-white">Tiếp theo</Text>
         </TouchableOpacity>
       ) : (

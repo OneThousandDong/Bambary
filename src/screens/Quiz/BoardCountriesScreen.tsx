@@ -27,6 +27,9 @@ const BoardCountriesScreen = ({route, navigation}) => {
           {/*<Text className="m-8 font-bold text-xl">Điểm cao nhất</Text>*/}
           <View className="justify-center items-center">
             <AnimatedCircularProgress
+              prefill={100}
+              delay={400}
+              duration={700}
               size={200}
               width={20}
               fill={20}
@@ -37,7 +40,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
                 <Circle cx={center.x} cy={center.y} r="10" fill="#00e0ff" />
               )}
               backgroundColor="#3d5875">
-              {fill => <Text>{fill}/195</Text>}
+              {fill => <Text>20/195</Text>}
             </AnimatedCircularProgress>
             <View className={'absolute'}>
               {/*<Text className="m-8 font-bold text-xl">20/195</Text>*/}
