@@ -14,7 +14,7 @@ import {
   TouchableWithoutFeedback,
   ImageBackground,
 } from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Svgs from '../constants/Svgs';
 import MapScreen from './MapScreen';
 import LottieView from 'lottie-react-native';
@@ -84,6 +84,7 @@ const CategoryDataVi = [
 const HomeScreen = ({route, navigation}) => {
   const animationRef = useRef<LottieView>(null);
   const animationRef1 = useRef<LottieView>(null);
+  const [language, setLanguage] = useState('ENG');
 
   useEffect(() => {
     animationRef.current?.play();
@@ -147,10 +148,28 @@ const HomeScreen = ({route, navigation}) => {
           <View className="m-4">
             <Svgs.MenuSVG height={20} width={20} />
           </View>
-          {/*<LottieView*/}
-          {/*  ref={animationRef}*/}
-          {/*  source={require('../assets/lottie/worldaround.json')}*/}
-          {/*/>*/}
+          <LottieView
+            ref={animationRef}
+            source={require('../assets/lottie/worldaround.json')}
+          />
+          <View style={{ position: 'absolute', right: 0, margin: 20 }}>
+            <TouchableOpacity onPress={() => {
+              if (language == 'ENG') {
+                setLanguage('VI');
+              } else {
+                setLanguage('ENG');
+              }
+            }}>
+              <Svgs.LanguageSVG height={30} width={30} />
+              <View className='items-center justify-center'>
+                {language == 'ENG' ? (
+                  <Text className='text-xs'>ENG</Text>
+                ) : (
+                  <Text className='text-xs'>VI</Text>
+                )}
+              </View>
+            </TouchableOpacity>
+          </View>
         </ImageBackground>
 
         <View className="flex flex-row absolute top-24">
@@ -160,8 +179,11 @@ const HomeScreen = ({route, navigation}) => {
               imageStyle={{borderRadius: 12}}
               source={require('../assets/image/gradient1.png')}>
               <View className="items-center justify-center">
-                <Text className="text-lg font-bold m-2">Quốc gia</Text>
-              </View>
+                {language == 'VI' ? (
+                  <Text className="text-lg font-bold m-2 text-white">Quốc gia</Text>
+                ) : (
+                  <Text className="text-lg font-bold m-2 text-white">Countries</Text>
+                )}              </View>
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('BoardCountries');
@@ -182,9 +204,11 @@ const HomeScreen = ({route, navigation}) => {
               imageStyle={{borderRadius: 12}}
               source={require('../assets/image/gradient2.png')}>
               <View className="items-center justify-center">
-                <Text className="text-lg font-bold m-2">
-                  Thế giới
-                </Text>
+                {language == 'VI' ? (
+                  <Text className="text-lg font-bold m-2 text-white">Thế giới</Text>
+                ) : (
+                  <Text className="text-lg font-bold m-2 text-white">World</Text>
+                )}
               </View>
               <TouchableOpacity
                 onPress={() => {
@@ -206,75 +230,62 @@ const HomeScreen = ({route, navigation}) => {
           </View>
         </View>
 
-        {/*<View className="flex-1 top-14 z-30">*/}
-        {/*  <FlatList*/}
-        {/*    contentContainerStyle={{*/}
-        {/*      marginTop: 4,*/}
-        {/*    }}*/}
-        {/*    data={CategoryDataVi}*/}
-        {/*    numColumns={2}*/}
-        {/*    columnWrapperStyle={{*/}
-        {/*      justifyContent: 'center',*/}
-        {/*    }}*/}
-        {/*    initialNumToRender={CategoryData.length}*/}
-        {/*    showsVerticalScrollIndicator={false}*/}
-        {/*    keyExtractor={(item, index) => String(index)}*/}
-        {/*    renderItem={({item, index}) => (*/}
-        {/*      <View*/}
-        {/*        className="mx-2 items-center"*/}
-        {/*        style={{margin: index % 2 !== 0 ? 15 : 0}}>*/}
-        {/*        {item.name == 'World' ? (*/}
-        {/*          <View className="rounded-xl items-center">*/}
-        {/*            <ImageBackground*/}
-        {/*              style={{height: 100, width: 300}}*/}
-        {/*              imageStyle={{borderRadius: 12}}*/}
-        {/*              source={require('../assets/image/gradient.png')}>*/}
-        {/*              <View className="rounded-xl items-center flex flex-row">*/}
-        {/*                {item?.uri}*/}
-        {/*                <Text className="text-base font-bold">*/}
-        {/*                  {item?.name}*/}
-        {/*                </Text>*/}
-        {/*              </View>*/}
-        {/*            </ImageBackground>*/}
-        {/*          </View>*/}
-        {/*        ) : (*/}
-        {/*          <View className="rounded-xl items-center">*/}
-        {/*            <ImageBackground*/}
-        {/*              style={{height: 144, width: 144}}*/}
-        {/*              imageStyle={{borderRadius: 12}}*/}
-        {/*              source={require('../assets/image/gradient.png')}>*/}
-        {/*              <View className="pt-1">{item?.uri}</View>*/}
-        {/*              <View className="items-center">*/}
-        {/*                <Text className="text-base font-bold m-2">*/}
-        {/*                  {item?.name}*/}
-        {/*                </Text>*/}
-        {/*              </View>*/}
-        {/*            </ImageBackground>*/}
-        {/*          </View>*/}
-        {/*        )}*/}
-        {/*      </View>*/}
-        {/*    )}*/}
-        {/*    ListHeaderComponent={*/}
-        {/*      <Text className="text-lg font-bold m-2 ml-5">*/}
-        {/*        Choose Categories*/}
-        {/*      </Text>*/}
-        {/*    }*/}
-        {/*    ListFooterComponent={*/}
-        {/*      <View*/}
-        {/*        style={{*/}
-        {/*          height: Dimensions.get('window').height / 4,*/}
-        {/*          width: Dimensions.get('window').width,*/}
-        {/*          marginBottom: 10,*/}
-        {/*        }}>*/}
-        {/*        <LottieView*/}
-        {/*          ref={animationRef1}*/}
-        {/*          source={require('../assets/lottie/world.json')}*/}
-        {/*        />*/}
-        {/*      </View>*/}
-        {/*    }*/}
-        {/*    onEndReachedThreshold={0.2}*/}
-        {/*  />*/}
-        {/*</View>*/}
+        <View className="flex-1 top-14">
+          <FlatList
+            contentContainerStyle={{
+              marginTop: 4,
+            }}
+            data={language == 'VI' ? CategoryDataVi : CategoryData}
+            numColumns={2}
+            columnWrapperStyle={{
+              justifyContent: 'center',
+            }}
+            initialNumToRender={CategoryData.length}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item, index) => String(index)}
+            renderItem={({ item, index }) => (
+              <View
+                className="mx-2 items-center"
+                style={{ margin: index % 2 !== 0 ? 15 : 0 }}>
+                {item.name == 'World' ? (
+                  <View className="rounded-xl items-center">
+                    <ImageBackground style={{ height: 100, width: 300 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient.png')}>
+                      <View className="rounded-xl items-center flex flex-row">
+                        {item?.uri}
+                        <Text className="text-base font-bold">{item?.name}</Text>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                ) : (
+                  <View className="rounded-xl items-center">
+                    <ImageBackground style={{ height: 144, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient.png')}>
+                      <View className='pt-1'>
+                        {item?.uri}
+                      </View>
+                      <View className="items-center">
+                        <Text className="text-base font-bold m-2">{item?.name}</Text>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                )}
+              </View>
+            )}
+            ListHeaderComponent={<Text className="text-lg font-bold m-2 ml-5">Choose Categories</Text>}
+            ListFooterComponent={
+              <View style={{ height: Dimensions.get('window').height / 4, width: Dimensions.get('window').width, marginBottom: 10 }}>
+                {/* <Svgs.World
+                  height={Dimensions.get('window').height / 3}
+                  width={Dimensions.get('window').width}
+                /> */}
+                <LottieView
+                  ref={animationRef1}
+                  source={require('../assets/lottie/world.json')}
+                />
+              </View>
+            }
+            onEndReachedThreshold={0.2}
+          />
+        </View>
       </View>
     </>
     // <View>
