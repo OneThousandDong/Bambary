@@ -14,7 +14,7 @@ import {
   TouchableWithoutFeedback,
   ImageBackground,
 } from 'react-native';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Svgs from '../constants/Svgs';
 import MapScreen from './MapScreen';
 import LottieView from 'lottie-react-native';
@@ -81,18 +81,7 @@ const CategoryDataVi = [
   },
 ];
 
-const ExtensionData = [
-  {
-    name: 'Tất cả lá cờ',
-    uri: <Svgs.Asia height={100} width={150} />,
-  },
-  {
-    name: 'Europe',
-    uri: <Svgs.Europe height={100} width={100} />,
-  },
-];
-
-const HomeScreen = ({ route, navigation }) => {
+const HomeScreen = ({route, navigation}) => {
   const animationRef = useRef<LottieView>(null);
   const animationRef1 = useRef<LottieView>(null);
 
@@ -103,7 +92,7 @@ const HomeScreen = ({ route, navigation }) => {
 
   const [modalVisible, setModalVisible] = useState(false);
 
-  const ModalPopup = ({ visible }) => {
+  const ModalPopup = ({visible}) => {
     const scaleVal = React.useRef(new Animated.Value(1)).current;
     const [showModal, setShowModal] = useState(visible);
     useEffect(() => {
@@ -132,7 +121,7 @@ const HomeScreen = ({ route, navigation }) => {
       <Modal transparent={true} visible={showModal}>
         <View style={styles.modalContainer}>
           <Animated.View
-            style={[styles.modal, { transform: [{ scale: scaleVal }] }]}>
+            style={[styles.modal, {transform: [{scale: scaleVal}]}]}>
             <TouchableOpacity onPress={() => setModalVisible(false)}>
               <Svgs.CloseSvg height={40} width={40} />
             </TouchableOpacity>
@@ -145,24 +134,33 @@ const HomeScreen = ({ route, navigation }) => {
 
   return (
     <>
-      <View className='bg-white' style={styles.container}>
-        {/* <ImageBackground style={{ height: '100%', width: '100%' }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/space-5654794_1280.png')}> */}
-
-        <View className="bg-sky-200 h-1/5 w-full z-10 p-4 rounded-b-3xl">
+      <View className="bg-white" style={styles.container}>
+        <ImageBackground
+          imageStyle={{
+            height: Dimensions.get('window').height / 5,
+            width: Dimensions.get('window').width,
+            borderBottomLeftRadius: 40,
+            borderBottomRightRadius: 40,
+          }}
+          source={require('../assets/image/gradient1.png')}
+          className=" h-1/5 w-full z-10 p-4 rounded-b-3xl">
           <View className="m-4">
             <Svgs.MenuSVG height={20} width={20} />
           </View>
-          <LottieView
-            ref={animationRef}
-            source={require('../assets/lottie/worldaround.json')}
-          />
-        </View>
+          {/*<LottieView*/}
+          {/*  ref={animationRef}*/}
+          {/*  source={require('../assets/lottie/worldaround.json')}*/}
+          {/*/>*/}
+        </ImageBackground>
 
         <View className="flex flex-row absolute top-24">
           <View className=" mr-2 z-20 rounded-xl">
-            <ImageBackground style={{ height: 120, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient1.png')}>
+            <ImageBackground
+              style={{height: 120, width: 144}}
+              imageStyle={{borderRadius: 12}}
+              source={require('../assets/image/gradient1.png')}>
               <View className="items-center justify-center">
-                <Text className="text-lg font-bold m-2 text-white">Quốc gia</Text>
+                <Text className="text-lg font-bold m-2">Quốc gia</Text>
               </View>
               <TouchableOpacity
                 onPress={() => {
@@ -171,7 +169,7 @@ const HomeScreen = ({ route, navigation }) => {
                 <View className="flex flex-row">
                   <Svgs.HorseSVG height={80} width={80} />
                   <View className="justify-center">
-                    <Text className="text-xl font-bold text-white">195</Text>
+                    <Text className="text-xl font-bold">195</Text>
                     {/* <Text className="text-xs font-bold">Quốc gia</Text> */}
                   </View>
                 </View>
@@ -179,9 +177,14 @@ const HomeScreen = ({ route, navigation }) => {
             </ImageBackground>
           </View>
           <View className=" ml-2 z-10 rounded-xl">
-            <ImageBackground style={{ height: 120, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient2.png')}>
+            <ImageBackground
+              style={{height: 120, width: 144}}
+              imageStyle={{borderRadius: 12}}
+              source={require('../assets/image/gradient2.png')}>
               <View className="items-center justify-center">
-                <Text className="text-lg font-bold m-2 text-white">Thế giới</Text>
+                <Text className="text-lg font-bold m-2">
+                  Thế giới
+                </Text>
               </View>
               <TouchableOpacity
                 onPress={() => {
@@ -189,78 +192,89 @@ const HomeScreen = ({ route, navigation }) => {
                 }}>
                 <View className="flex flex-row">
                   <Svgs.DinosaurSVG
-                    style={{ transform: [{ rotateY: '180deg' }] }}
+                    style={{transform: [{rotateY: '180deg'}]}}
                     height={80}
                     width={80}
                   />
                   <View className="justify-center">
-                    <Text className="text-lg font-bold text-white">249</Text>
+                    <Text className="text-lg font-bold">249</Text>
                     {/* <Text className="text-xs font-bold">Đất nước</Text> */}
                   </View>
                 </View>
               </TouchableOpacity>
             </ImageBackground>
-
           </View>
         </View>
 
-        <View className="flex-1 top-14">
-          <FlatList
-            contentContainerStyle={{
-              marginTop: 4,
-            }}
-            data={CategoryDataVi}
-            numColumns={2}
-            columnWrapperStyle={{
-              justifyContent: 'center',
-            }}
-            initialNumToRender={CategoryData.length}
-            showsVerticalScrollIndicator={false}
-            keyExtractor={(item, index) => String(index)}
-            renderItem={({ item, index }) => (
-              <View
-                className="mx-2 items-center"
-                style={{ margin: index % 2 !== 0 ? 15 : 0 }}>
-                {item.name == 'World' ? (
-                  <View className="rounded-xl items-center">
-                    <ImageBackground style={{ height: 100, width: 300 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient.png')}>
-                      <View className="rounded-xl items-center flex flex-row">
-                        {item?.uri}
-                        <Text className="text-base font-bold">{item?.name}</Text>
-                      </View>
-                    </ImageBackground>
-                  </View>
-                ) : (
-                  <View className="rounded-xl items-center">
-                    <ImageBackground style={{ height: 144, width: 144 }} imageStyle={{ borderRadius: 12 }} source={require('../assets/image/gradient.png')}>
-                      <View className='pt-1'>
-                        {item?.uri}
-                      </View>
-                      <View className="items-center">
-                        <Text className="text-base font-bold m-2">{item?.name}</Text>
-                      </View>
-                    </ImageBackground>
-                  </View>
-                )}
-              </View>
-            )}
-            ListHeaderComponent={<Text className="text-lg font-bold m-2 ml-5">Choose Categories</Text>}
-            ListFooterComponent={
-              <View style={{height: Dimensions.get('window').height / 4, width: Dimensions.get('window').width, marginBottom: 10}}>
-                {/* <Svgs.World
-                  height={Dimensions.get('window').height / 3}
-                  width={Dimensions.get('window').width}
-                /> */}
-                <LottieView
-                  ref={animationRef1}
-                  source={require('../assets/lottie/world.json')}
-                />
-              </View>
-            }
-            onEndReachedThreshold={0.2}
-          />
-        </View>
-        {/* </ImageBackground> */}
+        {/*<View className="flex-1 top-14 z-30">*/}
+        {/*  <FlatList*/}
+        {/*    contentContainerStyle={{*/}
+        {/*      marginTop: 4,*/}
+        {/*    }}*/}
+        {/*    data={CategoryDataVi}*/}
+        {/*    numColumns={2}*/}
+        {/*    columnWrapperStyle={{*/}
+        {/*      justifyContent: 'center',*/}
+        {/*    }}*/}
+        {/*    initialNumToRender={CategoryData.length}*/}
+        {/*    showsVerticalScrollIndicator={false}*/}
+        {/*    keyExtractor={(item, index) => String(index)}*/}
+        {/*    renderItem={({item, index}) => (*/}
+        {/*      <View*/}
+        {/*        className="mx-2 items-center"*/}
+        {/*        style={{margin: index % 2 !== 0 ? 15 : 0}}>*/}
+        {/*        {item.name == 'World' ? (*/}
+        {/*          <View className="rounded-xl items-center">*/}
+        {/*            <ImageBackground*/}
+        {/*              style={{height: 100, width: 300}}*/}
+        {/*              imageStyle={{borderRadius: 12}}*/}
+        {/*              source={require('../assets/image/gradient.png')}>*/}
+        {/*              <View className="rounded-xl items-center flex flex-row">*/}
+        {/*                {item?.uri}*/}
+        {/*                <Text className="text-base font-bold">*/}
+        {/*                  {item?.name}*/}
+        {/*                </Text>*/}
+        {/*              </View>*/}
+        {/*            </ImageBackground>*/}
+        {/*          </View>*/}
+        {/*        ) : (*/}
+        {/*          <View className="rounded-xl items-center">*/}
+        {/*            <ImageBackground*/}
+        {/*              style={{height: 144, width: 144}}*/}
+        {/*              imageStyle={{borderRadius: 12}}*/}
+        {/*              source={require('../assets/image/gradient.png')}>*/}
+        {/*              <View className="pt-1">{item?.uri}</View>*/}
+        {/*              <View className="items-center">*/}
+        {/*                <Text className="text-base font-bold m-2">*/}
+        {/*                  {item?.name}*/}
+        {/*                </Text>*/}
+        {/*              </View>*/}
+        {/*            </ImageBackground>*/}
+        {/*          </View>*/}
+        {/*        )}*/}
+        {/*      </View>*/}
+        {/*    )}*/}
+        {/*    ListHeaderComponent={*/}
+        {/*      <Text className="text-lg font-bold m-2 ml-5">*/}
+        {/*        Choose Categories*/}
+        {/*      </Text>*/}
+        {/*    }*/}
+        {/*    ListFooterComponent={*/}
+        {/*      <View*/}
+        {/*        style={{*/}
+        {/*          height: Dimensions.get('window').height / 4,*/}
+        {/*          width: Dimensions.get('window').width,*/}
+        {/*          marginBottom: 10,*/}
+        {/*        }}>*/}
+        {/*        <LottieView*/}
+        {/*          ref={animationRef1}*/}
+        {/*          source={require('../assets/lottie/world.json')}*/}
+        {/*        />*/}
+        {/*      </View>*/}
+        {/*    }*/}
+        {/*    onEndReachedThreshold={0.2}*/}
+        {/*  />*/}
+        {/*</View>*/}
       </View>
     </>
     // <View>
