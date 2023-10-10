@@ -7,14 +7,14 @@ import {
   Text,
   Dimensions,
 } from 'react-native';
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import Svgs from '../../constants/Svgs';
-import { DATAVI } from '../DataQuiz/DataVi';
+import {DATAVI} from '../DataQuiz/DataVi';
 import FastImage from 'react-native-fast-image';
 import LottieView from 'lottie-react-native';
 const TOTAL_FLAG = 1;
 
-const QuizCountriesScreen = ({ route, navigation }) => {
+const QuizCountriesScreen = ({route, navigation}) => {
   const [progress, setProgress] = useState(0);
   const [selected, setSelected] = useState([0, 0, 0, 0]);
   const [buttonColor, setButtonnColor] = useState('#ebebe0');
@@ -43,7 +43,7 @@ const QuizCountriesScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     animateProgress();
-    return () => { };
+    return () => {};
   }, [progress]);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const QuizCountriesScreen = ({ route, navigation }) => {
 
   useEffect(() => {
     animationRefWrong.current?.play();
-  }, [incorrect])
+  }, [incorrect]);
 
   useEffect(() => {
     animatedScale1.setValue(1);
@@ -63,61 +63,61 @@ const QuizCountriesScreen = ({ route, navigation }) => {
     animatedScale3.setValue(1);
     animatedScale4.setValue(1);
     animatedScaleButton.setValue(1);
-  }, [])
+  }, []);
 
   const handleButton = async () => {
-    animatedScaleButton.setValue(0.8)
+    animatedScaleButton.setValue(0.8);
     Animated.spring(animatedScaleButton, {
       toValue: 1,
       bounciness: 24,
       speed: 4,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
-  }
+  };
 
   const handleButton1 = () => {
-    animatedScale1.setValue(0.8)
+    animatedScale1.setValue(0.8);
     Animated.spring(animatedScale1, {
       toValue: 1,
       bounciness: 24,
       speed: 4,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
-  }
+  };
   const handleButton2 = () => {
-    animatedScale2.setValue(0.8)
+    animatedScale2.setValue(0.8);
     Animated.spring(animatedScale2, {
       toValue: 1,
       bounciness: 24,
       speed: 4,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
-  }
+  };
   const handleButton3 = () => {
-    animatedScale3.setValue(0.8)
+    animatedScale3.setValue(0.8);
     Animated.spring(animatedScale3, {
       toValue: 1,
       bounciness: 24,
       speed: 4,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
-  }
+  };
   const handleButton4 = () => {
-    animatedScale4.setValue(0.8)
+    animatedScale4.setValue(0.8);
     Animated.spring(animatedScale4, {
       toValue: 1,
       bounciness: 24,
       speed: 4,
-      useNativeDriver: true
+      useNativeDriver: true,
     }).start();
-  }
+  };
 
   return (
     <SafeAreaView>
       <View className="bg-cyan-200 h-2/4 rounded-3xl m-4">
         <View className="flex flex-row justify-center items-center m-6">
           <TouchableOpacity
-            className='z-50'
+            className="z-50"
             onPress={() => navigation.goBack()}>
             <Svgs.CloseSvg height={40} width={40} />
           </TouchableOpacity>
@@ -148,23 +148,25 @@ const QuizCountriesScreen = ({ route, navigation }) => {
             ref={animationRef}
             source={require('../../assets/lottie/congratulations.json')}
           />
-          {incorrect ? (<LottieView
-            style={{
-              width: Dimensions.get('window').width / 1.5,
-              height: Dimensions.get('window').height / 1.5,
-              position: 'absolute',
-              top: 0,
-              bottom: 0,
-              zIndex: 2,
-            }}
-            loop={false}
-            ref={animationRefWrong}
-            source={require('../../assets/lottie/wrong.json')}
-          />) : null}
+          {incorrect ? (
+            <LottieView
+              style={{
+                width: Dimensions.get('window').width / 1.5,
+                height: Dimensions.get('window').height / 1.5,
+                position: 'absolute',
+                top: 0,
+                bottom: 0,
+                zIndex: 2,
+              }}
+              loop={false}
+              ref={animationRefWrong}
+              source={require('../../assets/lottie/wrong.json')}
+            />
+          ) : null}
         </View>
         <View className="justify-center items-center text-center">
           <FastImage
-            style={{ width: 250, height: 250 }}
+            style={{width: 250, height: 250}}
             source={question.uri}
             resizeMode={FastImage.resizeMode.contain}
           />
@@ -186,32 +188,32 @@ const QuizCountriesScreen = ({ route, navigation }) => {
           source={require('../../assets/lottie/completed.json')}
         />
         <View className="flex flex-row">
-          <Animated.View style={{ transform: [{ scale: animatedScale1 }] }} className="box-content h-28 w-1/2 rounded-full justify-center">
+          <Animated.View
+            style={{transform: [{scale: animatedScale1}]}}
+            className="box-content h-28 w-1/2 rounded-full justify-center">
             <TouchableOpacity
               onPress={() => {
                 handleButton1();
-                !correctAnwser && setSelected([1, 0, 0, 0])
+                !correctAnwser && setSelected([1, 0, 0, 0]);
               }}
               style={{
-                backgroundColor: selected[0]
-                  ? '#00bfff'
-                  : 'rgb(236 253 245)',
+                backgroundColor: selected[0] ? '#00bfff' : 'rgb(236 253 245)',
               }}
               className="ml-10 mr-4 mt-2 h-16 rounded-xl items-center justify-center">
               <Text className="text-center">{question.answer[0]}</Text>
             </TouchableOpacity>
           </Animated.View>
 
-          <Animated.View style={{ transform: [{ scale: animatedScale2 }] }} className="box-content h-28 w-1/2 rounded-full justify-center">
+          <Animated.View
+            style={{transform: [{scale: animatedScale2}]}}
+            className="box-content h-28 w-1/2 rounded-full justify-center">
             <TouchableOpacity
               onPress={() => {
                 handleButton2();
-                !correctAnwser && setSelected([0, 1, 0, 0])
+                !correctAnwser && setSelected([0, 1, 0, 0]);
               }}
               style={{
-                backgroundColor: selected[1]
-                  ? '#00bfff'
-                  : 'rgb(236 253 245)',
+                backgroundColor: selected[1] ? '#00bfff' : 'rgb(236 253 245)',
               }}
               className="mr-10 ml-4 mt-2 h-16 rounded-xl items-center justify-center">
               <Text className="text-center">{question.answer[1]}</Text>
@@ -220,32 +222,32 @@ const QuizCountriesScreen = ({ route, navigation }) => {
         </View>
 
         <View className="flex flex-row">
-          <Animated.View style={{ transform: [{ scale: animatedScale3 }] }} className="box-content h-28 w-1/2 rounded-full justify-center">
+          <Animated.View
+            style={{transform: [{scale: animatedScale3}]}}
+            className="box-content h-28 w-1/2 rounded-full justify-center">
             <TouchableOpacity
               onPress={() => {
                 handleButton3();
-                !correctAnwser && setSelected([0, 0, 1, 0])
+                !correctAnwser && setSelected([0, 0, 1, 0]);
               }}
               style={{
-                backgroundColor: selected[2]
-                  ? '#00bfff'
-                  : 'rgb(236 253 245)',
+                backgroundColor: selected[2] ? '#00bfff' : 'rgb(236 253 245)',
               }}
               className="ml-10 mr-4 h-16 rounded-xl items-center justify-center">
               <Text className="text-center">{question.answer[2]}</Text>
             </TouchableOpacity>
           </Animated.View>
 
-          <Animated.View style={{ transform: [{ scale: animatedScale4 }] }} className="box-content h-28 w-1/2 rounded-full justify-center">
+          <Animated.View
+            style={{transform: [{scale: animatedScale4}]}}
+            className="box-content h-28 w-1/2 rounded-full justify-center">
             <TouchableOpacity
               onPress={() => {
                 handleButton4();
-                !correctAnwser && setSelected([0, 0, 0, 1])
+                !correctAnwser && setSelected([0, 0, 0, 1]);
               }}
               style={{
-                backgroundColor: selected[3]
-                  ? '#00bfff'
-                  : 'rgb(236 253 245)',
+                backgroundColor: selected[3] ? '#00bfff' : 'rgb(236 253 245)',
               }}
               className="mr-10 ml-4 h-16 rounded-xl items-center justify-center">
               <Text className="text-center">{question.answer[3]}</Text>
@@ -273,7 +275,7 @@ const QuizCountriesScreen = ({ route, navigation }) => {
           <Text className="text-lg font-bold text-white">Tiếp theo</Text>
         </TouchableOpacity>
       ) : (
-        <Animated.View style={{ transform: [{ scale: animatedScaleButton }] }}>
+        <Animated.View style={{transform: [{scale: animatedScaleButton}]}}>
           <TouchableOpacity
             onPress={() => {
               handleButton();
@@ -292,7 +294,7 @@ const QuizCountriesScreen = ({ route, navigation }) => {
                 }
               }, 100);
             }}
-            style={{ backgroundColor: buttonColor }}
+            style={{backgroundColor: buttonColor}}
             className=" mx-10 mt-2 h-14 rounded-xl items-center justify-center">
             <Text className="text-lg font-bold text-white">Kiểm tra</Text>
           </TouchableOpacity>
