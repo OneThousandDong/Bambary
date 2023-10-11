@@ -18,7 +18,8 @@ import Svg, {G, Circle} from 'react-native-svg';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
 import useWorldStore from '../../store/useWorldStore';
 import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
-import { DATAVI } from "../DataQuiz/DataVi";
+import {DATAVI} from '../DataQuiz/DataVi';
+import useMenuStore from "../../store/useMenuStore";
 
 const {width, height} = Dimensions.get('window');
 const BoardCountriesScreen = ({route, navigation}) => {
@@ -27,26 +28,18 @@ const BoardCountriesScreen = ({route, navigation}) => {
     setQuantityQuestionCountries,
     scoreCountries,
   } = useWorldStore();
+  const {setArrayQuestion} = useMenuStore();
   const [preFill, setPrefill] = useState(100);
-
+  const [score, setScore] = useState(0);
   useEffect(() => {
     const dataQuestion = QuantityQuestionData.find(
-      i => i.name == quantityQuestionCountries,
+      i => i.quantity == quantityQuestionCountries,
     );
-    if (dataQuestion && dataQuestion?.index < 8) {
+    if (dataQuestion) {
+      setScore(scoreCountries[dataQuestion.index]);
       if (
         scoreCountries &&
-        scoreCountries[dataQuestion?.index] <=
-          parseInt(dataQuestion?.name, 10) / 2
-      ) {
-        setPrefill(100);
-      } else {
-        setPrefill(0);
-      }
-    } else if (dataQuestion && dataQuestion?.index == 8) {
-      if (
-        scoreCountries &&
-        scoreCountries[dataQuestion?.index] <= DATAVI.length / 2
+        scoreCountries[dataQuestion?.index] <= dataQuestion?.quantity / 2
       ) {
         setPrefill(100);
       } else {
@@ -54,6 +47,29 @@ const BoardCountriesScreen = ({route, navigation}) => {
       }
     }
   }, []);
+
+  const onChangeQuantity = (item: any) => {
+    setQuantityQuestionCountries(item.quantity);
+    const dataQuestion = QuantityQuestionData.find(
+      i => i.quantity == item.quantity,
+    );
+    if (dataQuestion) {
+      setScore(scoreCountries[dataQuestion.index]);
+    }
+  };
+
+  const shuffleArray = () => {
+    let array: any = [];
+    for (let i = 0; i < quantityQuestionCountries; i++) {
+      array.push(i);
+    }
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
+
   return (
     <ScrollView contentContainerStyle={{flexGrow: 1}}>
       <View className="bg-emerald-200 mx-4 mt-4 h-2/5 rounded-3xl">
@@ -69,13 +85,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
               duration={700}
               size={200}
               width={20}
-              fill={
-                scoreCountries[
-                  QuantityQuestionData.find(
-                    i => i.name == quantityQuestionCountries,
-                  )?.index || 0
-                ]
-              }
+              fill={Math.round((score / quantityQuestionCountries) * 100)}
               lineCap={'round'}
               rotation={0}
               tintColor="#00e0ff"
@@ -87,7 +97,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
                 <Text>{`${
                   scoreCountries[
                     QuantityQuestionData.find(
-                      i => i.name == quantityQuestionCountries,
+                      i => i.quantity == quantityQuestionCountries,
                     )?.index || 0
                   ]
                 }/${quantityQuestionCountries}`}</Text>
@@ -110,6 +120,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
           <View className="mx-2 box-content h-28 w-28 rounded-full justify-center">
             <TouchableOpacity
               onPress={() => {
+                setArrayQuestion(shuffleArray());
                 navigation.navigate('QuizCountries');
               }}>
               <View className="items-center">
@@ -143,7 +154,9 @@ const BoardCountriesScreen = ({route, navigation}) => {
           keyExtractor={(item, index) => String(index)}
           renderItem={({item, index}) => (
             <TouchableOpacity
-              onPress={() => setQuantityQuestionCountries(item.name)}>
+              onPress={() => {
+                onChangeQuantity(item);
+              }}>
               <View className="m-2">
                 <View className="rounded-xl">
                   <ImageBackground
@@ -154,7 +167,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
                     }}
                     imageStyle={{borderRadius: 12}}
                     source={
-                      quantityQuestionCountries === item.name
+                      quantityQuestionCountries === item.quantity
                         ? require('../../assets/image/gradient.png')
                         : require('../../assets/image/gradient1.png')
                     }>

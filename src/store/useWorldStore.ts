@@ -6,8 +6,8 @@ export interface WorldState {
   languageState: string;
   setLanguageState: (languageState: string) => void;
   // Countries
-  quantityQuestionCountries: string;
-  setQuantityQuestionCountries: (quantityQuestion: string) => void;
+  quantityQuestionCountries: number;
+  setQuantityQuestionCountries: (quantityQuestion: number) => void;
   scoreCountries: number[];
   setScoreCountries: (scoreCountries: number[]) => void;
   // World
@@ -21,8 +21,8 @@ const useWorldStore = create<WorldState>()(
       languageState: 'VI',
       setLanguageState: (languageState: string) => set({languageState}),
       // Countries
-      quantityQuestionCountries: '10',
-      setQuantityQuestionCountries: (quantityQuestionCountries: string) =>
+      quantityQuestionCountries: 10,
+      setQuantityQuestionCountries: (quantityQuestionCountries: number) =>
         set({quantityQuestionCountries}),
       scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
       setScoreCountries: (scoreCountries: number[]) => set({scoreCountries}),
