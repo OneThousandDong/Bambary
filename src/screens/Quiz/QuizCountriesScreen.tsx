@@ -12,6 +12,8 @@ import Svgs from '../../constants/Svgs';
 import {DATAVI} from '../DataQuiz/DataVi';
 import FastImage from 'react-native-fast-image';
 import LottieView from 'lottie-react-native';
+import useWorldStore from '../../store/useWorldStore';
+import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
 const TOTAL_FLAG = 1;
 
 const QuizCountriesScreen = ({route, navigation}) => {
@@ -32,7 +34,10 @@ const QuizCountriesScreen = ({route, navigation}) => {
   const animatedScaleButton = useRef(new Animated.Value(0)).current;
   const [incorrect, setIncorrect] = useState(false);
   const [showCompleted, setShowCompleted] = useState(false);
-
+  const {quantityQuestionCountries, scoreCountries, setScoreCountries} =
+    useWorldStore();
+  const [scoreNow, setScoreNow] = useState(0);
+  const [indexQuestion, setIndexQuestion] = useState(0);
   const animateProgress = () => {
     Animated.timing(progressAnim, {
       toValue: progress,
@@ -63,6 +68,13 @@ const QuizCountriesScreen = ({route, navigation}) => {
     animatedScale3.setValue(1);
     animatedScale4.setValue(1);
     animatedScaleButton.setValue(1);
+    let index = QuantityQuestionData.find(
+      i => i.name === quantityQuestionCountries,
+    )?.index;
+    if (index) {
+      setIndexQuestion(index);
+      setScoreNow(scoreCountries[index]);
+    }
   }, []);
 
   const handleButton = async () => {
@@ -269,6 +281,11 @@ const QuizCountriesScreen = ({route, navigation}) => {
               setSelected([0, 0, 0, 0]);
               setButtonnColor('#ebebe0');
               animatedScaleButton.setValue(1);
+              if (indexQue + 1 > scoreNow) {
+                let scoreArr = scoreCountries;
+                scoreArr[indexQuestion] = indexQue + 1;
+                setScoreCountries(scoreArr);
+              }
             }
           }}
           style={{backgroundColor: buttonColor}}
