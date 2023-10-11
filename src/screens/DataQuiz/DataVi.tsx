@@ -1,7 +1,3 @@
-import {Dimensions} from 'react-native';
-import Svgs from '../../constants/Svgs';
-
-const widthDimensions = Dimensions.get('window').width;
 export type country = {
   id: string;
   name: string;
