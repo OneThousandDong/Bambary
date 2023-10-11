@@ -24,22 +24,24 @@ import useMenuStore from "../../store/useMenuStore";
 const {width, height} = Dimensions.get('window');
 const BoardCountriesScreen = ({route, navigation}) => {
   const {
-    quantityQuestionCountries,
-    setQuantityQuestionCountries,
-    scoreCountries,
+    // countryMenu.quantityQuestionCountries,
+    // setQuantityQuestionCountries,
+    // countryMenu.scoreCountries,
+    setCountryMenu,
+    countryMenu
   } = useWorldStore();
-  const {setArrayQuestion} = useMenuStore();
+  const {setArrayQuestion, typeCategory} = useMenuStore();
   const [preFill, setPrefill] = useState(100);
   const [score, setScore] = useState(0);
   useEffect(() => {
     const dataQuestion = QuantityQuestionData.find(
-      i => i.quantity == quantityQuestionCountries,
+      i => i.quantity == countryMenu.quantityQuestionCountries,
     );
     if (dataQuestion) {
-      setScore(scoreCountries[dataQuestion.index]);
+      setScore(countryMenu.scoreCountries[dataQuestion.index]);
       if (
-        scoreCountries &&
-        scoreCountries[dataQuestion?.index] <= dataQuestion?.quantity / 2
+        countryMenu.scoreCountries &&
+        countryMenu.scoreCountries[dataQuestion?.index] <= dataQuestion?.quantity / 2
       ) {
         setPrefill(100);
       } else {
@@ -49,18 +51,20 @@ const BoardCountriesScreen = ({route, navigation}) => {
   }, []);
 
   const onChangeQuantity = (item: any) => {
-    setQuantityQuestionCountries(item.quantity);
+    // setQuantityQuestionCountries(item.quantity);
+    countryMenu.quantityQuestionCountries = item.quantity;
+    setCountryMenu(countryMenu)
     const dataQuestion = QuantityQuestionData.find(
       i => i.quantity == item.quantity,
     );
     if (dataQuestion) {
-      setScore(scoreCountries[dataQuestion.index]);
+      setScore(countryMenu.scoreCountries[dataQuestion.index]);
     }
   };
 
   const shuffleArray = () => {
     let array: any = [];
-    for (let i = 0; i < quantityQuestionCountries; i++) {
+    for (let i = 0; i < countryMenu.quantityQuestionCountries; i++) {
       array.push(i);
     }
     for (let i = array.length - 1; i > 0; i--) {
@@ -85,7 +89,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
               duration={700}
               size={200}
               width={20}
-              fill={Math.round((score / quantityQuestionCountries) * 100)}
+              fill={Math.round((score / countryMenu.quantityQuestionCountries) * 100)}
               lineCap={'round'}
               rotation={0}
               tintColor="#00e0ff"
@@ -94,13 +98,13 @@ const BoardCountriesScreen = ({route, navigation}) => {
               )}
               backgroundColor="#3d5875">
               {fill => (
-                <Text>{`${
-                  scoreCountries[
+                <Text className="text-xl font-bold">{`${
+                  countryMenu.scoreCountries[
                     QuantityQuestionData.find(
-                      i => i.quantity == quantityQuestionCountries,
+                      i => i.quantity == countryMenu.quantityQuestionCountries,
                     )?.index || 0
                   ]
-                }/${quantityQuestionCountries}`}</Text>
+                }/${countryMenu.quantityQuestionCountries}`}</Text>
               )}
             </AnimatedCircularProgress>
             <View className={'absolute'}>
@@ -167,7 +171,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
                     }}
                     imageStyle={{borderRadius: 12}}
                     source={
-                      quantityQuestionCountries === item.quantity
+                      countryMenu.quantityQuestionCountries === item.quantity
                         ? require('../../assets/image/gradient.png')
                         : require('../../assets/image/gradient1.png')
                     }>

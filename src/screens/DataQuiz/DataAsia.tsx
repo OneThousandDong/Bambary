@@ -6,7 +6,7 @@ export type country = {
   correct: number;
   index: number;
 };
-export const DATA: country[] = [
+export const DATAASIA: country[] = [
 {
   id: 'AE',
     name: 'Các tiểu vương quốc Ả Rập Thống nhất',

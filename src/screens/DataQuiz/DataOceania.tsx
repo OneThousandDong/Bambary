@@ -7,7 +7,7 @@ export type country = {
   correct: number;
   index: number;
 };
-export const DATA: country[] = [{
+export const DATAOCEANIA: country[] = [{
   id: 'AS',
     name: 'American Samoa',
   uri: "require('../../assets/flagpng/AS.png)",

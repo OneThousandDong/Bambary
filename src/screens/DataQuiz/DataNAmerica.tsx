@@ -6,7 +6,7 @@ export type country = {
   correct: number;
   index: number;
 };
-export const DATA: country[] = [
+export const DATANAMERICA: country[] = [
 {
   id: 'AG',
     name: 'Antigua và Barbuda',

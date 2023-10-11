@@ -34,9 +34,9 @@ const QuizCountriesScreen = ({route, navigation}) => {
   const animatedScaleButton = useRef(new Animated.Value(0)).current;
   const [incorrect, setIncorrect] = useState(false);
   const [showCompleted, setShowCompleted] = useState(false);
-  const {quantityQuestionCountries, scoreCountries, setScoreCountries} =
-    useWorldStore();
-  const {arrayQuestion} = useMenuStore();
+  // const {countryMenu.quantityQuestionCountries, countryMenu.scoreCountries, setScoreCountries} =
+  const {setCountryMenu,countryMenu} = useWorldStore();
+  const {arrayQuestion, typeCategory} = useMenuStore();
   const [question, setQuestion] = useState(DATAVI[arrayQuestion[0]]);
   const [scoreNow, setScoreNow] = useState(0);
   const [indexQuestion, setIndexQuestion] = useState(0);
@@ -71,11 +71,11 @@ const QuizCountriesScreen = ({route, navigation}) => {
     animatedScale4.setValue(1);
     animatedScaleButton.setValue(1);
     let index = QuantityQuestionData.find(
-      i => i.quantity === quantityQuestionCountries,
+      i => i.quantity === countryMenu.quantityQuestionCountries,
     )?.index;
     if (index) {
       setIndexQuestion(index);
-      setScoreNow(scoreCountries[index]);
+      setScoreNow(countryMenu.scoreCountries[index]);
     }
   }, []);
 
@@ -279,7 +279,7 @@ const QuizCountriesScreen = ({route, navigation}) => {
       {correctAnwser ? (
         <TouchableOpacity
           onPress={() => {
-            if (indexQue > quantityQuestionCountries) {
+            if (indexQue > countryMenu.quantityQuestionCountries - 1) {
               // if (indexQue > TOTAL_FLAG) {
               setShowCompleted(true);
               animatedScaleCompleted.current?.play();
@@ -287,16 +287,18 @@ const QuizCountriesScreen = ({route, navigation}) => {
               setIndexQues(indexQue + 1);
               setQuestion(DATAVI[arrayQuestion[indexQue]]);
               setProgress(
-                Math.round((indexQue / quantityQuestionCountries) * 100),
+                Math.round((indexQue / countryMenu.quantityQuestionCountries) * 100),
               );
               setCorrectAnswer(false);
               setSelected([0, 0, 0, 0]);
               setButtonnColor('#ebebe0');
               animatedScaleButton.setValue(1);
               if (indexQue + 1 > scoreNow) {
-                let scoreArr = scoreCountries;
+                let scoreArr = countryMenu.scoreCountries;
                 scoreArr[indexQuestion] = indexQue + 1;
-                setScoreCountries(scoreArr);
+                countryMenu.scoreCountries = scoreArr;
+                // setScoreCountries(scoreArr);
+                setCountryMenu(countryMenu);
               }
             }
           }}
