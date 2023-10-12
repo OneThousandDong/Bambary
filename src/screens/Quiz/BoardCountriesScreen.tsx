@@ -16,10 +16,10 @@ import React, {useMemo, useRef, useState, useCallback, useEffect} from 'react';
 import Svgs from '../../constants/Svgs';
 import Svg, {G, Circle} from 'react-native-svg';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
-import useWorldStore from '../../store/useWorldStore';
+import useWorldStore, {Menu} from '../../store/useWorldStore';
 import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
 import {DATAVI} from '../DataQuiz/DataVi';
-import useMenuStore from "../../store/useMenuStore";
+import useMenuStore from '../../store/useMenuStore';
 
 const {width, height} = Dimensions.get('window');
 const BoardCountriesScreen = ({route, navigation}) => {
@@ -27,21 +27,30 @@ const BoardCountriesScreen = ({route, navigation}) => {
     // countryMenu.quantityQuestionCountries,
     // setQuantityQuestionCountries,
     // countryMenu.scoreCountries,
-    setCountryMenu,
-    countryMenu
+    getScore,
+    getQuantity,
+    setMenuQuestion,
   } = useWorldStore();
   const {setArrayQuestion, typeCategory} = useMenuStore();
   const [preFill, setPrefill] = useState(100);
   const [score, setScore] = useState(0);
+  const quantityQuestion = getQuantity(`quantity${typeCategory}`);
+  const scoreQuestion = getScore(`score${typeCategory}`);
+
   useEffect(() => {
+    console.log(`quantity${typeCategory}`);
+    console.log('getMenuQuestion(`quantity${typeCategory}`)');
+    console.log(getQuantity(`quantity${typeCategory}`));
+    console.log(getScore(`score${typeCategory}`));
+    // let type; //Country/World/Africa/Asia/Europe/NAmerica/SAmerica/Oceania
     const dataQuestion = QuantityQuestionData.find(
-      i => i.quantity == countryMenu.quantityQuestionCountries,
+      i => i.quantity == quantityQuestion,
     );
     if (dataQuestion) {
-      setScore(countryMenu.scoreCountries[dataQuestion.index]);
+      setScore(scoreQuestion[dataQuestion.index]);
       if (
-        countryMenu.scoreCountries &&
-        countryMenu.scoreCountries[dataQuestion?.index] <= dataQuestion?.quantity / 2
+        scoreQuestion &&
+        scoreQuestion[dataQuestion?.index] <= dataQuestion?.quantity / 2
       ) {
         setPrefill(100);
       } else {
@@ -52,19 +61,19 @@ const BoardCountriesScreen = ({route, navigation}) => {
 
   const onChangeQuantity = (item: any) => {
     // setQuantityQuestionCountries(item.quantity);
-    countryMenu.quantityQuestionCountries = item.quantity;
-    setCountryMenu(countryMenu)
+    // countryMenu.quantityQuestionCountries = item.quantity;
+    setMenuQuestion(`quantity${typeCategory}`, item.quantity);
     const dataQuestion = QuantityQuestionData.find(
       i => i.quantity == item.quantity,
     );
     if (dataQuestion) {
-      setScore(countryMenu.scoreCountries[dataQuestion.index]);
+      setScore(scoreQuestion[dataQuestion.index]);
     }
   };
 
   const shuffleArray = () => {
     let array: any = [];
-    for (let i = 0; i < countryMenu.quantityQuestionCountries; i++) {
+    for (let i = 0; i < quantityQuestion; i++) {
       array.push(i);
     }
     for (let i = array.length - 1; i > 0; i--) {
@@ -72,6 +81,51 @@ const BoardCountriesScreen = ({route, navigation}) => {
       [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
+  };
+
+  const renderItem = () => {
+    const columns = [];
+    for (let i = 0; i < QuantityQuestionData.length; i += 3) {
+      const columnItems = QuantityQuestionData.slice(i, i + 3);
+      const column = (
+        <View key={i} style={styles.row}>
+          {columnItems.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              onPress={() => {
+                onChangeQuantity(item);
+              }}>
+              <View style={styles.column}>
+                <View className="m-4">
+                  <View className="rounded-xl">
+                    <ImageBackground
+                      style={{
+                        height: 50,
+                        width: width / 4,
+                        justifyContent: 'center',
+                      }}
+                      imageStyle={{borderRadius: 12}}
+                      source={
+                        quantityQuestion === item.quantity
+                          ? require('../../assets/image/gradient.png')
+                          : require('../../assets/image/gradient1.png')
+                      }>
+                      <View className="rounded-xl flex flex-row justify-center">
+                        <Text className="text-base font-bold items-center">
+                          {item.quantity}
+                        </Text>
+                      </View>
+                    </ImageBackground>
+                  </View>
+                </View>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+      );
+      columns.push(column);
+    }
+    return columns;
   };
 
   return (
@@ -89,7 +143,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
               duration={700}
               size={200}
               width={20}
-              fill={Math.round((score / countryMenu.quantityQuestionCountries) * 100)}
+              fill={Math.round((score / quantityQuestion) * 100)}
               lineCap={'round'}
               rotation={0}
               tintColor="#00e0ff"
@@ -99,12 +153,12 @@ const BoardCountriesScreen = ({route, navigation}) => {
               backgroundColor="#3d5875">
               {fill => (
                 <Text className="text-xl font-bold">{`${
-                  countryMenu.scoreCountries[
+                  scoreQuestion[
                     QuantityQuestionData.find(
-                      i => i.quantity == countryMenu.quantityQuestionCountries,
+                      i => i.quantity == quantityQuestion,
                     )?.index || 0
                   ]
-                }/${countryMenu.quantityQuestionCountries}`}</Text>
+                }/${quantityQuestion}`}</Text>
               )}
             </AnimatedCircularProgress>
             <View className={'absolute'}>
@@ -145,62 +199,63 @@ const BoardCountriesScreen = ({route, navigation}) => {
           {/*</View>*/}
         </View>
       </View>
-      <View className="flex-1">
-        <FlatList
-          nestedScrollEnabled
-          data={QuantityQuestionData}
-          numColumns={3}
-          columnWrapperStyle={{
-            justifyContent: 'center',
-          }}
-          initialNumToRender={QuantityQuestionData.length}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={(item, index) => String(index)}
-          renderItem={({item, index}) => (
-            <TouchableOpacity
-              onPress={() => {
-                onChangeQuantity(item);
-              }}>
-              <View className="m-2">
-                <View className="rounded-xl">
-                  <ImageBackground
-                    style={{
-                      height: 50,
-                      width: width / 4,
-                      justifyContent: 'center',
-                    }}
-                    imageStyle={{borderRadius: 12}}
-                    source={
-                      countryMenu.quantityQuestionCountries === item.quantity
-                        ? require('../../assets/image/gradient.png')
-                        : require('../../assets/image/gradient1.png')
-                    }>
-                    <View className="rounded-xl flex flex-row justify-center">
-                      <Text className="text-base font-bold items-center">
-                        {item?.name}
-                      </Text>
-                    </View>
-                  </ImageBackground>
-                </View>
-              </View>
-            </TouchableOpacity>
-          )}
-          ListHeaderComponent={
-            <Text className="text-lg font-bold m-2 ml-10">
-              Chọn số lượng câu hỏi
-            </Text>
-          }
-          // ListFooterComponent={
-          //   <View
-          //     style={{
-          //       height: Dimensions.get('window').height / 3,
-          //       width: Dimensions.get('window').width,
-          //       marginBottom: 10,
-          //     }}
-          //   />
-          // }
-          onEndReachedThreshold={0.2}
-        />
+      {renderItem()}
+      <View className="flex flex-row">
+        {/*<FlatList*/}
+        {/*  nestedScrollEnabled*/}
+        {/*  data={QuantityQuestionData}*/}
+        {/*  numColumns={3}*/}
+        {/*  columnWrapperStyle={{*/}
+        {/*    justifyContent: 'center',*/}
+        {/*  }}*/}
+        {/*  initialNumToRender={QuantityQuestionData.length}*/}
+        {/*  showsVerticalScrollIndicator={false}*/}
+        {/*  keyExtractor={(item, index) => String(index)}*/}
+        {/*  renderItem={({item, index}) => (*/}
+        {/*    <TouchableOpacity*/}
+        {/*      onPress={() => {*/}
+        {/*        onChangeQuantity(item);*/}
+        {/*      }}>*/}
+        {/*      <View className="m-2">*/}
+        {/*        <View className="rounded-xl">*/}
+        {/*          <ImageBackground*/}
+        {/*            style={{*/}
+        {/*              height: 50,*/}
+        {/*              width: width / 4,*/}
+        {/*              justifyContent: 'center',*/}
+        {/*            }}*/}
+        {/*            imageStyle={{borderRadius: 12}}*/}
+        {/*            source={*/}
+        {/*              countryMenu.quantityQuestionCountries === item.quantity*/}
+        {/*                ? require('../../assets/image/gradient.png')*/}
+        {/*                : require('../../assets/image/gradient1.png')*/}
+        {/*            }>*/}
+        {/*            <View className="rounded-xl flex flex-row justify-center">*/}
+        {/*              <Text className="text-base font-bold items-center">*/}
+        {/*                {item?.name}*/}
+        {/*              </Text>*/}
+        {/*            </View>*/}
+        {/*          </ImageBackground>*/}
+        {/*        </View>*/}
+        {/*      </View>*/}
+        {/*    </TouchableOpacity>*/}
+        {/*  )}*/}
+        {/*  ListHeaderComponent={*/}
+        {/*    <Text className="text-lg font-bold m-2 ml-10">*/}
+        {/*      Chọn số lượng câu hỏi*/}
+        {/*    </Text>*/}
+        {/*  }*/}
+        {/*  // ListFooterComponent={*/}
+        {/*  //   <View*/}
+        {/*  //     style={{*/}
+        {/*  //       height: Dimensions.get('window').height / 3,*/}
+        {/*  //       width: Dimensions.get('window').width,*/}
+        {/*  //       marginBottom: 10,*/}
+        {/*  //     }}*/}
+        {/*  //   />*/}
+        {/*  // }*/}
+        {/*  onEndReachedThreshold={0.2}*/}
+        {/*/>*/}
       </View>
     </ScrollView>
   );
@@ -223,5 +278,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: 'gray',
     marginHorizontal: 4,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  column: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

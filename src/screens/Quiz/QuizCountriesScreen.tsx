@@ -14,7 +14,7 @@ import FastImage from 'react-native-fast-image';
 import LottieView from 'lottie-react-native';
 import useWorldStore from '../../store/useWorldStore';
 import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
-import useMenuStore from "../../store/useMenuStore";
+import useMenuStore from '../../store/useMenuStore';
 const TOTAL_FLAG = 1;
 
 const QuizCountriesScreen = ({route, navigation}) => {
@@ -34,12 +34,13 @@ const QuizCountriesScreen = ({route, navigation}) => {
   const animatedScaleButton = useRef(new Animated.Value(0)).current;
   const [incorrect, setIncorrect] = useState(false);
   const [showCompleted, setShowCompleted] = useState(false);
-  // const {countryMenu.quantityQuestionCountries, countryMenu.scoreCountries, setScoreCountries} =
-  const {setCountryMenu,countryMenu} = useWorldStore();
+  const {setMenuQuestion, getScore, getQuantity} = useWorldStore();
   const {arrayQuestion, typeCategory} = useMenuStore();
   const [question, setQuestion] = useState(DATAVI[arrayQuestion[0]]);
   const [scoreNow, setScoreNow] = useState(0);
   const [indexQuestion, setIndexQuestion] = useState(0);
+  const quantityQuestion = getQuantity(`quantity${typeCategory}`);
+  const scoreQuestion = getScore(`score${typeCategory}`);
   const animateProgress = () => {
     Animated.timing(progressAnim, {
       toValue: progress,
@@ -71,11 +72,11 @@ const QuizCountriesScreen = ({route, navigation}) => {
     animatedScale4.setValue(1);
     animatedScaleButton.setValue(1);
     let index = QuantityQuestionData.find(
-      i => i.quantity === countryMenu.quantityQuestionCountries,
+      i => i.quantity === quantityQuestion,
     )?.index;
     if (index) {
       setIndexQuestion(index);
-      setScoreNow(countryMenu.scoreCountries[index]);
+      setScoreNow(scoreQuestion[index]);
     }
   }, []);
 
@@ -185,12 +186,8 @@ const QuizCountriesScreen = ({route, navigation}) => {
           {/*  resizeMode={FastImage.resizeMode.contain}*/}
           {/*/>*/}
 
-          <Text>
-            {arrayQuestion}
-          </Text>
-          <Text>
-            {arrayQuestion.length}
-          </Text>
+          <Text>{arrayQuestion}</Text>
+          <Text>{arrayQuestion.length}</Text>
         </View>
       </View>
       <View className="items-center">
@@ -279,26 +276,25 @@ const QuizCountriesScreen = ({route, navigation}) => {
       {correctAnwser ? (
         <TouchableOpacity
           onPress={() => {
-            if (indexQue > countryMenu.quantityQuestionCountries - 1) {
+            if (indexQue > quantityQuestion - 1) {
               // if (indexQue > TOTAL_FLAG) {
               setShowCompleted(true);
               animatedScaleCompleted.current?.play();
             } else {
               setIndexQues(indexQue + 1);
               setQuestion(DATAVI[arrayQuestion[indexQue]]);
-              setProgress(
-                Math.round((indexQue / countryMenu.quantityQuestionCountries) * 100),
-              );
+              setProgress(Math.round((indexQue / quantityQuestion) * 100));
               setCorrectAnswer(false);
               setSelected([0, 0, 0, 0]);
               setButtonnColor('#ebebe0');
               animatedScaleButton.setValue(1);
               if (indexQue + 1 > scoreNow) {
-                let scoreArr = countryMenu.scoreCountries;
+                let scoreArr = scoreQuestion;
                 scoreArr[indexQuestion] = indexQue + 1;
-                countryMenu.scoreCountries = scoreArr;
+                // countryMenu.scoreCountries = scoreArr;
                 // setScoreCountries(scoreArr);
-                setCountryMenu(countryMenu);
+                // setCountryMenu('scoreCountries', countryMenu);
+                setMenuQuestion(`score${typeCategory}`, scoreArr);
               }
             }
           }}

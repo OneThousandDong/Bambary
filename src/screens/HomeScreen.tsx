@@ -26,58 +26,71 @@ const CategoryData = [
   },
   {
     name: 'Europe',
-    uri: <Svgs.Europe height={100} width={150} />,id: 'Europe',
+    uri: <Svgs.Europe height={100} width={150} />,
+    id: 'Europe',
   },
   {
     name: 'North America',
-    uri: <Svgs.North_America height={100} width={130} />,id: 'NAmerica',
+    uri: <Svgs.North_America height={100} width={130} />,
+    id: 'NAmerica',
   },
   {
     name: 'South America',
-    uri: <Svgs.South_America height={100} width={140} />,id: 'SAmerica',
+    uri: <Svgs.South_America height={100} width={140} />,
+    id: 'SAmerica',
   },
   {
     name: 'Africa',
-    uri: <Svgs.Africa height={100} width={140} />,id: 'Africa',
+    uri: <Svgs.Africa height={100} width={140} />,
+    id: 'Africa',
   },
   {
     name: 'Oceania',
-    uri: <Svgs.Oceania height={100} width={150} />,id: 'Oceania',
+    uri: <Svgs.Oceania height={100} width={150} />,
+    id: 'Oceania',
   },
   {
     name: 'Flags',
-    uri: <Svgs.World height={100} width={120} />,id: 'Flags',
+    uri: <Svgs.World height={100} width={120} />,
+    id: 'Flags',
   },
 ];
 
 const CategoryDataVi = [
   {
     name: 'Châu Á',
-    uri: <Svgs.Asia height={100} width={150} />,id: 'Asia',
+    uri: <Svgs.Asia height={100} width={150} />,
+    id: 'Asia',
   },
   {
     name: 'Châu Âu',
-    uri: <Svgs.Europe height={100} width={150} />,id: 'Europe',
+    uri: <Svgs.Europe height={100} width={150} />,
+    id: 'Europe',
   },
   {
     name: 'Bắc Mĩ',
-    uri: <Svgs.North_America height={100} width={130} />,id: 'NAmerica',
+    uri: <Svgs.North_America height={100} width={130} />,
+    id: 'NAmerica',
   },
   {
     name: 'Nam Mĩ',
-    uri: <Svgs.South_America height={100} width={140} />,id: 'SAmerica',
+    uri: <Svgs.South_America height={100} width={140} />,
+    id: 'SAmerica',
   },
   {
     name: 'Châu Phi',
-    uri: <Svgs.Africa height={100} width={140} />,id: 'Africa',
+    uri: <Svgs.Africa height={100} width={140} />,
+    id: 'Africa',
   },
   {
     name: 'Châu Đại Dương',
-    uri: <Svgs.Oceania height={100} width={150} />,id: 'Oceania',
+    uri: <Svgs.Oceania height={100} width={150} />,
+    id: 'Oceania',
   },
   {
     name: 'Tất cả lá cờ',
-    uri: <Svgs.World height={100} width={150} />,id: 'Flags',
+    uri: <Svgs.World height={100} width={150} />,
+    id: 'Flags',
   },
 ];
 
@@ -220,14 +233,14 @@ const HomeScreen = ({route, navigation}) => {
               </View>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('BoardWorldScreen');
+                  navigation.navigate('BoardCountries');
                 }}>
                 <View className="flex flex-row">
-                  <Svgs.DinosaurSVG
-                    style={{transform: [{rotateY: '180deg'}]}}
-                    height={80}
-                    width={80}
-                  />
+                  {/*<Svgs.DinosaurSVG*/}
+                  {/*  style={{transform: [{rotateY: '180deg'}]}}*/}
+                  {/*  height={80}*/}
+                  {/*  width={80}*/}
+                  {/*/>*/}
                   <View className="justify-center">
                     <Text className="text-lg font-bold">249</Text>
                   </View>
@@ -237,77 +250,77 @@ const HomeScreen = ({route, navigation}) => {
           </View>
         </View>
 
-        <View className="flex-1 top-14">
-          <FlatList
-            contentContainerStyle={{
-              marginTop: 4,
-            }}
-            data={languageState == 'VI' ? CategoryDataVi : CategoryData}
-            numColumns={2}
-            columnWrapperStyle={{
-              justifyContent: 'center',
-            }}
-            initialNumToRender={CategoryData.length}
-            showsVerticalScrollIndicator={false}
-            keyExtractor={(item, index) => String(index)}
-            renderItem={({item, index}) => (
-              <TouchableOpacity onPress={() => setTypeCategory(item.id)}>
-              <View
-                className="mx-2 items-center"
-                style={{margin: index % 2 !== 0 ? 15 : 0}}>
-                {item.name == 'World' ? (
-                  <View className="rounded-xl items-center">
-                    <ImageBackground
-                      style={{height: 100, width: 300}}
-                      imageStyle={{borderRadius: 12}}
-                      source={require('../assets/image/gradient.png')}>
-                      <View className="rounded-xl items-center flex flex-row">
-                        {item?.uri}
-                        <Text className="text-base font-bold">
-                          {item?.name}
-                        </Text>
-                      </View>
-                    </ImageBackground>
-                  </View>
-                ) : (
-                  <View className="rounded-xl items-center">
-                    <ImageBackground
-                      style={{height: 144, width: 144}}
-                      imageStyle={{borderRadius: 12}}
-                      source={require('../assets/image/gradient.png')}>
-                      <View className="pt-1">{item?.uri}</View>
-                      <View className="items-center">
-                        <Text className="text-base font-bold m-2">
-                          {item?.name}
-                        </Text>
-                      </View>
-                    </ImageBackground>
-                  </View>
-                )}
-              </View>
-              </TouchableOpacity>
-            )}
-            ListHeaderComponent={
-              <Text className="text-lg font-bold m-2 ml-10">
-                {languageState == 'VI' ? 'Chọn thể loại' : 'Choose Categories'}
-              </Text>
-            }
-            ListFooterComponent={
-              <View
-                style={{
-                  height: Dimensions.get('window').height / 4,
-                  width: Dimensions.get('window').width,
-                  marginBottom: 10,
-                }}>
-                <LottieView
-                  ref={animationRef1}
-                  source={require('../assets/lottie/world.json')}
-                />
-              </View>
-            }
-            onEndReachedThreshold={0.2}
-          />
-        </View>
+        {/*<View className="flex-1 top-14">*/}
+        {/*  <FlatList*/}
+        {/*    contentContainerStyle={{*/}
+        {/*      marginTop: 4,*/}
+        {/*    }}*/}
+        {/*    data={languageState == 'VI' ? CategoryDataVi : CategoryData}*/}
+        {/*    numColumns={2}*/}
+        {/*    columnWrapperStyle={{*/}
+        {/*      justifyContent: 'center',*/}
+        {/*    }}*/}
+        {/*    initialNumToRender={CategoryData.length}*/}
+        {/*    showsVerticalScrollIndicator={false}*/}
+        {/*    keyExtractor={(item, index) => String(index)}*/}
+        {/*    renderItem={({item, index}) => (*/}
+        {/*      <TouchableOpacity onPress={() => setTypeCategory(item.id)}>*/}
+        {/*        <View*/}
+        {/*          className="mx-2 items-center"*/}
+        {/*          style={{margin: index % 2 !== 0 ? 15 : 0}}>*/}
+        {/*          {item.name == 'World' ? (*/}
+        {/*            <View className="rounded-xl items-center">*/}
+        {/*              <ImageBackground*/}
+        {/*                style={{height: 100, width: 300}}*/}
+        {/*                imageStyle={{borderRadius: 12}}*/}
+        {/*                source={require('../assets/image/gradient.png')}>*/}
+        {/*                <View className="rounded-xl items-center flex flex-row">*/}
+        {/*                  {item?.uri}*/}
+        {/*                  <Text className="text-base font-bold">*/}
+        {/*                    {item?.name}*/}
+        {/*                  </Text>*/}
+        {/*                </View>*/}
+        {/*              </ImageBackground>*/}
+        {/*            </View>*/}
+        {/*          ) : (*/}
+        {/*            <View className="rounded-xl items-center">*/}
+        {/*              <ImageBackground*/}
+        {/*                style={{height: 144, width: 144}}*/}
+        {/*                imageStyle={{borderRadius: 12}}*/}
+        {/*                source={require('../assets/image/gradient.png')}>*/}
+        {/*                <View className="pt-1">{item?.uri}</View>*/}
+        {/*                <View className="items-center">*/}
+        {/*                  <Text className="text-base font-bold m-2">*/}
+        {/*                    {item?.name}*/}
+        {/*                  </Text>*/}
+        {/*                </View>*/}
+        {/*              </ImageBackground>*/}
+        {/*            </View>*/}
+        {/*          )}*/}
+        {/*        </View>*/}
+        {/*      </TouchableOpacity>*/}
+        {/*    )}*/}
+        {/*    ListHeaderComponent={*/}
+        {/*      <Text className="text-lg font-bold m-2 ml-10">*/}
+        {/*        {languageState == 'VI' ? 'Chọn thể loại' : 'Choose Categories'}*/}
+        {/*      </Text>*/}
+        {/*    }*/}
+        {/*    ListFooterComponent={*/}
+        {/*      <View*/}
+        {/*        style={{*/}
+        {/*          height: Dimensions.get('window').height / 4,*/}
+        {/*          width: Dimensions.get('window').width,*/}
+        {/*          marginBottom: 10,*/}
+        {/*        }}>*/}
+        {/*        <LottieView*/}
+        {/*          ref={animationRef1}*/}
+        {/*          source={require('../assets/lottie/world.json')}*/}
+        {/*        />*/}
+        {/*      </View>*/}
+        {/*    }*/}
+        {/*    onEndReachedThreshold={0.2}*/}
+        {/*  />*/}
+        {/*</View>*/}
       </View>
     </>
     // <View>

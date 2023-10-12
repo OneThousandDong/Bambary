@@ -20,8 +20,6 @@ const App = (): React.ReactElement => {
             headerShown: false,
           }}>
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="QuizWorld" component={QuizWorldScreen} />
-          <Stack.Screen name="BoardWorldScreen" component={BoardWorldScreen} />
           <Stack.Screen name="QuizCountries" component={QuizCountriesScreen} />
           <Stack.Screen
             name="BoardCountries"
