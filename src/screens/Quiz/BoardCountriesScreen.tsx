@@ -1,36 +1,23 @@
 import {
-  SafeAreaView,
   StyleSheet,
-  FlatList,
   View,
   Text,
   ScrollView,
   TouchableOpacity,
   Dimensions,
-  useWindowDimensions,
-  Animated,
-  Easing,
   ImageBackground,
 } from 'react-native';
-import React, {useMemo, useRef, useState, useCallback, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import Svgs from '../../constants/Svgs';
-import Svg, {G, Circle} from 'react-native-svg';
+import {Circle} from 'react-native-svg';
 import {AnimatedCircularProgress} from 'react-native-circular-progress';
-import useWorldStore, {Menu} from '../../store/useWorldStore';
+import useWorldStore from '../../store/useWorldStore';
 import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
-import {DATAVI} from '../DataQuiz/DataVi';
 import useMenuStore from '../../store/useMenuStore';
 
-const {width, height} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 const BoardCountriesScreen = ({route, navigation}) => {
-  const {
-    // countryMenu.quantityQuestionCountries,
-    // setQuantityQuestionCountries,
-    // countryMenu.scoreCountries,
-    getScore,
-    getQuantity,
-    setMenuQuestion,
-  } = useWorldStore();
+  const {getScore, getQuantity, setMenuQuestion} = useWorldStore();
   const {setArrayQuestion, typeCategory} = useMenuStore();
   const [preFill, setPrefill] = useState(100);
   const [score, setScore] = useState(0);
@@ -38,10 +25,6 @@ const BoardCountriesScreen = ({route, navigation}) => {
   const scoreQuestion = getScore(`score${typeCategory}`);
 
   useEffect(() => {
-    console.log(`quantity${typeCategory}`);
-    console.log('getMenuQuestion(`quantity${typeCategory}`)');
-    console.log(getQuantity(`quantity${typeCategory}`));
-    console.log(getScore(`score${typeCategory}`));
     // let type; //Country/World/Africa/Asia/Europe/NAmerica/SAmerica/Oceania
     const dataQuestion = QuantityQuestionData.find(
       i => i.quantity == quantityQuestion,
@@ -60,8 +43,6 @@ const BoardCountriesScreen = ({route, navigation}) => {
   }, []);
 
   const onChangeQuantity = (item: any) => {
-    // setQuantityQuestionCountries(item.quantity);
-    // countryMenu.quantityQuestionCountries = item.quantity;
     setMenuQuestion(`quantity${typeCategory}`, item.quantity);
     const dataQuestion = QuantityQuestionData.find(
       i => i.quantity == item.quantity,
@@ -161,9 +142,6 @@ const BoardCountriesScreen = ({route, navigation}) => {
                 }/${quantityQuestion}`}</Text>
               )}
             </AnimatedCircularProgress>
-            <View className={'absolute'}>
-              {/*<Text className="m-8 font-bold text-xl">20/195</Text>*/}
-            </View>
           </View>
           <View className="items-center justify-center m-6">
             {/*<Text className="text-sm">*/}
@@ -186,77 +164,9 @@ const BoardCountriesScreen = ({route, navigation}) => {
               </View>
             </TouchableOpacity>
           </View>
-
-          {/*<View className="mx-2 box-content h-28 w-28 rounded-full justify-center">*/}
-          {/*  <TouchableOpacity*/}
-          {/*    onPress={() => {*/}
-          {/*      navigation.navigate('QuizCountries');*/}
-          {/*    }}>*/}
-          {/*    <View className="items-center">*/}
-          {/*      <Svgs.ReturnSVG height={130} width={130} />*/}
-          {/*    </View>*/}
-          {/*  </TouchableOpacity>*/}
-          {/*</View>*/}
         </View>
       </View>
       {renderItem()}
-      <View className="flex flex-row">
-        {/*<FlatList*/}
-        {/*  nestedScrollEnabled*/}
-        {/*  data={QuantityQuestionData}*/}
-        {/*  numColumns={3}*/}
-        {/*  columnWrapperStyle={{*/}
-        {/*    justifyContent: 'center',*/}
-        {/*  }}*/}
-        {/*  initialNumToRender={QuantityQuestionData.length}*/}
-        {/*  showsVerticalScrollIndicator={false}*/}
-        {/*  keyExtractor={(item, index) => String(index)}*/}
-        {/*  renderItem={({item, index}) => (*/}
-        {/*    <TouchableOpacity*/}
-        {/*      onPress={() => {*/}
-        {/*        onChangeQuantity(item);*/}
-        {/*      }}>*/}
-        {/*      <View className="m-2">*/}
-        {/*        <View className="rounded-xl">*/}
-        {/*          <ImageBackground*/}
-        {/*            style={{*/}
-        {/*              height: 50,*/}
-        {/*              width: width / 4,*/}
-        {/*              justifyContent: 'center',*/}
-        {/*            }}*/}
-        {/*            imageStyle={{borderRadius: 12}}*/}
-        {/*            source={*/}
-        {/*              countryMenu.quantityQuestionCountries === item.quantity*/}
-        {/*                ? require('../../assets/image/gradient.png')*/}
-        {/*                : require('../../assets/image/gradient1.png')*/}
-        {/*            }>*/}
-        {/*            <View className="rounded-xl flex flex-row justify-center">*/}
-        {/*              <Text className="text-base font-bold items-center">*/}
-        {/*                {item?.name}*/}
-        {/*              </Text>*/}
-        {/*            </View>*/}
-        {/*          </ImageBackground>*/}
-        {/*        </View>*/}
-        {/*      </View>*/}
-        {/*    </TouchableOpacity>*/}
-        {/*  )}*/}
-        {/*  ListHeaderComponent={*/}
-        {/*    <Text className="text-lg font-bold m-2 ml-10">*/}
-        {/*      Chọn số lượng câu hỏi*/}
-        {/*    </Text>*/}
-        {/*  }*/}
-        {/*  // ListFooterComponent={*/}
-        {/*  //   <View*/}
-        {/*  //     style={{*/}
-        {/*  //       height: Dimensions.get('window').height / 3,*/}
-        {/*  //       width: Dimensions.get('window').width,*/}
-        {/*  //       marginBottom: 10,*/}
-        {/*  //     }}*/}
-        {/*  //   />*/}
-        {/*  // }*/}
-        {/*  onEndReachedThreshold={0.2}*/}
-        {/*/>*/}
-      </View>
     </ScrollView>
   );
 };

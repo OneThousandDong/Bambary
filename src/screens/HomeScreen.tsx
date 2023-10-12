@@ -13,9 +13,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import Svgs from '../constants/Svgs';
 import MapScreen from './MapScreen';
 import LottieView from 'lottie-react-native';
-import {useMMKV} from 'react-native-mmkv';
 import useWorldStore from '../store/useWorldStore';
-import {storage} from '../store/mmkv';
 import useMenuStore from '../store/useMenuStore';
 
 const CategoryData = [
@@ -236,11 +234,11 @@ const HomeScreen = ({route, navigation}) => {
                   navigation.navigate('BoardCountries');
                 }}>
                 <View className="flex flex-row">
-                  {/*<Svgs.DinosaurSVG*/}
-                  {/*  style={{transform: [{rotateY: '180deg'}]}}*/}
-                  {/*  height={80}*/}
-                  {/*  width={80}*/}
-                  {/*/>*/}
+                  <Svgs.DinosaurSVG
+                    style={{transform: [{rotateY: '180deg'}]}}
+                    height={80}
+                    width={80}
+                  />
                   <View className="justify-center">
                     <Text className="text-lg font-bold">249</Text>
                   </View>
@@ -250,77 +248,77 @@ const HomeScreen = ({route, navigation}) => {
           </View>
         </View>
 
-        {/*<View className="flex-1 top-14">*/}
-        {/*  <FlatList*/}
-        {/*    contentContainerStyle={{*/}
-        {/*      marginTop: 4,*/}
-        {/*    }}*/}
-        {/*    data={languageState == 'VI' ? CategoryDataVi : CategoryData}*/}
-        {/*    numColumns={2}*/}
-        {/*    columnWrapperStyle={{*/}
-        {/*      justifyContent: 'center',*/}
-        {/*    }}*/}
-        {/*    initialNumToRender={CategoryData.length}*/}
-        {/*    showsVerticalScrollIndicator={false}*/}
-        {/*    keyExtractor={(item, index) => String(index)}*/}
-        {/*    renderItem={({item, index}) => (*/}
-        {/*      <TouchableOpacity onPress={() => setTypeCategory(item.id)}>*/}
-        {/*        <View*/}
-        {/*          className="mx-2 items-center"*/}
-        {/*          style={{margin: index % 2 !== 0 ? 15 : 0}}>*/}
-        {/*          {item.name == 'World' ? (*/}
-        {/*            <View className="rounded-xl items-center">*/}
-        {/*              <ImageBackground*/}
-        {/*                style={{height: 100, width: 300}}*/}
-        {/*                imageStyle={{borderRadius: 12}}*/}
-        {/*                source={require('../assets/image/gradient.png')}>*/}
-        {/*                <View className="rounded-xl items-center flex flex-row">*/}
-        {/*                  {item?.uri}*/}
-        {/*                  <Text className="text-base font-bold">*/}
-        {/*                    {item?.name}*/}
-        {/*                  </Text>*/}
-        {/*                </View>*/}
-        {/*              </ImageBackground>*/}
-        {/*            </View>*/}
-        {/*          ) : (*/}
-        {/*            <View className="rounded-xl items-center">*/}
-        {/*              <ImageBackground*/}
-        {/*                style={{height: 144, width: 144}}*/}
-        {/*                imageStyle={{borderRadius: 12}}*/}
-        {/*                source={require('../assets/image/gradient.png')}>*/}
-        {/*                <View className="pt-1">{item?.uri}</View>*/}
-        {/*                <View className="items-center">*/}
-        {/*                  <Text className="text-base font-bold m-2">*/}
-        {/*                    {item?.name}*/}
-        {/*                  </Text>*/}
-        {/*                </View>*/}
-        {/*              </ImageBackground>*/}
-        {/*            </View>*/}
-        {/*          )}*/}
-        {/*        </View>*/}
-        {/*      </TouchableOpacity>*/}
-        {/*    )}*/}
-        {/*    ListHeaderComponent={*/}
-        {/*      <Text className="text-lg font-bold m-2 ml-10">*/}
-        {/*        {languageState == 'VI' ? 'Chọn thể loại' : 'Choose Categories'}*/}
-        {/*      </Text>*/}
-        {/*    }*/}
-        {/*    ListFooterComponent={*/}
-        {/*      <View*/}
-        {/*        style={{*/}
-        {/*          height: Dimensions.get('window').height / 4,*/}
-        {/*          width: Dimensions.get('window').width,*/}
-        {/*          marginBottom: 10,*/}
-        {/*        }}>*/}
-        {/*        <LottieView*/}
-        {/*          ref={animationRef1}*/}
-        {/*          source={require('../assets/lottie/world.json')}*/}
-        {/*        />*/}
-        {/*      </View>*/}
-        {/*    }*/}
-        {/*    onEndReachedThreshold={0.2}*/}
-        {/*  />*/}
-        {/*</View>*/}
+        <View className="flex-1 top-14">
+          <FlatList
+            contentContainerStyle={{
+              marginTop: 4,
+            }}
+            data={languageState == 'VI' ? CategoryDataVi : CategoryData}
+            numColumns={2}
+            columnWrapperStyle={{
+              justifyContent: 'center',
+            }}
+            initialNumToRender={CategoryData.length}
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(item, index) => String(index)}
+            renderItem={({item, index}) => (
+              <TouchableOpacity onPress={() => setTypeCategory(item.id)}>
+                <View
+                  className="mx-2 items-center"
+                  style={{margin: index % 2 !== 0 ? 15 : 0}}>
+                  {item.name == 'World' ? (
+                    <View className="rounded-xl items-center">
+                      <ImageBackground
+                        style={{height: 100, width: 300}}
+                        imageStyle={{borderRadius: 12}}
+                        source={require('../assets/image/gradient.png')}>
+                        <View className="rounded-xl items-center flex flex-row">
+                          {item?.uri}
+                          <Text className="text-base font-bold">
+                            {item?.name}
+                          </Text>
+                        </View>
+                      </ImageBackground>
+                    </View>
+                  ) : (
+                    <View className="rounded-xl items-center">
+                      <ImageBackground
+                        style={{height: 144, width: 144}}
+                        imageStyle={{borderRadius: 12}}
+                        source={require('../assets/image/gradient.png')}>
+                        <View className="pt-1">{item?.uri}</View>
+                        <View className="items-center">
+                          <Text className="text-base font-bold m-2">
+                            {item?.name}
+                          </Text>
+                        </View>
+                      </ImageBackground>
+                    </View>
+                  )}
+                </View>
+              </TouchableOpacity>
+            )}
+            ListHeaderComponent={
+              <Text className="text-lg font-bold m-2 ml-10">
+                {languageState == 'VI' ? 'Chọn thể loại' : 'Choose Categories'}
+              </Text>
+            }
+            ListFooterComponent={
+              <View
+                style={{
+                  height: Dimensions.get('window').height / 4,
+                  width: Dimensions.get('window').width,
+                  marginBottom: 10,
+                }}>
+                <LottieView
+                  ref={animationRef1}
+                  source={require('../assets/lottie/world.json')}
+                />
+              </View>
+            }
+            onEndReachedThreshold={0.2}
+          />
+        </View>
       </View>
     </>
     // <View>

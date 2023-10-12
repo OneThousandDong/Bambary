@@ -2,11 +2,6 @@ import {create} from 'zustand';
 import {persist, createJSONStorage} from 'zustand/middleware';
 import {zustandStorage} from './mmkv';
 
-type Type = {
-  quantity: number;
-  score: number[];
-};
-
 export type Menu = {
   [key: string]: any;
   // country
@@ -48,32 +43,7 @@ export interface WorldState {
   menuQuestion: Menu;
   setMenuQuestion: (key: string, value: any) => void;
   getQuantity: (key: string) => number;
-  getScore: (key: string) => [];
-  // // Countries
-  // quantityCountries: number;
-  // setquantityCountries: (quantity: number) => void;
-  // scoreCountries: number[];
-  // setScoreCountries: (scoreCountries: number[]) => void;
-  // // World
-  // quantityWorld: string;
-  // setquantityWorld: (quantity: string) => void;
-  //Country/World/Africa/Asia/Europe/NAmerica/SAmerica/Oceania
-  // countryMenu: Menu;
-  // setCountryMenu: (key: string, value: any) => void;
-  // worldMenu: Menu;
-  // setWorldMenu: (key: string, value: any) => void;
-  // asiaMenu: Menu;
-  // setAsiaMenu: (key: string, value: any) => void;
-  // africaMenu: Menu;
-  // setAfricaMenu: (key: string, value: any) => void;
-  // europeMenu: Menu;
-  // setEuropeMenu: (key: string, value: any) => void;
-  // nAmericaMenu: Menu;
-  // setNAmericaMenu: (key: string, value: any) => void;
-  // sAmericaMenu: Menu;
-  // setSAmericaMenu: (key: string, value: any) => void;
-  // oceaniaMenu: Menu;
-  // setOceaniaMenu: (key: string, value: any) => void;
+  getScore: (key: string) => number[];
 }
 
 const useWorldStore = create<WorldState>()(
@@ -128,104 +98,6 @@ const useWorldStore = create<WorldState>()(
       getScore: (key: string) => {
         return get().menuQuestion[key];
       },
-      // // Countries
-      // quantityCountries: 10,
-      // setquantityCountries: (quantityCountries: number) =>
-      //   set({quantityCountries}),
-      // scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // setScoreCountries: (scoreCountries: number[]) => set({scoreCountries}),
-      // // World
-      // quantityWorld: '10',
-      // setquantityWorld: (quantityWorld: string) =>
-      //   set({quantityWorld}),
-      // countryMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setCountryMenu: (key: string, value: string) =>
-      //   set({
-      //     countryMenu: {
-      //       ...get().countryMenu,
-      //       [key]: value,
-      //     },
-      //   }),
-      // worldMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setWorldMenu: (key: string, value: string) =>
-      //   set({
-      //     worldMenu: {
-      //       ...get().worldMenu,
-      //       [key]: value,
-      //     },
-      //   }),
-      // asiaMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setAsiaMenu: (key: string, value: string) =>
-      //   set({
-      //     asiaMenu: {
-      //       ...get().asiaMenu,
-      //       [key]: value,
-      //     },
-      //   }),
-      // africaMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setAfricaMenu: (key: string, value: string) =>
-      //   set({
-      //     africaMenu: {
-      //       ...get().africaMenu,
-      //       [key]: value,
-      //     },
-      //   }),
-      // europeMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setEuropeMenu: (key: string, value: string) =>
-      //   set({
-      //     europeMenu: {
-      //       ...get().europeMenu,
-      //       [key]: value,
-      //     },
-      //   }),
-      // nAmericaMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setNAmericaMenu: (key: string, value: string) =>
-      //   set({
-      //     nAmericaMenu: {
-      //       ...get().nAmericaMenu,
-      //       [key]: value,
-      //     },
-      //   }),
-      // sAmericaMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setSAmericaMenu: (key: string, value: string) =>
-      //   set({
-      //     sAmericaMenu: {
-      //       ...get().sAmericaMenu,
-      //       [key]: value,
-      //     },
-      //   }),
-      // oceaniaMenu: {
-      //   quantityCountries: 10,
-      //   scoreCountries: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-      // },
-      // setOceaniaMenu: (key: string, value: string) =>
-      //   set({
-      //     oceaniaMenu: {
-      //       ...get().oceaniaMenu,
-      //       [key]: value,
-      //     },
-      //   }),
     }),
     {
       name: 'world',

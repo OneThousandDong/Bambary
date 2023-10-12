@@ -203,14 +203,11 @@ const QuizCountriesScreen = ({route, navigation}) => {
           ) : null}
         </View>
         <View className="justify-center items-center text-center">
-          {/*<FastImage*/}
-          {/*  style={{width: 250, height: 250}}*/}
-          {/*  source={question.uri}*/}
-          {/*  resizeMode={FastImage.resizeMode.contain}*/}
-          {/*/>*/}
-
-          <Text>{arrayQuestion}</Text>
-          <Text>{arrayQuestion.length}</Text>
+          <FastImage
+            style={{width: 250, height: 250}}
+            source={question.uri}
+            resizeMode={FastImage.resizeMode.contain}
+          />
         </View>
       </View>
       <View className="items-center">
@@ -300,7 +297,6 @@ const QuizCountriesScreen = ({route, navigation}) => {
         <TouchableOpacity
           onPress={() => {
             if (indexQue > quantityQuestion - 1) {
-              // if (indexQue > TOTAL_FLAG) {
               setShowCompleted(true);
               animatedScaleCompleted.current?.play();
             } else {
@@ -314,9 +310,6 @@ const QuizCountriesScreen = ({route, navigation}) => {
               if (indexQue + 1 > scoreNow) {
                 let scoreArr = scoreQuestion;
                 scoreArr[indexQuestion] = indexQue + 1;
-                // countryMenu.scoreCountries = scoreArr;
-                // setScoreCountries(scoreArr);
-                // setCountryMenu('scoreCountries', countryMenu);
                 setMenuQuestion(`score${typeCategory}`, scoreArr);
               }
             }

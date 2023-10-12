@@ -3,8 +3,6 @@ import {StyleSheet} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
-import QuizWorldScreen from './src/screens/Quiz/QuizWorldScreen';
-import BoardWorldScreen from './src/screens/Quiz/BoardWorldScreen';
 import QuizCountriesScreen from './src/screens/Quiz/QuizCountriesScreen';
 import BoardCountriesScreen from './src/screens/Quiz/BoardCountriesScreen';
 import MapScreen from './src/screens/MapScreen';
