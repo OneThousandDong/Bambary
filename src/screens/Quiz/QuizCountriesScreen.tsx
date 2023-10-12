@@ -15,7 +15,7 @@ import LottieView from 'lottie-react-native';
 import useWorldStore from '../../store/useWorldStore';
 import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
 import useMenuStore from '../../store/useMenuStore';
-const TOTAL_FLAG = 1;
+import Sound from 'react-native-sound';
 
 const QuizCountriesScreen = ({route, navigation}) => {
   const [progress, setProgress] = useState(0);
@@ -125,6 +125,29 @@ const QuizCountriesScreen = ({route, navigation}) => {
       speed: 4,
       useNativeDriver: true,
     }).start();
+  };
+
+  const soundPlay = (sound: any) => {
+    Sound.setCategory('Playback');
+    const soundVar = new Sound(sound, Sound.MAIN_BUNDLE, error => {
+      if (error) {
+        console.log('Error Sound');
+      } else {
+        soundVar.play(() => {
+          soundVar.release();
+        });
+      }
+    });
+    setTimeout(() => {
+      soundVar.play(success => {
+        if (success) {
+          soundVar.release();
+          console.log('successfully');
+        } else {
+          console.log('failed');
+        }
+      });
+    }, 100);
   };
 
   return (
@@ -317,8 +340,10 @@ const QuizCountriesScreen = ({route, navigation}) => {
               setTimeout(() => {
                 if (selected[question?.correct] == 1) {
                   animationRef.current?.play();
+                  soundPlay(require('../../assets/mp3/success.mp3'));
                 } else {
                   animationRefWrong.current?.play();
+                  soundPlay(require('../../assets/mp3/wrong.mp3'));
                 }
               }, 100);
             }}
