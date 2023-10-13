@@ -7,34 +7,21 @@ export type Menu = {
   // country
   quantityCountry: number;
   scoreCountry: number[];
-
   //world
   quantityWorld: number;
   scoreWorld: number[];
-
   //africa
-  quantityAfrica: number;
-  scoreAfrica: number[];
-
+  scoreAfrica: number;
   //asia
-  quantityAsia: number;
-  scoreAsia: number[];
-
+  scoreAsia: number;
   //eu
-  quantityEu: number;
-  scoreEu: number[];
-
+  scoreEurope: number;
   //namerica
-  quantityNAmerica: number;
-  scoreNAmerica: number[];
-
+  scoreNAmerica: number;
   //samerica
-  quantitySAmerica: number;
-  scoreSAmerica: number[];
-
+  scoreSAmerica: number;
   //oceania
-  quantityOceania: number;
-  scoreOceania: number[];
+  scoreOceania: number;
 };
 
 export interface WorldState {
@@ -44,6 +31,7 @@ export interface WorldState {
   setMenuQuestion: (key: string, value: any) => void;
   getQuantity: (key: string) => number;
   getScore: (key: string) => number[];
+  getScoreContinents: (key: string) => number;
 }
 
 const useWorldStore = create<WorldState>()(
@@ -51,39 +39,20 @@ const useWorldStore = create<WorldState>()(
     (set, get) => ({
       languageState: 'VI',
       setLanguageState: (languageState: string) => set({languageState}),
-
       menuQuestion: {
         // country
         quantityCountry: 10,
         scoreCountry: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-
         //world
         quantityWorld: 10,
         scoreWorld: [0, 0, 0, 0, 0, 0, 0, 0, 0],
 
-        //africa
-        quantityAfrica: 10,
-        scoreAfrica: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-
-        //asia
-        quantityAsia: 10,
-        scoreAsia: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-
-        //eu
-        quantityEu: 10,
-        scoreEu: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-
-        //namerica
-        quantityNAmerica: 10,
-        scoreNAmerica: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-
-        //samerica
-        quantitySAmerica: 10,
-        scoreSAmerica: [0, 0, 0, 0, 0, 0, 0, 0, 0],
-
-        //oceania
-        quantityOceania: 10,
-        scoreOceania: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        scoreAfrica: 0,
+        scoreAsia: 0,
+        scoreEurope: 0,
+        scoreNAmerica: 0,
+        scoreSAmerica: 0,
+        scoreOceania: 0,
       },
       setMenuQuestion: (key: string, value: any) =>
         set({
@@ -96,6 +65,9 @@ const useWorldStore = create<WorldState>()(
         return get().menuQuestion[key];
       },
       getScore: (key: string) => {
+        return get().menuQuestion[key];
+      },
+      getScoreContinents: (key: string) => {
         return get().menuQuestion[key];
       },
     }),

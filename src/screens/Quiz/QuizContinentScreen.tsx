@@ -12,16 +12,18 @@ import Svgs from '../../constants/Svgs';
 import FastImage from 'react-native-fast-image';
 import LottieView from 'lottie-react-native';
 import useWorldStore from '../../store/useWorldStore';
-import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
 import useMenuStore from '../../store/useMenuStore';
 import Sound from 'react-native-sound';
+import {DATAVI} from '../DataQuiz/Data';
+import {Country} from '../../model/Country';
 import {DATAAFRICA, DATAAFRICAVI} from '../DataQuiz/DataAfrica';
 import {DATAASIA, DATAASIAVI} from '../DataQuiz/DataAsia';
-import {Country} from '../../model/Country';
-import { DATA, DATAVI } from "../DataQuiz/Data";
-import { DATA195, DATAVI195 } from "../DataQuiz/DataVI195";
+import {DATAEU, DATAEUVI} from '../DataQuiz/DataEu';
+import {DATANAMERICA, DATANAMERICAVI} from '../DataQuiz/DataNAmerica';
+import {DATASAMERICA, DATASAMERICAVI} from '../DataQuiz/DataSAmerica';
+import {DATAOCEANIA, DATAOCEANIAVI} from '../DataQuiz/DataOceania';
 
-const QuizCountriesScreen = ({route, navigation}) => {
+const QuizContinentScreen = ({route, navigation}) => {
   const [progress, setProgress] = useState(0);
   const [selected, setSelected] = useState([0, 0, 0, 0]);
   const [buttonColor, setButtonnColor] = useState('#ebebe0');
@@ -38,15 +40,14 @@ const QuizCountriesScreen = ({route, navigation}) => {
   const animatedScaleButton = useRef(new Animated.Value(0)).current;
   const [incorrect, setIncorrect] = useState(false);
   const [showCompleted, setShowCompleted] = useState(false);
-  const {setMenuQuestion, getScore, getQuantity, languageState} =
-    useWorldStore();
-  const {arrayQuestion, typeCategory} = useMenuStore();
+  const {setMenuQuestion, getScoreContinents, languageState} = useWorldStore();
+  const {arrayQuestion, typeCategory, getQuantityContinent} = useMenuStore();
   // const [question, setQuestion] = useState(DATAVI[arrayQuestion[0]]);
   const [question, setQuestion] = useState<Country>();
-  const [scoreNow, setScoreNow] = useState(0);
   const [indexQuestion, setIndexQuestion] = useState(0);
-  const quantityQuestion = getQuantity(`quantity${typeCategory}`);
-  const scoreQuestion = getScore(`score${typeCategory}`);
+  const [scoreNow, setScoreNow] = useState(0);
+  const quantityQuestion = getQuantityContinent(`quantity${typeCategory}`);
+  const scoreQuestion = getScoreContinents(`score${typeCategory}`);
   const animateProgress = () => {
     Animated.timing(progressAnim, {
       toValue: progress,
@@ -77,35 +78,52 @@ const QuizCountriesScreen = ({route, navigation}) => {
     animatedScale3.setValue(1);
     animatedScale4.setValue(1);
     animatedScaleButton.setValue(1);
-    let index = QuantityQuestionData.find(
-      i => i.quantity === quantityQuestion,
-    )?.index;
-    if (index) {
-      setIndexQuestion(index);
-      setScoreNow(scoreQuestion[index]);
-    }
+    setScoreNow(scoreQuestion);
   }, []);
 
+  useEffect(() => {
+    onNextQuestion(indexQuestion);
+  }, [indexQuestion]);
+
   const onNextQuestion = (index: number) => {
-    if (typeCategory == 'Country') {
+    if (typeCategory == 'Africa') {
       if (languageState == 'VI') {
-        setQuestion(DATAVI[arrayQuestion[index]]);
+        setQuestion(DATAAFRICAVI[arrayQuestion[index]]);
       } else {
-        setQuestion(DATA[arrayQuestion[index]]);
+        setQuestion(DATAAFRICA[arrayQuestion[index]]);
       }
     } else if (typeCategory == 'Asia') {
       if (languageState == 'VI') {
-        setQuestion(DATAVI195[arrayQuestion[index]]);
+        setQuestion(DATAASIAVI[arrayQuestion[index]]);
       } else {
-        setQuestion(DATA195[arrayQuestion[index]]);
+        setQuestion(DATAASIA[arrayQuestion[index]]);
+      }
+    } else if (typeCategory == 'Europe') {
+      if (languageState == 'VI') {
+        setQuestion(DATAEUVI[arrayQuestion[index]]);
+      } else {
+        setQuestion(DATAEU[arrayQuestion[index]]);
+      }
+    } else if (typeCategory == 'NAmerica') {
+      if (languageState == 'VI') {
+        setQuestion(DATANAMERICAVI[arrayQuestion[index]]);
+      } else {
+        setQuestion(DATANAMERICA[arrayQuestion[index]]);
+      }
+    } else if (typeCategory == 'SAmerica') {
+      if (languageState == 'VI') {
+        setQuestion(DATASAMERICAVI[arrayQuestion[index]]);
+      } else {
+        setQuestion(DATASAMERICA[arrayQuestion[index]]);
+      }
+    } else if (typeCategory == 'Oceania') {
+      if (languageState == 'VI') {
+        setQuestion(DATAOCEANIAVI[arrayQuestion[index]]);
+      } else {
+        setQuestion(DATASAMERICA[arrayQuestion[index]]);
       }
     }
   };
-
-  useEffect(() => {
-    console.log('Hiii quest');
-    onNextQuestion(indexQue - 1);
-  }, [indexQue]);
 
   const handleButton = async () => {
     animatedScaleButton.setValue(0.8);
@@ -328,17 +346,15 @@ const QuizCountriesScreen = ({route, navigation}) => {
               animatedScaleCompleted.current?.play();
             } else {
               setIndexQues(indexQue + 1);
+              setIndexQuestion(indexQuestion + 1);
               // setQuestion(DATAVI[arrayQuestion[indexQue]]);
-              onNextQuestion(indexQue - 1);
               setProgress(Math.round((indexQue / quantityQuestion) * 100));
               setCorrectAnswer(false);
               setSelected([0, 0, 0, 0]);
               setButtonnColor('#ebebe0');
               animatedScaleButton.setValue(1);
               if (indexQue + 1 > scoreNow) {
-                let scoreArr = scoreQuestion;
-                scoreArr[indexQuestion] = indexQue + 1;
-                setMenuQuestion(`score${typeCategory}`, scoreArr);
+                setMenuQuestion(`score${typeCategory}`, indexQue + 1);
               }
             }
           }}
@@ -378,7 +394,7 @@ const QuizCountriesScreen = ({route, navigation}) => {
   );
 };
 
-export default QuizCountriesScreen;
+export default QuizContinentScreen;
 
 const styles = StyleSheet.create({
   container: {

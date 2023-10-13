@@ -202,6 +202,7 @@ const HomeScreen = ({route, navigation}) => {
               </View>
               <TouchableOpacity
                 onPress={() => {
+                  setTypeCategory('Country');
                   navigation.navigate('BoardCountries');
                 }}>
                 <View className="flex flex-row">
@@ -231,6 +232,7 @@ const HomeScreen = ({route, navigation}) => {
               </View>
               <TouchableOpacity
                 onPress={() => {
+                  setTypeCategory('World');
                   navigation.navigate('BoardCountries');
                 }}>
                 <View className="flex flex-row">
@@ -262,7 +264,11 @@ const HomeScreen = ({route, navigation}) => {
             showsVerticalScrollIndicator={false}
             keyExtractor={(item, index) => String(index)}
             renderItem={({item, index}) => (
-              <TouchableOpacity onPress={() => setTypeCategory(item.id)}>
+              <TouchableOpacity
+                onPress={() => {
+                  setTypeCategory(item.id);
+                  navigation.navigate('BoardContinent');
+                }}>
                 <View
                   className="mx-2 items-center"
                   style={{margin: index % 2 !== 0 ? 15 : 0}}>
