@@ -26,29 +26,28 @@ import BoardContinentScreen from './src/screens/Quiz/BoardContinentScreen';
 import WorldMap from './src/screens/MapScreen';
 
 const App = (): React.ReactElement => {
-  console.log(DATAASIAVI.length); //53
-  console.log(DATAASIA.length); //46
-  console.log(DATAAFRICAVI.length); //58
-  console.log(DATAASIA.length); //46
-  console.log(DATAEUVI.length); //52
-  console.log(DATAEU.length); //43
-  console.log(DATANAMERICAVI.length); //40
-  console.log(DATANAMERICA.length); //23
-  console.log(DATAOCEANIAVI.length); //26
-  console.log(DATAOCEANIA.length); //15
-  console.log(DATASAMERICAVI.length); //14
-  console.log(DATASAMERICA.length); //12
-  for (var i = 0; i < DATASAMERICAVI.length; i++) {
-    for (var k = 0; k < DATASAMERICA.length; k++) {
-      if (DATASAMERICAVI[i].id == DATASAMERICA[k].id) {
+  console.log(DATAAFRICAVI.length); //54
+  console.log(DATAAFRICA.length); //56
+  console.log(DATAASIAVI.length); //58
+  console.log(DATAASIA.length); //48
+  // console.log(DATAEUVI.length); //52
+  // console.log(DATAEU.length); //43
+  // console.log(DATANAMERICAVI.length); //40
+  // console.log(DATANAMERICA.length); //23
+  // console.log(DATAOCEANIAVI.length); //26
+  // console.log(DATAOCEANIA.length); //14
+  // console.log(DATASAMERICAVI.length); //14
+  // console.log(DATASAMERICA.length); //12
+  for (var i = 0; i < DATAAFRICAVI.length; i++) {
+    for (var k = 0; k < DATAAFRICA.length; k++) {
+      if (DATAAFRICAVI[i].id == DATAAFRICA[k].id) {
         break;
       }
-      if (k == DATASAMERICA.length - 1) {
-        console.log(DATASAMERICAVI[i]);
+      if (k == DATAAFRICA.length - 1) {
+        console.log(DATAAFRICAVI[i]);
       }
     }
   }
-  console.log('Hii')
   const Stack = createNativeStackNavigator();
   return (
     <>
