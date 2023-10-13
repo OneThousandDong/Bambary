@@ -103,7 +103,7 @@ export const DATAAFRICAVI: Country[] = [
     uri: require('../../assets/flagpng/dj.png'),
   },
   {
-    answer: ['Chad', 'Liberia', 'Algeria', 'Algeria'],
+    answer: ['Chad', 'Liberia', 'Egypt', 'Algeria'],
     correct: 3,
     id: 'DZ',
     index: 60,
@@ -369,7 +369,7 @@ export const DATAAFRICAVI: Country[] = [
     uri: require('../../assets/flagpng/sl.png'),
   },
   {
-    answer: ['Senegal', 'Senegal', 'Eritrea', 'Guinea-Bissau'],
+    answer: ['Niger', 'Senegal', 'Eritrea', 'Guinea-Bissau'],
     correct: 1,
     id: 'SN',
     index: 208,
@@ -526,7 +526,7 @@ export const DATAAFRICA: Country[] = [
     uri: require('../../assets/flagpng/bw.png'),
   },
   {
-    answer: ['Mozambique', 'Burkina Faso', 'Zambia', 'Burkina Faso'],
+    answer: ['Mozambique', 'Burkina Faso', 'Zambia', 'Senegal'],
     correct: 1,
     id: 'BF',
     index: 26,
