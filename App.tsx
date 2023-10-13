@@ -38,17 +38,17 @@ const App = (): React.ReactElement => {
   console.log(DATAOCEANIA.length); //15
   console.log(DATASAMERICAVI.length); //14
   console.log(DATASAMERICA.length); //12
-  for (var i = 0; i < DATASAMERICA.length; i++) {
-    for (var k = 0; i < DATASAMERICAVI.length; k++) {
-      if (DATASAMERICA[i]?.id == DATASAMERICAVI[k]?.id) {
+  for (var i = 0; i < DATASAMERICAVI.length; i++) {
+    for (var k = 0; k < DATASAMERICA.length; k++) {
+      if (DATASAMERICAVI[i].id == DATASAMERICA[k].id) {
         break;
       }
-      if (k == DATASAMERICAVI.length - 1) {
+      if (k == DATASAMERICA.length - 1) {
         console.log(DATASAMERICAVI[i]);
       }
     }
   }
-  console.log('Hii');
+  console.log('Hii')
   const Stack = createNativeStackNavigator();
   return (
     <>
