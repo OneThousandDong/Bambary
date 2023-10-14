@@ -17,7 +17,7 @@ import useMenuStore from '../../store/useMenuStore';
 
 const {width} = Dimensions.get('window');
 const BoardCountriesScreen = ({route, navigation}) => {
-  const {getScore, getQuantity, setMenuQuestion} = useWorldStore();
+  const {getScore, getQuantity, setMenuQuestion, languageState} = useWorldStore();
   const {setArrayQuestion, typeCategory} = useMenuStore();
   const [preFill, setPrefill] = useState(100);
   const [score, setScore] = useState(0);
@@ -144,10 +144,20 @@ const BoardCountriesScreen = ({route, navigation}) => {
             </AnimatedCircularProgress>
           </View>
           <View className="items-center justify-center m-6">
-            {/*<Text className="text-sm">*/}
-            {/*  Bao gồm 195 quốc gia thuộc Liên Hiệp Quốc, bao gồm 193 quốc gia và*/}
-            {/*  2 quan sát viên là Thành Vatican và Palestine.*/}
-            {/*</Text>*/}
+            {languageState == 'VI' ? (
+              <Text className="text-sm">
+              {typeCategory == 'Country' ? 
+              'Lá cờ 195 quốc gia thuộc Liên Hiệp Quốc, bao gồm 193 quốc gia và 2 quan sát viên là Thành Vatican và Palestine.'
+              : 'Lá cờ 249 quốc gia, vùng lãnh thổ và khu vực địa lý có mã ISO 3166-1 được cấp chính thức.'}
+            </Text>
+            ) :(
+<Text className="text-sm">
+              {typeCategory == 'Country' ? 
+              'The flags of 195 entries made up from the 193 sovereign states (commonly refered to as countries) that are members of the United Nations (UN) plus the 2 observer states of Palestine and the Vatican City State.'
+              : 'The flags of 249 countries, territories, and areas of geographical interest that have an officially assigned ISO 3166-1 code.'}
+            </Text>
+            )}
+            
           </View>
         </View>
       </View>
@@ -166,6 +176,7 @@ const BoardCountriesScreen = ({route, navigation}) => {
           </View>
         </View>
       </View>
+      <Text className="mx-4 font-bold text-xl">{languageState == 'VI' ? 'Chọn số lượng câu hỏi' : 'Select  the number of question'}</Text>
       {renderItem()}
     </ScrollView>
   );

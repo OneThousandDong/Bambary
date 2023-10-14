@@ -14,12 +14,12 @@ import LottieView from 'lottie-react-native';
 import useWorldStore from '../../store/useWorldStore';
 import {QuantityQuestionData} from '../DataQuiz/QuantityQuestionData';
 import useMenuStore from '../../store/useMenuStore';
-import Sound from 'react-native-sound';
 import {DATAAFRICA, DATAAFRICAVI} from '../DataQuiz/DataAfrica';
 import {DATAASIA, DATAASIAVI} from '../DataQuiz/DataAsia';
 import {Country} from '../../model/Country';
 import { DATA, DATAVI } from "../DataQuiz/Data";
 import { DATA195, DATAVI195 } from "../DataQuiz/DataVI195";
+import SoundPlayer from 'react-native-sound-player';
 
 const QuizCountriesScreen = ({route, navigation}) => {
   const [progress, setProgress] = useState(0);
@@ -155,26 +155,11 @@ const QuizCountriesScreen = ({route, navigation}) => {
   };
 
   const soundPlay = (sound: any) => {
-    Sound.setCategory('Playback');
-    const soundVar = new Sound(sound, Sound.MAIN_BUNDLE, error => {
-      if (error) {
-        console.log('Error Sound');
-      } else {
-        soundVar.play(() => {
-          soundVar.release();
-        });
-      }
-    });
-    setTimeout(() => {
-      soundVar.play(success => {
-        if (success) {
-          soundVar.release();
-          console.log('successfully');
-        } else {
-          console.log('failed');
-        }
-      });
-    }, 100);
+    try {
+      SoundPlayer.playSoundFile(sound, 'mp3')
+    } catch (e) {
+      console.log(e)
+    }
   };
 
   return (
@@ -353,18 +338,18 @@ const QuizCountriesScreen = ({route, navigation}) => {
               handleButton();
               if (selected[question?.correct] == 1) {
                 setCorrectAnswer(true);
+                soundPlay('success');
               } else {
                 setSelected([0, 0, 0, 0]);
                 setButtonnColor('#ff4d4d');
                 setIncorrect(true);
+                soundPlay('wrong1');
               }
               setTimeout(() => {
                 if (selected[question?.correct] == 1) {
                   animationRef.current?.play();
-                  soundPlay(require('../../assets/mp3/success.mp3'));
                 } else {
                   animationRefWrong.current?.play();
-                  soundPlay(require('../../assets/mp3/wrong-answer-129254.mp3'));
                 }
               }, 100);
             }}
