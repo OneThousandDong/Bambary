@@ -1078,9 +1078,8 @@ const WorldMap = ({countries}: Props): React.ReactElement => {
   return (
     <View style={styles.container}>
       <Svg
-        xmlns="http://www.w3.org/2000/svg"
         width="130%"
-        height="200%"
+        height="190%"
         viewBox="60 50 555 250"
         id="svg5249">
         {data.map((item, index) => {

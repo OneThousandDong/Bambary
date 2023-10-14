@@ -130,7 +130,7 @@ const HomeScreen = ({route, navigation}) => {
 
     return (
       <Modal transparent={true} visible={showModal}>
-        <View style={styles.modalContainer}>
+        <View className='rounded-md' style={styles.modalContainer}>
           <Animated.View
             style={[styles.modal, {transform: [{scale: scaleVal}]}]}>
             <TouchableOpacity onPress={() => setModalVisible(false)}>
@@ -232,8 +232,9 @@ const HomeScreen = ({route, navigation}) => {
               </View>
               <TouchableOpacity
                 onPress={() => {
-                  setTypeCategory('World');
-                  navigation.navigate('BoardCountries');
+                  // setTypeCategory('World');
+                  // navigation.navigate('BoardCountries');
+                  setModalVisible(true)
                 }}>
                 <View className="flex flex-row">
                   <Svgs.DinosaurSVG
@@ -325,12 +326,9 @@ const HomeScreen = ({route, navigation}) => {
             onEndReachedThreshold={0.2}
           />
         </View>
+        <ModalPopup visible={modalVisible} />        
       </View>
     </>
-    // <View>
-    //   <ModalPopup visible={modalVisible} />
-    //   <Button title="CLick" onPress={() => setModalVisible(true)} />
-    // </View>
   );
 };
 
@@ -350,11 +348,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f2e6ff',
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   modal: {
     width: '90%',
-    height: '30%',
+    height: '40%',
     backgroundColor: '#b3ffb3',
+    borderRadius: 20
   },
 });
