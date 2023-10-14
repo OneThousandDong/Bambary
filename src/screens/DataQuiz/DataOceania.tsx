@@ -127,7 +127,7 @@ export const DATAOCEANIAVI: Country[] = [
   //   uri: require('../../assets/flagpng/pf.png'),
   // },
   {
-    answer: ['Guam', 'Samoa', 'Papua New Guinea', 'Papua New Guinea'],
+    answer: ['Guam', 'Samoa', 'Papua New Guinea', 'Vanuatu'],
     correct: 2,
     id: 'PG',
     index: 179,
@@ -175,7 +175,7 @@ export const DATAOCEANIAVI: Country[] = [
   //   uri: require('../../assets/flagpng/tl.png'),
   // },
   {
-    answer: ['Tonga', 'Polynésie thuộc Pháp', 'Cook Islands', 'Tonga'],
+    answer: ['Tuvalu', 'Polynésie thuộc Pháp', 'Cook Islands', 'Tonga'],
     correct: 3,
     id: 'TO',
     index: 227,
@@ -183,7 +183,7 @@ export const DATAOCEANIAVI: Country[] = [
     uri: require('../../assets/flagpng/to.png'),
   },
   {
-    answer: ['Úc', 'Tuvalu', 'Quần đảo Solomon', 'Tuvalu'],
+    answer: ['Úc', 'Tuvalu', 'Quần đảo Solomon', 'Fiji'],
     correct: 1,
     id: 'TV',
     index: 230,
@@ -223,7 +223,7 @@ export const DATAOCEANIAVI: Country[] = [
 
 export const DATAOCEANIA: Country[] = [
   {
-    answer: ['Solomon Islands', 'Tuvalu', 'Australia', 'Australia'],
+    answer: ['Solomon Islands', 'Tuvalu', 'Australia', 'Nauru'],
     correct: 2,
     id: 'AU',
     index: 8,
@@ -284,7 +284,7 @@ export const DATAOCEANIA: Country[] = [
     uri: require('../../assets/flagpng/nz.png'),
   },
   {
-    answer: ['Fiji', 'Vanuatu', 'Palau', 'Palau'],
+    answer: ['Fiji', 'Vanuatu', 'Palau', 'Papua New Guinea'],
     correct: 2,
     id: 'PW',
     index: 132,
@@ -332,7 +332,7 @@ export const DATAOCEANIA: Country[] = [
     uri: require('../../assets/flagpng/to.png'),
   },
   {
-    answer: ['New Zealand', 'Tuvalu', 'Fiji', 'Tuvalu'],
+    answer: ['New Zealand', 'Tuvalu', 'Fiji', 'Tonga'],
     correct: 1,
     id: 'TV',
     index: 179,
@@ -340,7 +340,7 @@ export const DATAOCEANIA: Country[] = [
     uri: require('../../assets/flagpng/tv.png'),
   },
   {
-    answer: ['Vanuatu', 'Vanuatu', 'Marshall Islands', 'New Zealand'],
+    answer: ['Vanuatu', 'Fiji', 'Marshall Islands', 'New Zealand'],
     correct: 0,
     id: 'VU',
     index: 187,

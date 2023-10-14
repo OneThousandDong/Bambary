@@ -380,7 +380,7 @@ const QuizContinentScreen = ({route, navigation}) => {
                   soundPlay(require('../../assets/mp3/success.mp3'));
                 } else {
                   animationRefWrong.current?.play();
-                  soundPlay(require('../../assets/mp3/wrong.mp3'));
+                  soundPlay(require('../../assets/mp3/wrong-answer-129254.mp3'));
                 }
               }, 100);
             }}

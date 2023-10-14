@@ -191,7 +191,7 @@ export const DATAEUVI: Country[] = [
     uri: require('../../assets/flagpng/hr.png'),
   },
   {
-    answer: ['Hungary', 'Hungary', 'Andorra', 'Quần đảo Svalbard và Jan Mayen'],
+    answer: ['Serbia', 'Hungary', 'Andorra', 'Quần đảo Svalbard và Jan Mayen'],
     correct: 1,
     id: 'HU',
     index: 103,
@@ -215,7 +215,7 @@ export const DATAEUVI: Country[] = [
   //   uri: require('../../assets/flagpng/im.png'),
   // },
   {
-    answer: ['Iceland', 'Iceland', 'Hà Lan', 'Bỉ'],
+    answer: ['Italy', 'Iceland', 'Hà Lan', 'Bỉ'],
     correct: 1,
     id: 'IS',
     index: 112,
@@ -263,7 +263,7 @@ export const DATAEUVI: Country[] = [
     uri: require('../../assets/flagpng/lu.png'),
   },
   {
-    answer: ['Séc', 'Kosovo', 'Latvia', 'Latvia'],
+    answer: ['Séc', 'Kosovo', 'Monaco', 'Latvia'],
     correct: 3,
     id: 'LV',
     index: 138,
@@ -470,7 +470,7 @@ export const DATAEU: Country[] = [
     uri: require('../../assets/flagpng/at.png'),
   },
   {
-    answer: ['Serbia', 'Italy', 'Belarus', 'Belarus'],
+    answer: ['Serbia', 'Italy', 'Czechia', 'Belarus'],
     correct: 3,
     id: 'BY',
     index: 15,
@@ -643,7 +643,7 @@ export const DATAEU: Country[] = [
     uri: require('../../assets/flagpng/lu.png'),
   },
   {
-    answer: ['Malta', 'France', 'Malta', 'San Marino'],
+    answer: ['Malta', 'France', 'Poland', 'San Marino'],
     correct: 0,
     id: 'MT',
     index: 107,
@@ -739,7 +739,7 @@ export const DATAEU: Country[] = [
     uri: require('../../assets/flagpng/rs.png'),
   },
   {
-    answer: ['Slovakia', 'Greece', 'Andorra', 'Slovakia'],
+    answer: ['Belarus', 'Greece', 'Andorra', 'Slovakia'],
     correct: 3,
     id: 'SK',
     index: 156,

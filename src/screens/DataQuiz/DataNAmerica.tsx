@@ -192,7 +192,7 @@ export const DATANAMERICAVI: Country[] = [
     uri: require('../../assets/flagpng/ht.png'),
   },
   {
-    answer: ['Jamaica', 'Jamaica', 'Quần đảo Virgin', 'Cộng hòa Dominica'],
+    answer: ['Bahamas', 'Jamaica', 'Quần đảo Virgin', 'Cộng hòa Dominica'],
     correct: 1,
     id: 'JM',
     index: 115,
@@ -225,7 +225,7 @@ export const DATANAMERICAVI: Country[] = [
       'Saint Pierre và Miquelon',
       'Curaçao',
       'Saint Lucia',
-      'Saint Lucia',
+      'Mexico',
     ],
     correct: 2,
     id: 'LC',
@@ -484,7 +484,7 @@ export const DATANAMERICA: Country[] = [
   {
     answer: [
       'Costa Rica',
-      'El Salvador',
+      'Bahamas',
       'El Salvador',
       'United States of America',
     ],
@@ -508,7 +508,7 @@ export const DATANAMERICA: Country[] = [
     uri: require('../../assets/flagpng/gd.png'),
   },
   {
-    answer: ['Saint Lucia', 'Guatemala', 'Canada', 'Guatemala'],
+    answer: ['Saint Lucia', 'Guatemala', 'Canada', 'Haiti'],
     correct: 1,
     id: 'GT',
     index: 68,
@@ -594,7 +594,7 @@ export const DATANAMERICA: Country[] = [
       'Dominica',
       'Nicaragua',
       'Saint Vincent and the Grenadines',
-      'Saint Vincent and the Grenadines',
+      'Honduras',
     ],
     correct: 2,
     id: 'VC',
@@ -606,7 +606,7 @@ export const DATANAMERICA: Country[] = [
     answer: [
       'Honduras',
       'Dominica',
-      'Trinidad and Tobago',
+      'Grenada',
       'Trinidad and Tobago',
     ],
     correct: 3,

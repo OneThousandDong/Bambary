@@ -312,14 +312,14 @@ const HomeScreen = ({route, navigation}) => {
             ListFooterComponent={
               <View
                 style={{
-                  height: Dimensions.get('window').height / 4,
+                  height: Dimensions.get('window').height / 10,
                   width: Dimensions.get('window').width,
                   marginBottom: 10,
                 }}>
-                <LottieView
+                {/* <LottieView
                   ref={animationRef1}
                   source={require('../assets/lottie/world.json')}
-                />
+                /> */}
               </View>
             }
             onEndReachedThreshold={0.2}

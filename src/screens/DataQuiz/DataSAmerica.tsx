@@ -2,7 +2,7 @@ import {Country} from '../../model/Country';
 
 export const DATASAMERICAVI: Country[] = [
   {
-    answer: ['Argentina', 'Venezuela', 'Guyana', 'Argentina'],
+    answer: ['Colombia', 'Bolivia', 'Guyana', 'Argentina'],
     correct: 3,
     id: 'AR',
     index: 9,
@@ -111,7 +111,7 @@ export const DATASAMERICAVI: Country[] = [
     uri: require('../../assets/flagpng/uy.png'),
   },
   {
-    answer: ['Paraguay', 'Venezuela', 'Venezuela', 'Chile'],
+    answer: ['Paraguay', 'Venezuela', 'Uruguay', 'Chile'],
     correct: 1,
     id: 'VE',
     index: 240,
@@ -161,7 +161,7 @@ export const DATASAMERICA: Country[] = [
     uri: require('../../assets/flagpng/br.png'),
   },
   {
-    answer: ['Venezuela (Bolivarian Republic of)', 'Uruguay', 'Chile', 'Chile'],
+    answer: ['Venezuela (Bolivarian Republic of)', 'Uruguay', 'Chile', 'Paraguay'],
     correct: 2,
     id: 'CL',
     index: 34,
@@ -246,7 +246,7 @@ export const DATASAMERICA: Country[] = [
       'Uruguay',
       'Venezuela (Bolivarian Republic of)',
       'Chile',
-      'Uruguay',
+      'Paraguay',
     ],
     correct: 0,
     id: 'UY',
@@ -259,7 +259,7 @@ export const DATASAMERICA: Country[] = [
       'Venezuela (Bolivarian Republic of)',
       'Bolivia (Plurinational State of)',
       'Guyana',
-      'Venezuela (Bolivarian Republic of)',
+      'Uruguay',
     ],
     correct: 0,
     id: 'VE',

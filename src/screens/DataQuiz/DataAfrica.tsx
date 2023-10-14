@@ -823,7 +823,7 @@ export const DATAAFRICA: Country[] = [
     uri: require('../../assets/flagpng/na.png'),
   },
   {
-    answer: ['Sierra Leone', 'Niger', 'Niger', 'Congo'],
+    answer: ['Sierra Leone', 'Niger', 'Namibia', 'Congo'],
     correct: 1,
     id: 'NE',
     index: 126,

@@ -38,16 +38,30 @@ const App = (): React.ReactElement => {
   // console.log(DATAOCEANIA.length); //14
   // console.log(DATASAMERICAVI.length); //14
   // console.log(DATASAMERICA.length); //12
-  for (var i = 0; i < DATAAFRICAVI.length; i++) {
-    for (var k = 0; k < DATAAFRICA.length; k++) {
-      if (DATAAFRICAVI[i].id == DATAAFRICA[k].id) {
-        break;
+  // for (var i = 0; i < DATAAFRICAVI.length; i++) {
+  //   for (var k = 0; k < DATAAFRICA.length; k++) {
+  //     if (DATAAFRICAVI[i].id == DATAAFRICA[k].id) {
+  //       break;
+  //     }
+  //     if (k == DATAAFRICA.length - 1) {
+  //       console.log(DATAAFRICAVI[i]);
+  //     }
+  //   }
+  // }
+  let index = 0;
+  let data = DATASAMERICA;
+  for (var i = 0; i < data.length; i++) {
+    for (var k = 0; k < data[i].answer.length; k++) {
+      if (data[i].name == data[i].answer[k]) {
+        index ++;
       }
-      if (k == DATAAFRICA.length - 1) {
-        console.log(DATAAFRICAVI[i]);
+      if (index == 2) {
+        console.log(data[i])
       }
     }
+    index = 0
   }
+  console.log('Hii')
   const Stack = createNativeStackNavigator();
   return (
     <>
