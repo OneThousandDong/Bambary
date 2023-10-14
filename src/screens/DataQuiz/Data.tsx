@@ -467,7 +467,7 @@ export const DATA: Country[] = [
     uri: require('../../assets/flagpng/ck.png'),
   },
   {
-    answer: ['Haiti', 'Solomon Islands', 'Chile', 'Chile'],
+    answer: ['Haiti', 'Solomon Islands', 'Latvia', 'Chile'],
     correct: 3,
     id: 'CL',
     index: 45,
@@ -2984,11 +2984,11 @@ export const DATAVI: Country[] = [
     uri: require('../../assets/flagpng/ee.png'),
   },
   {
-    answer: ['Egypt', 'Monaco', 'Trinidad và Tobago', 'Egypt'],
+    answer: ['Ai Cập', 'Monaco', 'Trinidad và Tobago', 'Serbia'],
     correct: 0,
     id: 'EG',
     index: 63,
-    name: 'Egypt',
+    name: 'Ai Cập',
     uri: require('../../assets/flagpng/eg.png'),
   },
   {
@@ -3223,7 +3223,7 @@ export const DATAVI: Country[] = [
     uri: require('../../assets/flagpng/gp.png'),
   },
   {
-    answer: ['Italy', 'Philippines', 'Egypt', 'Equatorial Guinea'],
+    answer: ['Italy', 'Philippines', 'Ai Cập', 'Equatorial Guinea'],
     correct: 3,
     id: 'GQ',
     index: 91,
@@ -3764,7 +3764,7 @@ export const DATAVI: Country[] = [
     answer: [
       'Quần đảo Bắc Mariana',
       'Saint Kitts và Nevis',
-      'Egypt',
+      'Ai Cập',
       'Somalia',
     ],
     correct: 0,
@@ -3896,7 +3896,7 @@ export const DATAVI: Country[] = [
     uri: require('../../assets/flagpng/nf.png'),
   },
   {
-    answer: ['Antarctica', 'Nigeria', 'Romania', 'Nigeria'],
+    answer: ['Antarctica', 'Lào', 'Romania', 'Nigeria'],
     correct: 3,
     id: 'NG',
     index: 167,
@@ -3920,7 +3920,7 @@ export const DATAVI: Country[] = [
     uri: require('../../assets/flagpng/nl.png'),
   },
   {
-    answer: ['Georgia', 'Na Uy', 'Tonga', 'Na Uy'],
+    answer: ['Georgia', 'Canada', 'Tonga', 'Na Uy'],
     correct: 3,
     id: 'NO',
     index: 170,
@@ -4672,5 +4672,31 @@ export const DATAVI: Country[] = [
     index: 252,
     name: 'Zimbabwe',
     uri: require('../../assets/flagpng/zw.png'),
+  },
+  {
+    answer: [
+      'Iran',
+      'Caribe Hà Lan',
+      'Albania',
+      'Pitcairn',
+    ],
+    correct: 1,
+    id: 'BQ',
+    index: 29,
+    name: 'Caribe Hà Lan',
+    uri: require('../../assets/flagpng/bq.png'),
+  },
+  {
+    answer: [
+      'Nam Sudan',
+      'Cape Verde',
+      'Kiribati',
+      'Các đảo xa thuộc Hoa Kỳ',
+    ],
+    correct: 3,
+    id: 'UM',
+    index: 236,
+    name: 'Các đảo xa thuộc Hoa Kỳ',
+    uri: require('../../assets/flagpng/um.png'),
   },
 ];

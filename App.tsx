@@ -19,12 +19,27 @@ import {
   DATASAMERICA,
   DATASAMERICAVI,
 } from './src/screens/DataQuiz/DataSAmerica';
-import {DATAVI195} from './src/screens/DataQuiz/DataVI195';
+import {DATA195, DATAVI195} from './src/screens/DataQuiz/DataVI195';
 import BoardContinentScreen from './src/screens/Quiz/BoardContinentScreen';
 import WorldMap from './src/screens/MapScreen';
 import FlagsScreen from './src/screens/Quiz/FlagsScreen';
 
 const App = (): React.ReactElement => {
+  console.log(DATA.length); //255
+  console.log(DATAVI.length); //255
+  console.log(DATA195.length); //193
+  console.log(DATAVI195.length); //193
+  let json = require('./src/assets/world.json');
+  // for (var i = 0; i < DATA.length; i++) {
+  //   for (var k = 0; k < DATAVI.length; k++) {
+  //     if (DATA[i].id.toLowerCase() == DATAVI[k].id.toLowerCase()) {
+  //       break;
+  //     }
+  //     if (k == DATAVI.length - 1) {
+  //       console.log(DATA[i]);
+  //     }
+  //   }
+  // }
   // console.log(DATAAFRICAVI.length); //54
   // console.log(DATAAFRICA.length); //56
   // console.log(DATAASIAVI.length); //58
@@ -48,7 +63,7 @@ const App = (): React.ReactElement => {
   //   }
   // }
   // let index = 0;
-  // let data = DATASAMERICA;
+  // let data = DATAVI195;
   // for (var i = 0; i < data.length; i++) {
   //   for (var k = 0; k < data[i].answer.length; k++) {
   //     if (data[i].name == data[i].answer[k]) {
