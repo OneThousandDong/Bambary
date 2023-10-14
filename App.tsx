@@ -5,9 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
 import QuizCountriesScreen from './src/screens/Quiz/QuizCountriesScreen';
 import BoardCountriesScreen from './src/screens/Quiz/BoardCountriesScreen';
-import MapScreen from './src/screens/MapScreen';
 import QuizContinentScreen from './src/screens/Quiz/QuizContinentScreen';
-import BoardContinentsScreen from './src/screens/Quiz/BoardContinentScreen';
 import {DATA, DATAVI} from './src/screens/DataQuiz/Data';
 import {DATAAFRICA, DATAAFRICAVI} from './src/screens/DataQuiz/DataAfrica';
 import {DATAASIA, DATAASIAVI} from './src/screens/DataQuiz/DataAsia';
@@ -24,12 +22,13 @@ import {
 import {DATAVI195} from './src/screens/DataQuiz/DataVI195';
 import BoardContinentScreen from './src/screens/Quiz/BoardContinentScreen';
 import WorldMap from './src/screens/MapScreen';
+import FlagsScreen from './src/screens/Quiz/FlagsScreen';
 
 const App = (): React.ReactElement => {
-  console.log(DATAAFRICAVI.length); //54
-  console.log(DATAAFRICA.length); //56
-  console.log(DATAASIAVI.length); //58
-  console.log(DATAASIA.length); //48
+  // console.log(DATAAFRICAVI.length); //54
+  // console.log(DATAAFRICA.length); //56
+  // console.log(DATAASIAVI.length); //58
+  // console.log(DATAASIA.length); //48
   // console.log(DATAEUVI.length); //52
   // console.log(DATAEU.length); //43
   // console.log(DATANAMERICAVI.length); //40
@@ -48,20 +47,20 @@ const App = (): React.ReactElement => {
   //     }
   //   }
   // }
-  let index = 0;
-  let data = DATASAMERICA;
-  for (var i = 0; i < data.length; i++) {
-    for (var k = 0; k < data[i].answer.length; k++) {
-      if (data[i].name == data[i].answer[k]) {
-        index ++;
-      }
-      if (index == 2) {
-        console.log(data[i])
-      }
-    }
-    index = 0
-  }
-  console.log('Hii')
+  // let index = 0;
+  // let data = DATASAMERICA;
+  // for (var i = 0; i < data.length; i++) {
+  //   for (var k = 0; k < data[i].answer.length; k++) {
+  //     if (data[i].name == data[i].answer[k]) {
+  //       index ++;
+  //     }
+  //     if (index == 2) {
+  //       console.log(data[i])
+  //     }
+  //   }
+  //   index = 0
+  // }
+  // console.log('Hii')
   const Stack = createNativeStackNavigator();
   return (
     <>
@@ -82,7 +81,11 @@ const App = (): React.ReactElement => {
             name="BoardContinent"
             component={BoardContinentScreen}
           />
-          <Stack.Screen name="Map" component={WorldMap} />
+          <Stack.Screen
+            name="Flags"
+            component={FlagsScreen}
+          />
+          {/* <Stack.Screen name="Map" component={WorldMap} /> */}
         </Stack.Navigator>
       </NavigationContainer>
     </>

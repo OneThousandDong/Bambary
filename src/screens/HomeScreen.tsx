@@ -49,7 +49,7 @@ const CategoryData = [
   },
   {
     name: 'Flags',
-    uri: <Svgs.World height={100} width={120} />,
+    uri: <Svgs.World height={100} width={150} />,
     id: 'Flags',
   },
 ];
@@ -96,52 +96,13 @@ const HomeScreen = ({route, navigation}) => {
   const {languageState, setLanguageState} = useWorldStore();
   const {setTypeCategory} = useMenuStore();
   const animationRef = useRef<LottieView>(null);
-  const animationRef1 = useRef<LottieView>(null);
+  // const animationRef1 = useRef<LottieView>(null);
   useEffect(() => {
     animationRef.current?.play();
-    animationRef1.current?.play();
+    // animationRef1.current?.play();
   }, []);
 
-  const [modalVisible, setModalVisible] = useState(false);
-  const ModalPopup = ({visible}) => {
-    const scaleVal = React.useRef(new Animated.Value(1)).current;
-    const [showModal, setShowModal] = useState(visible);
-    useEffect(() => {
-      toggleModal();
-    }, [visible]);
 
-    const toggleModal = () => {
-      if (visible) {
-        setShowModal(true);
-        Animated.spring(scaleVal, {
-          toValue: 1,
-          delay: 300,
-          useNativeDriver: true,
-        }).start();
-      } else {
-        setTimeout(() => setShowModal(false), 200);
-        Animated.timing(scaleVal, {
-          toValue: 1,
-          duration: 300,
-          useNativeDriver: true,
-        }).start();
-      }
-    };
-
-    return (
-      <Modal transparent={true} visible={showModal}>
-        <View className='rounded-md' style={styles.modalContainer}>
-          <Animated.View
-            style={[styles.modal, {transform: [{scale: scaleVal}]}]}>
-            <TouchableOpacity onPress={() => setModalVisible(false)}>
-              <Svgs.CloseSvg height={40} width={40} />
-            </TouchableOpacity>
-            <MapScreen countries={['VN']} />
-          </Animated.View>
-        </View>
-      </Modal>
-    );
-  };
 
   return (
     <>
@@ -232,9 +193,8 @@ const HomeScreen = ({route, navigation}) => {
               </View>
               <TouchableOpacity
                 onPress={() => {
-                  // setTypeCategory('World');
-                  // navigation.navigate('BoardCountries');
-                  setModalVisible(true)
+                  setTypeCategory('World');
+                  navigation.navigate('BoardCountries');
                 }}>
                 <View className="flex flex-row">
                   <Svgs.DinosaurSVG
@@ -267,8 +227,12 @@ const HomeScreen = ({route, navigation}) => {
             renderItem={({item, index}) => (
               <TouchableOpacity
                 onPress={() => {
-                  setTypeCategory(item.id);
-                  navigation.navigate('BoardContinent');
+                  if (item.name == 'Flags') {
+                    navigation.navigate('Flags');
+                  } else {
+                    setTypeCategory(item.id);
+                    navigation.navigate('BoardContinent');
+                  }
                 }}>
                 <View
                   className="mx-2 items-center"
@@ -326,7 +290,6 @@ const HomeScreen = ({route, navigation}) => {
             onEndReachedThreshold={0.2}
           />
         </View>
-        <ModalPopup visible={modalVisible} />        
       </View>
     </>
   );
@@ -337,23 +300,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
     alignItems: 'center',
-  },
-  headerBox: {
-    backgroundColor: 'blue',
-    margin: 10,
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.5)',
-  },
-  modal: {
-    width: '90%',
-    height: '40%',
-    backgroundColor: '#b3ffb3',
-    borderRadius: 20
   },
 });

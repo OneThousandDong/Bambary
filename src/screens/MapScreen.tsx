@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, ScrollView,Dimensions,Text} from 'react-native';
 import Svg, {G, Path} from 'react-native-svg';
 
 const data = [
@@ -955,9 +955,56 @@ const data = [
   },
   {
     code: 'VN',
-    name: 'M 384.6929555895865 123.16998468606431 L 386.22052067381316 122.44640122511485 388.3510719754977 120.87863705972435 388.3510719754977 118.02450229709035 388.51186830015314 117.34111791730474 387.1450995405819 115.25076569678407 384.9743491577335 113.03981623277183 383.9693721286371 112.39663093415008 385.2959418070444 111.43185298621745 384.2105666156202 110.34647779479326 383.0849923430321 110.46707503828483 382.92419601837673 109.58269525267994 381.8790199081164 108.57771822358346 382.32120980091884 108.09532924961715 384.0899693721286 108.41692189892802 385.697932618683 107.37174578866768 387.42649310872895 108.13552833078101 387.1852986217458 108.61791730474732 388.91385911179174 109.70329249617151 387.62748851454825 110.38667687595712 386.54211332312406 111.55245022970904 386.0597243491577 112.7584226646248 387.2656967840735 114.64777947932619 389.8384379785605 117.1803215926493 390.6424196018377 120.19525267993875 390.1198315467075 122.04441041347626 388.02947932618684 123.21018376722817 387.3862940275651 123.04938744257274 387.10490045941805 124.21516079632465 385.05474732006127 125.09954058192956 385.0949464012251 123.41117917304747 384.6929555895865 123.16998468606431 Z',
+    name: 'm384.69296,123.16998l1.52756,-0.72358l2.13055,-1.56776l0,-2.85414l0.1608,-0.68338l-1.36677,-2.09035l-2.17075,-2.21095l-1.00498,-0.64319l1.32657,-0.96478l-1.08537,-1.08537l-1.12558,0.1206l-0.16079,-0.88438l-1.04518,-1.00498l0.44219,-0.48239l1.76876,0.32159l1.60796,-1.04517l1.72856,0.76378l-0.24119,0.48239l1.72856,1.08537l-1.28637,0.68339l-1.08538,1.16577l-0.48239,1.20597l1.20598,1.88936l2.57274,2.53254l0.80398,3.01493l-0.52259,1.84916l-2.09035,1.16577l-0.64319,-0.16079l-0.28139,1.16577l-2.05015,0.88438l0.0402,-1.68836l-0.40199,-0.2412z',
     nation: 'vietnam',
   },
+  // qđ
+  {
+    code: 'VN',
+    name: 'm394.93051,121.53732l-0.11125,0.16721l-0.11125,-0.11147l0,-0.16721l0.16688,-0.05574l0.05563,0.16721l-0.00001,0z',
+    nation: 'vietnam',
+  },
+  {
+    code: 'VN',
+    name: 'm395.98743,121.59306l-0.11125,0.05574l-0.22251,-0.05574l-0.16688,-0.16721l-0.05563,-0.16721l0.11125,-0.22294l0.27814,-0.16721l0.22251,0l0.11125,0.39015l-0.05563,0.22294l-0.11125,0.11147l0,0.00001z',
+    nation: 'vietnam',
+  },
+  {
+    code: 'VN',
+    name: 'm397.16279,120.58516l0.15844,0.05083l0,0.10165l0.15844,0.10165l0.31688,0.25414l0.15844,0l0.15844,0.15248l0.15844,0.25414l0.15844,0.10165l-0.23766,0.25414l-0.23766,0.05083l-0.3961,-0.05083l-0.23766,-0.05083l-0.23766,-0.15248l0,-0.10165l-0.15844,-0.05083l-0.07922,-0.20331l0.07922,-0.10165l0,-0.15248l0.15844,-0.20331l-0.15844,-0.25414l0.23766,0z',
+    nation: 'vietnam',
+  },
+  {
+    code: 'VN',
+    name: 'm399.65884,119.86524l0.16688,0.05574l0.05563,0.33442l-0.05563,0.22294l-0.22251,0.11147l-0.22251,-0.22294l0.11125,-0.22294l-0.05563,-0.11147l0.22251,-0.16721l0.00001,-0.00001z',
+    nation: 'vietnam',
+  },
+  {
+    code: 'VN',
+    name: 'm382.12539,123.71063l0.31671,-0.11147l0.52785,0.11147l0.10557,0.11147l0,0.39015l-0.42228,0.16721l-0.31671,0.11147l-0.11027,0.37457l-0.73429,-0.48604l0,-0.27868l0.21114,-0.11147l0,-0.33442l0.10557,-0.05574l0.31671,0.11147l0,0.00001z',
+    nation: 'vietnam',
+  },
+  {
+    code: 'VN',
+    name: 'm396.3212,115.12766l0.22251,-0.05574l0.16688,0.11147l0.22251,0l0.16688,0.11147l0.05563,0.11147l-0.27814,0l-0.38939,-0.16721l-0.11125,0.05574l-0.16688,0.33442l-0.16688,-0.33442l-0.05563,-0.05574l-0.05563,-0.22294l0.16688,-0.05574l0.22251,0.16721l0,0.00001z',
+    nation: 'vietnam',
+  },
+  {
+    code: 'VN',
+    name: 'm394.99705,116.50816l0.05563,0.05574l-0.05563,0.33442l-0.11125,0.05574l0,-0.27868l-0.11125,-0.16721l0,-0.16721l-0.05563,-0.16721l0.22251,-0.16721l0.11125,0.11147l-0.05563,0.33442l0,0.05574l0,-0.00001z',
+    nation: 'vietnam',
+  },
+  {
+    code: 'VN',
+    name: 'm394.37424,114.12441l0.11125,0.16721l0.05563,0.16721l-0.38939,0.16721l-0.16688,-0.11147l-0.11125,-0.11147l0.22251,-0.22294l0.27814,-0.05574l-0.00001,-0.00001z',
+    nation: 'vietnam',
+  },
+  // {
+  //   code: 'VN',
+  //   name: 'm393.92922,113.12116l0.16688,0.05574l0,0.11147l0.16688,0.16721l-0.11125,0.22294l-0.33376,0.16721l-0.22251,0.22294l-0.38939,0.05574l0,-0.05574l0,-0.27868l-0.11125,-0.11147l0,-0.11147l0.11125,-0.11147l0.11125,0l0.11125,-0.11147l0.38939,-0.22294l0.11125,0l0.00001,-0.00001z',
+  //   nation: 'vietnam',
+  // },
+  // qđ
   {
     code: 'VU',
     name: 'M 459.78483920367535 152.63591117917304 L 460.66921898928024 153.43989280245023 461.1114088820827 155.77143950995406 460.0260336906585 155.28905053598774 459.06125574272585 153.64088820826953 459.78483920367535 152.63591117917304 Z',
@@ -1075,11 +1122,32 @@ type Props = {
 };
 const WorldMap = ({countries}: Props): React.ReactElement => {
   const [selected, setSelected] = React.useState('');
+  const [selectedCountry, setSelectedCountry] = React.useState('');
+  React.useEffect(() => {
+    if (data.filter(i => i.code == countries[0]).length > 0) {
+      setSelectedCountry(data.filter(i => i.code == countries[0])[0].nation);
+    }
+  },[]);
+  
   return (
-    <View style={styles.container}>
+    <ScrollView horizontal style={styles.container} contentContainerStyle={{ flexGrow: 1 }}>
+      <View style={{width: 200, height: 20, alignItems: 'center', justifyContent: 'center'}}>
+        <Text className='text-white text-base'>{selectedCountry?.toUpperCase()}</Text>
+      </View>
+      <View style={{width: 200, height: 20, alignItems: 'center', justifyContent: 'flex-end'}}>
+        <Text className='text-white text-base'>{selectedCountry?.toUpperCase()}</Text>
+      </View>
+      <View style={{width: 200, height: 20, alignItems: 'center', justifyContent: 'center'}}>
+        <Text className='text-white text-base'>{selectedCountry?.toUpperCase()}</Text>
+      </View>
+      <View style={{width: 200, height: 20, alignItems: 'center', justifyContent: 'center'}}>
+        <Text className='text-white text-base'>{selectedCountry?.toUpperCase()}</Text>
+      </View>
+      <View style={{width: 200, height: 20, alignItems: 'center', justifyContent: 'center'}}>
+      </View>
       <Svg
         width="130%"
-        height="190%"
+        style={[{ height: Dimensions.get('window').height * 1.2 }, styles.svgCenter]}
         viewBox="60 50 555 250"
         id="svg5249">
         {data.map((item, index) => {
@@ -1087,6 +1155,7 @@ const WorldMap = ({countries}: Props): React.ReactElement => {
             <G
               key={index}
               onPressIn={() => {
+                setSelectedCountry(item.nation);
                 selected !== item.nation
                   ? setSelected(item.nation)
                   : setSelected('');
@@ -1094,10 +1163,10 @@ const WorldMap = ({countries}: Props): React.ReactElement => {
               <Path
                 fill={
                   selected === item.nation
-                    ? '#2754A8'
-                    : countries?.includes(item.code)
-                    ? '#6180C0'
-                    : '#E6580E'
+                    ? '#58EBD0'
+                    : countries?.includes(item.code.toUpperCase())
+                      ? '#45CE29'
+                      : '#DAE7DB'
                 }
                 id={index.toString()}
                 d={item.name}
@@ -1106,7 +1175,7 @@ const WorldMap = ({countries}: Props): React.ReactElement => {
           );
         })}
       </Svg>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -1114,9 +1183,11 @@ export default WorldMap;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    padding: 8,
+    margin: 5,
     width: '100%',
-    height: 250,
   },
+  svgCenter: {
+    position: 'absolute',
+    marginTop: '5%',
+  }
 });
