@@ -27,7 +27,7 @@ import FlagsScreen from './src/screens/Quiz/FlagsScreen';
 const App = (): React.ReactElement => {
   console.log(DATA.length); //255
   console.log(DATAVI.length); //255
-  console.log(DATA195.length); //193
+  console.log(DATA195.length); //193 vatican plestin
   console.log(DATAVI195.length); //193
   let json = require('./src/assets/world.json');
   // for (var i = 0; i < DATA.length; i++) {
